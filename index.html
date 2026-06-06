@@ -7,7 +7,7 @@
 <title>Guia Eleições 2026 — Sheila Casaril</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -37,14 +37,13 @@
 }
 body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
 
-/* ── HEADER ── */
 .header{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 1.5rem;position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
 .header-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;gap:1rem;height:60px;flex-wrap:wrap}
 .header-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .header-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--verde-m),var(--verde-d));display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);color:#fff;font-size:14px;flex-shrink:0}
 .header-titles{line-height:1.2}
 .header-logo{font-size:14px;font-weight:600;color:var(--verde)}
-.header-sub{font-size:11px;color:var(--text3);font-weight:400}
+.header-sub{font-size:11px;color:var(--text3)}
 .search-wrap{flex:1;min-width:180px;position:relative}
 .search-wrap input{width:100%;padding:8px 12px 8px 34px;border:1px solid var(--border2);border-radius:99px;background:var(--bg3);font-size:13px;color:var(--text);outline:none;font-family:var(--font);transition:border-color .2s}
 .search-wrap input:focus{border-color:var(--verde);background:var(--bg2)}
@@ -53,59 +52,68 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .perfil-label{font-size:11px;color:var(--text3);font-weight:500;text-transform:uppercase;letter-spacing:.04em}
 .btn-perfil{padding:5px 13px;border:1px solid var(--border2);border-radius:99px;font-size:12px;font-weight:500;cursor:pointer;background:transparent;color:var(--text2);transition:all .15s;font-family:var(--font)}
 .btn-perfil.ativo{background:var(--verde);color:#fff;border-color:var(--verde)}
-.btn-perfil:hover:not(.ativo){background:var(--bg3);border-color:var(--border2)}
+.btn-perfil:hover:not(.ativo){background:var(--bg3)}
 
-/* ── LAYOUT ── */
 .main{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:240px 1fr;gap:1.5rem;padding:1.5rem}
 
-/* ── SIDEBAR ── */
 .sidebar{position:sticky;top:76px;align-self:start;display:flex;flex-direction:column;gap:.875rem}
 .timeline{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow)}
 .tl-header{padding:10px 14px 8px;border-bottom:1px solid var(--border)}
-.tl-header-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--text3)}
-.tl-fase{padding:9px 14px;cursor:pointer;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;transition:background .15s;font-size:13px;position:relative}
+.tl-header-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3)}
+.tl-fase{padding:9px 14px;cursor:pointer;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;transition:background .15s;font-size:13px}
 .tl-fase:last-child{border-bottom:none}
 .tl-fase:hover{background:var(--bg3)}
-.tl-fase.fase-ativa{background:var(--bg3)}
-.tl-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;transition:transform .2s}
+.tl-fase.fase-ativa{background:var(--verde-l)}
+.tl-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 .tl-fase.fase-ativa .tl-dot{transform:scale(1.4);box-shadow:0 0 0 3px rgba(15,110,86,.2)}
 .tl-label{flex:1;line-height:1.3}
-.tl-label span{display:block;font-weight:500;color:var(--text)}
+.tl-label span{display:block;font-weight:500;color:var(--text);font-size:13px}
 .tl-label small{display:block;font-size:11px;color:var(--text3);margin-top:1px}
-.badge-ativa{font-size:10px;font-weight:600;background:var(--verde);color:#fff;border-radius:99px;padding:2px 7px;white-space:nowrap}
+.badge-ativa{font-size:10px;font-weight:700;background:var(--verde);color:#fff;border-radius:99px;padding:2px 7px;white-space:nowrap}
+.tl-cron{background:var(--verde-l);border-left:3px solid var(--verde)!important}
+.tl-cron:hover{background:var(--verde-l)}
+.tl-cron span{color:var(--verde-d)!important}
+.tl-cron .tl-dot{background:var(--verde)}
+.cron-panel{display:none;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow)}
+.cron-grupo-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);padding:8px 12px 4px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px}
+.cron-item{display:grid;grid-template-columns:38px 1fr auto;align-items:start;gap:5px;padding:6px 12px;border-bottom:1px solid var(--border);font-size:11px}
+.cron-item:last-child{border-bottom:none}
+.cron-data{font-weight:700;color:var(--verde);font-variant-numeric:tabular-nums;line-height:1.5}
+.cron-label{color:var(--text2);line-height:1.4}
+.cron-dias{font-size:10px;font-weight:700;border-radius:99px;padding:2px 6px;white-space:nowrap;text-align:center}
+.cron-dias.passado{background:var(--bg3);color:var(--text3)}
+.cron-dias.hoje{background:var(--verde);color:#fff}
+.cron-dias.breve{background:#FAEEDA;color:#BA7517}
+.cron-dias.futuro{background:var(--bg3);color:var(--text2)}
 
 .widget-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:14px 16px;box-shadow:var(--shadow)}
-.widget-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);margin-bottom:6px}
-.widget-val{font-size:26px;font-weight:600;color:var(--verde);font-variant-numeric:tabular-nums;line-height:1}
+.widget-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);margin-bottom:6px}
+.widget-val{font-size:26px;font-weight:700;color:var(--verde);font-variant-numeric:tabular-nums;line-height:1}
 .widget-sub{font-size:12px;color:var(--text2);margin-top:5px;line-height:1.4}
 .widget-fase-nome{font-size:14px;font-weight:600;color:var(--text);line-height:1.3;margin-bottom:3px}
 .widget-fase-desc{font-size:12px;color:var(--text2)}
 
-/* ── FASE CARDS ── */
-.fase-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-xl);margin-bottom:1.25rem;overflow:hidden;box-shadow:var(--shadow);transition:box-shadow .2s}
-.fase-card:hover{box-shadow:0 2px 8px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.06)}
+.fase-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-xl);margin-bottom:1.25rem;overflow:hidden;box-shadow:var(--shadow)}
 .fase-header{padding:1.1rem 1.4rem;display:flex;align-items:center;gap:14px;cursor:pointer;user-select:none;transition:background .15s}
 .fase-header:hover{background:var(--bg3)}
 .fase-num{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;flex-shrink:0;font-family:var(--font-serif)}
 .fase-info{flex:1}
-.fase-info h2{font-size:16px;font-weight:600;margin-bottom:2px;color:var(--text);font-family:var(--font)}
+.fase-info h2{font-size:16px;font-weight:600;margin-bottom:2px;color:var(--text)}
 .fase-info p{font-size:12px;color:var(--text3);line-height:1.4}
-.fase-divider{height:1px;background:var(--border);margin:0}
+.fase-divider{height:1px;background:var(--border)}
 .fase-toggle{color:var(--text3);font-size:20px;transition:transform .25s;flex-shrink:0}
 .fase-toggle.aberto{transform:rotate(180deg)}
 .fase-body{padding:1.4rem;display:none}
 .fase-body.aberto{display:block}
 
-/* ── SEÇÕES ── */
 .secao{margin-bottom:1.5rem}
 .secao:last-child{margin-bottom:0}
 .secao-title{font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.75rem;display:flex;align-items:center;gap:8px}
 .secao-title::after{content:'';flex:1;height:1px;background:var(--border)}
 .secao-texto{font-size:14px;line-height:1.75;color:var(--text)}
 .secao-texto p{margin-bottom:.6rem}
-.secao-texto strong{font-weight:600;color:var(--text)}
+.secao-texto strong{font-weight:600}
 
-/* ── ALERTAS ── */
 .novidade{border-left:3px solid #BA7517;background:#FAEEDA;border-radius:0 var(--radius) var(--radius) 0;padding:10px 14px;margin:.75rem 0;font-size:13px;line-height:1.65;color:#412402}
 .novidade strong{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;color:#633806;font-weight:700}
 .atencao{border-left:3px solid #A32D2D;background:#FCEBEB;border-radius:0 var(--radius) var(--radius) 0;padding:10px 14px;margin:.75rem 0;font-size:13px;line-height:1.65;color:#501313}
@@ -119,12 +127,11 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
   .atencao strong{color:#E24B4A}
 }
 
-/* ── PERMS ── */
 .perms-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:.75rem 0}
 .perm-col{border-radius:var(--radius);padding:12px 14px;font-size:13px}
 .perm-col.ok{background:#EAF3DE;border:1px solid #97C459;color:#173404}
 .perm-col.nao{background:#FCEBEB;border:1px solid #E24B4A;color:#501313}
-.perm-col h4{font-size:11px;font-weight:700;margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em;display:flex;align-items:center;gap:5px}
+.perm-col h4{font-size:11px;font-weight:700;margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em}
 .perm-col.ok h4{color:#27500A}
 .perm-col.nao h4{color:#791F1F}
 .perm-col ul{list-style:none;padding:0}
@@ -140,7 +147,6 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
   .perm-col.nao li::before{color:#E24B4A}
 }
 
-/* ── CHECKLIST ── */
 .checklist{margin-top:1.25rem;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
 .checklist-header{padding:10px 16px;background:var(--bg3);display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border)}
 .checklist-header span{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3)}
@@ -155,27 +161,22 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .check-label{color:var(--text);flex:1}
 .check-item.checked .check-label{color:var(--text3);text-decoration:line-through}
 
-/* ── DATAS ── */
 .datas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:.75rem 0}
-.data-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px;display:flex;flex-direction:column;gap:4px}
-.data-card .d{font-size:13px;font-weight:600;color:var(--verde);display:flex;align-items:center;gap:6px}
+.data-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px}
+.data-card .d{font-size:13px;font-weight:600;color:var(--verde);display:flex;align-items:center;gap:6px;margin-bottom:3px}
 .data-card .e{font-size:12px;color:var(--text2);line-height:1.4}
 
-/* ── GLOSSÁRIO ── */
 .glossario-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-xl);padding:1.25rem 1.4rem;margin-bottom:1.25rem;box-shadow:var(--shadow)}
-.glossario-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:0}
 .glossario-toggle{font-size:13px;color:var(--verde);cursor:pointer;border:none;background:none;padding:0;display:flex;align-items:center;gap:6px;font-family:var(--font);font-weight:500}
-.glossario-box{display:none;margin-top:1rem}
+.glossario-box{display:none;margin-top:1rem;display:none}
 .glossario-box.aberto{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .gloss-item{font-size:13px;padding:10px 12px;background:var(--bg3);border-radius:var(--radius);border:1px solid var(--border);line-height:1.4;color:var(--text)}
 .gloss-item strong{display:block;font-size:11px;color:var(--verde);margin-bottom:3px;font-weight:700}
 
-/* ── TOOLTIP ── */
 .termo{border-bottom:1.5px dashed var(--border2);cursor:help;position:relative}
 .tooltip-box{display:none;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);padding:9px 13px;font-size:12px;width:240px;z-index:300;line-height:1.55;color:var(--text);pointer-events:none;box-shadow:0 4px 20px rgba(0,0,0,.12)}
 .termo:hover .tooltip-box{display:block}
 
-/* ── RODAPÉ ── */
 .footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 1.5rem 2rem;margin-top:.5rem}
 .footer-inner{max-width:1040px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1.25rem;text-align:center}
 .footer-avatar-wrap{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--verde-m),var(--verde-d));display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);color:#fff;font-size:26px;box-shadow:0 0 0 4px var(--verde-l)}
@@ -190,38 +191,9 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .footer-link.instagram:hover{background:#C13584;border-color:#C13584;color:#fff}
 .footer-aviso{font-size:11px;color:var(--text3);line-height:1.6;max-width:480px;padding-top:.5rem;border-top:1px solid var(--border)}
 
-/* ── MISC ── */
 .hidden-perfil{display:none!important}
-
-/* ── BOTÃO CRONOGRAMA ── */
-.btn-prazos{display:flex;align-items:center;gap:6px;padding:6px 14px;border:1px solid var(--verde);border-radius:99px;font-size:12px;font-weight:600;cursor:pointer;background:transparent;color:var(--verde);transition:all .15s;font-family:var(--font);white-space:nowrap}
-.btn-prazos:hover{background:var(--verde);color:#fff}
-.btn-prazos.ativo{background:var(--verde);color:#fff}
-
-/* ── PAINEL DE PRAZOS ── */
-.prazos-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200;align-items:flex-start;justify-content:center;padding:1.5rem}
-.prazos-overlay.aberto{display:flex}
-.prazos-panel{background:var(--bg2);border-radius:var(--radius-xl);width:100%;max-width:680px;max-height:85vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 40px rgba(0,0,0,.2);margin-top:60px}
-.prazos-panel-header{padding:1.1rem 1.4rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
-.prazos-panel-header h2{font-size:16px;font-weight:600;font-family:var(--font)}
-.prazos-close{background:none;border:none;cursor:pointer;color:var(--text3);font-size:22px;padding:0;line-height:1;font-family:var(--font)}
-.prazos-close:hover{color:var(--text)}
-.prazos-body{overflow-y:auto;padding:1rem 1.4rem 1.4rem;flex:1}
-.prazos-grupo{margin-bottom:1.25rem}
-.prazos-grupo-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);margin-bottom:.5rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
-.prazo-item{display:flex;align-items:center;gap:14px;padding:9px 0;border-bottom:1px solid var(--border)}
-.prazo-item:last-child{border-bottom:none}
-.prazo-data{font-size:13px;font-weight:600;color:var(--verde);min-width:70px;flex-shrink:0;font-variant-numeric:tabular-nums}
-.prazo-label{font-size:13px;color:var(--text);flex:1;line-height:1.4}
-.prazo-badge{font-size:11px;font-weight:600;border-radius:99px;padding:3px 9px;white-space:nowrap;flex-shrink:0}
-.prazo-badge.passado{background:var(--bg3);color:var(--text3)}
-.prazo-badge.hoje{background:var(--verde);color:#fff}
-.prazo-badge.proximo{background:var(--fase3-l);color:var(--fase3)}
-.prazo-badge.futuro{background:var(--bg3);color:var(--text2)}
-.prazo-dias{font-size:12px;color:var(--text3);min-width:48px;text-align:right;flex-shrink:0;font-variant-numeric:tabular-nums}
 mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
 
-/* ── MOBILE ── */
 @media(max-width:720px){
   .main{grid-template-columns:1fr;padding:1rem}
   .sidebar{position:static}
@@ -255,7 +227,6 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
       <button class="btn-perfil" onclick="setPerfil('agente',this)">Agente público</button>
       <button class="btn-perfil" onclick="setPerfil('eleitor',this)">Eleitor</button>
     </div>
-    <button class="btn-prazos" onclick="togglePrazos()"><i class="ti ti-calendar-time" aria-hidden="true"></i> Cronograma</button>
   </div>
 </header>
 
@@ -273,7 +244,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
       </div>
       <div class="tl-fase" onclick="irParaFase('fase3')" id="tl-fase3" style="border-left:3px solid var(--fase3)">
         <div class="tl-dot" style="background:var(--fase3)"></div>
-        <div class="tl-label"><span>Campanha no ar</span><small>16/08 à véspera</small></div>
+        <div class="tl-label"><span>Campanha Eleitoral</span><small>16/08 à véspera</small></div>
       </div>
       <div class="tl-fase" onclick="irParaFase('fase4')" id="tl-fase4" style="border-left:3px solid var(--fase4)">
         <div class="tl-dot" style="background:var(--fase4)"></div>
@@ -287,7 +258,14 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
         <div class="tl-dot" style="background:var(--especial)"></div>
         <div class="tl-label"><span>Condutas vedadas</span><small>O ano todo</small></div>
       </div>
+      <div class="tl-fase tl-cron" onclick="toggleCronograma()" id="tl-cron-btn">
+        <div class="tl-dot"></div>
+        <div class="tl-label"><span>Cronograma completo</span><small>Todos os prazos</small></div>
+        <i class="ti ti-chevron-down" id="cron-icon" style="font-size:14px;color:var(--verde);transition:transform .25s"></i>
+      </div>
     </div>
+
+    <div class="cron-panel" id="cron-panel"></div>
 
     <div class="widget-box">
       <div class="widget-label">Próximo prazo</div>
@@ -308,65 +286,45 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
     <article class="fase-card" id="fase1" data-perfis="candidato,eleitor">
       <div class="fase-header" onclick="toggleFase(this)" aria-expanded="true">
         <div class="fase-num" style="background:var(--fase1-l);color:var(--fase1)">1</div>
-        <div class="fase-info">
-          <h2>Pré-campanha</h2>
-          <p>Até 15 de agosto de 2026 · Organizar partido, testar elegibilidade, divulgar pré-candidatura</p>
-        </div>
+        <div class="fase-info"><h2>Pré-campanha</h2><p>Até 15 de agosto de 2026 · Organizar partido, testar elegibilidade, divulgar pré-candidatura</p></div>
         <i class="ti ti-chevron-down fase-toggle aberto" aria-hidden="true"></i>
       </div>
       <div class="fase-divider"></div>
       <div class="fase-body aberto">
         <div class="secao">
           <div class="secao-title">O que pode (e o que não pode)</div>
-          <div class="secao-texto">
-            <p>A propaganda eleitoral só é permitida a partir de <strong>16/08/2026</strong>. Antes disso, o pré-candidato pode divulgar a pré-candidatura e apresentar projetos — <strong>desde que não peça voto de forma explícita</strong>. Lembre: pedir voto não se resume ao "vote em mim"; qualquer expressão com o mesmo sentido conta.</p>
-          </div>
+          <div class="secao-texto"><p>A propaganda eleitoral só é permitida a partir de <strong>16/08/2026</strong>. Antes disso, o pré-candidato pode divulgar a pré-candidatura e apresentar projetos — <strong>desde que não peça voto de forma explícita</strong>. Lembre: pedir voto não se resume ao "vote em mim"; qualquer expressão com o mesmo sentido conta.</p></div>
           <div class="perms-grid">
-            <div class="perm-col ok">
-              <h4>✓ Permitido</h4>
-              <ul>
-                <li>Entrevistas, debates e programas (rádio, TV, internet)</li>
-                <li>Encontros e seminários fechados do partido</li>
-                <li>Prévias partidárias com debates entre pré-candidatos</li>
-                <li>Divulgar atos parlamentares sem pedir voto</li>
-                <li>Lives nos perfis do pré-candidato, partido ou coligação</li>
-                <li>Impulsionar conteúdo político sem pedido de voto</li>
-                <li>Arrecadação por vaquinha virtual a partir de 15/05</li>
-              </ul>
-            </div>
-            <div class="perm-col nao">
-              <h4>✕ Proibido</h4>
-              <ul>
-                <li>Pedido explícito de voto (qualquer forma)</li>
-                <li>Número de urna, jingle e outdoor</li>
-                <li>Material com cara de campanha</li>
-                <li>Transmissão ao vivo de prévias por rádio e TV</li>
-                <li>Pré-campanha massiva com grande investimento</li>
-                <li>Contratar alguém para divulgar conteúdo em favor de terceiros</li>
-              </ul>
-            </div>
+            <div class="perm-col ok"><h4>✓ Permitido</h4><ul>
+              <li>Entrevistas, debates e programas (rádio, TV, internet)</li>
+              <li>Encontros e seminários fechados do partido</li>
+              <li>Prévias partidárias com debates entre pré-candidatos</li>
+              <li>Divulgar atos parlamentares sem pedir voto</li>
+              <li>Lives nos perfis do pré-candidato, partido ou coligação</li>
+              <li>Impulsionar conteúdo político sem pedido de voto</li>
+              <li>Arrecadação por vaquinha virtual a partir de 15/05</li>
+            </ul></div>
+            <div class="perm-col nao"><h4>✕ Proibido</h4><ul>
+              <li>Pedido explícito de voto (qualquer forma)</li>
+              <li>Número de urna, jingle e outdoor</li>
+              <li>Material com cara de campanha</li>
+              <li>Transmissão ao vivo de prévias por rádio e TV</li>
+              <li>Pré-campanha massiva com grande investimento</li>
+              <li>Contratar alguém para divulgar conteúdo em favor de terceiros</li>
+            </ul></div>
           </div>
         </div>
         <div class="secao">
           <div class="secao-title">Novidades 2026</div>
-          <div class="novidade">
-            <strong>Novidade 2026 — RDE (Declaração de Elegibilidade)</strong>
-            O <span class="termo">RDE<span class="tooltip-box">Criado pela LC 219/2025. Permite ao pré-candidato levar dúvida sobre elegibilidade à Justiça Eleitoral antes da campanha, evitando candidaturas que poderiam ser indeferidas depois.</span></span> permite levar dúvidas sobre elegibilidade à Justiça Eleitoral ainda na pré-campanha. Quem tem incertezas sobre condenações, contas rejeitadas ou Lei da Ficha Limpa pode pedir uma declaração prévia. Exige anuência expressa do partido ou federação.
-          </div>
-          <div class="novidade">
-            <strong>Novidade 2026 — Arrecadação antecipada</strong>
-            A partir de <strong>15/05/2026</strong>, o pré-candidato já pode arrecadar por <span class="termo">crowdfunding<span class="tooltip-box">Financiamento coletivo pela internet. Os valores só são liberados após cumprimento dos requisitos: registro pedido, CNPJ ativo e recibos emitidos. Se a candidatura não se efetivar, os valores voltam aos doadores.</span></span>. Os valores são liberados apenas após o cumprimento dos requisitos de registro.
-          </div>
+          <div class="novidade"><strong>Novidade 2026 — RDE (Declaração de Elegibilidade)</strong>O <span class="termo">RDE<span class="tooltip-box">Criado pela LC 219/2025. Permite ao pré-candidato levar dúvida sobre elegibilidade à Justiça Eleitoral antes da campanha.</span></span> permite levar dúvidas sobre elegibilidade à Justiça Eleitoral ainda na pré-campanha. Quem tem incertezas sobre condenações, contas rejeitadas ou Lei da Ficha Limpa pode pedir uma declaração prévia. Exige anuência expressa do partido ou federação.</div>
+          <div class="novidade"><strong>Novidade 2026 — Arrecadação antecipada</strong>A partir de <strong>15/05/2026</strong>, o pré-candidato já pode arrecadar por <span class="termo">crowdfunding<span class="tooltip-box">Financiamento coletivo pela internet. Valores liberados apenas após cumprimento dos requisitos: registro pedido, CNPJ ativo e recibos emitidos.</span></span>. Os valores são liberados apenas após o cumprimento dos requisitos de registro.</div>
         </div>
         <div class="secao">
           <div class="secao-title">Federações partidárias</div>
-          <div class="resumo">
-            <strong>Em resumo</strong>
-            União de dois ou mais partidos registrados no TSE por no mínimo 4 anos. Precisam estar constituídas e com estatuto registrado no TSE até <strong>4 de abril de 2026</strong>. Se houver suspensão judicial do órgão de qualquer partido da federação, toda ela fica impedida de participar na circunscrição.
-          </div>
+          <div class="resumo"><strong>Em resumo</strong>União de dois ou mais partidos registrados no TSE por no mínimo 4 anos. Precisam estar constituídas e com estatuto registrado no TSE até <strong>4 de abril de 2026</strong>. Se houver suspensão judicial do órgão de qualquer partido da federação, toda ela fica impedida de participar na circunscrição.</div>
         </div>
         <div class="checklist">
-          <div class="checklist-header"><i class="ti ti-list-check" aria-hidden="true" style="font-size:15px;color:var(--verde)"></i><span>Checklist — Fase 1</span></div>
+          <div class="checklist-header"><i class="ti ti-list-check" style="font-size:15px;color:var(--verde)"></i><span>Fase 1</span></div>
           <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Estatuto do partido/federação registrado no TSE até 04/04/2026</div></div>
           <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Federação constituída com regras de lista proporcional definidas</div></div>
           <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Órgão de direção constituído e anotado na circunscrição</div></div>
@@ -382,50 +340,34 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
     <article class="fase-card" id="fase2" data-perfis="candidato">
       <div class="fase-header" onclick="toggleFase(this)" aria-expanded="false">
         <div class="fase-num" style="background:var(--fase2-l);color:var(--fase2)">2</div>
-        <div class="fase-info">
-          <h2>Convenção e registro</h2>
-          <p>20/07 a 15/08/2026 · A largada formal — escolha de candidatos, coligações e registro na Justiça Eleitoral</p>
-        </div>
+        <div class="fase-info"><h2>Convenção e registro</h2><p>20/07 a 15/08/2026 · Escolha de candidatos, coligações e registro na Justiça Eleitoral</p></div>
         <i class="ti ti-chevron-down fase-toggle" aria-hidden="true"></i>
       </div>
       <div class="fase-divider"></div>
       <div class="fase-body">
         <div class="secao">
           <div class="secao-title">Convenções e ata</div>
-          <div class="secao-texto">
-            <p>Candidatos são escolhidos entre <strong>20/07 e 05/08</strong>. A convenção pode ser presencial, virtual ou híbrida. Nas virtuais, a presença é registrada por assinatura eletrônica, gravação de áudio/vídeo ou outro meio que identifique os presentes.</p>
-          </div>
-          <div class="atencao">
-            <strong>Atenção — Fim da dispensa de impressão</strong>
-            Em 2026 não existe mais a opção de registrar só no <span class="termo">CANDex<span class="tooltip-box">Sistema digital da Justiça Eleitoral para envio de candidaturas, atas de convenção e documentos. Toda transmissão gera recibo com horário.</span></span>: a ata deve ser impressa para coleta de assinaturas e conservada até 15 dias após a diplomação.
-          </div>
+          <div class="secao-texto"><p>Candidatos são escolhidos entre <strong>20/07 e 05/08</strong>. A convenção pode ser presencial, virtual ou híbrida. Nas virtuais, a presença é registrada por assinatura eletrônica, gravação de áudio/vídeo ou outro meio que identifique os presentes.</p></div>
+          <div class="atencao"><strong>Atenção — Fim da dispensa de impressão</strong>Em 2026 não existe mais a opção de registrar só no <span class="termo">CANDex<span class="tooltip-box">Sistema digital da Justiça Eleitoral para envio de candidaturas, atas de convenção e documentos.</span></span>: a ata deve ser impressa para coleta de assinaturas e conservada até 15 dias após a diplomação.</div>
         </div>
         <div class="secao">
           <div class="secao-title">Cota de gênero</div>
-          <div class="secao-texto">
-            <p>Cada partido, federação ou coligação deve preencher no mínimo <strong>30%</strong> e no máximo <strong>70%</strong> das vagas para cada gênero — sob pena de indeferimento do <span class="termo">DRAP<span class="tooltip-box">Demonstrativo de Regularidade dos Atos Partidários — processo que abre a análise das candidaturas individuais. Reúne dados da convenção, do partido e de todos os candidatos.</span></span> e apuração de fraude.</p>
-          </div>
-          <div class="atencao">
-            <strong>Atenção — Fraude à cota (Súmula TSE 73)</strong>
-            Votação zerada, contas zeradas ou ausência de atos efetivos de campanha podem caracterizar fraude. Consequências: cassação do DRAP e dos diplomas vinculados, inelegibilidade de quem anuiu e nulidade dos votos.
-          </div>
+          <div class="secao-texto"><p>Cada partido, federação ou coligação deve preencher no mínimo <strong>30%</strong> e no máximo <strong>70%</strong> das vagas para cada gênero — sob pena de indeferimento do <span class="termo">DRAP<span class="tooltip-box">Demonstrativo de Regularidade dos Atos Partidários — processo que abre a análise das candidaturas individuais.</span></span> e apuração de fraude.</p></div>
+          <div class="atencao"><strong>Atenção — Fraude à cota (Súmula TSE 73)</strong>Votação zerada, contas zeradas ou ausência de atos efetivos de campanha podem caracterizar fraude. Consequências: cassação do DRAP e dos diplomas vinculados, inelegibilidade de quem anuiu e nulidade dos votos.</div>
         </div>
         <div class="secao">
           <div class="secao-title">Documentos necessários (RRC)</div>
-          <div class="resumo">
-            <strong>Em resumo — o que reunir</strong>
-            Documento oficial com foto · Comprovante de escolaridade · Declaração de bens no CANDex · Foto para urna (161×225 px, fundo uniforme) · Certidões criminais Federal e Estadual · Plano de governo (só majoritárias) · Prova de desincompatibilização, se aplicável.
-          </div>
+          <div class="resumo"><strong>Em resumo — o que reunir</strong>Documento oficial com foto · Comprovante de escolaridade · Declaração de bens no CANDex · Foto para urna (161×225 px, fundo uniforme) · Certidões criminais Federal e Estadual · Plano de governo (só majoritárias) · Prova de desincompatibilização, se aplicável.</div>
         </div>
         <div class="checklist">
-          <div class="checklist-header"><i class="ti ti-list-check" aria-hidden="true" style="font-size:15px;color:var(--verde)"></i><span>Checklist — Fase 2</span></div>
+          <div class="checklist-header"><i class="ti ti-list-check" style="font-size:15px;color:var(--verde)"></i><span>Fase 2</span></div>
           <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Convenção realizada entre 20/07 e 05/08, conforme o estatuto</div></div>
           <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Ata e lista de presença registradas no CANDex e impressas para assinatura</div></div>
           <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Arquivo da convenção transmitido à Justiça Eleitoral até o dia seguinte</div></div>
           <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Cota de gênero entre 30% e 70% de cada gênero respeitada</div></div>
           <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Registro protocolado no CANDex até as 19h de 15/08</div></div>
           <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Documentos do RRC reunidos: foto da urna, declaração de bens e plano de governo (majoritárias)</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Certidões criminais (Federal e Estadual, 1º/2º grau); se positivas, a de "objeto e pé"</div></div>
+          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Certidões criminais (Federal e Estadual); se positivas, a de "objeto e pé"</div></div>
           <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Desincompatibilização cumprida no prazo, quando aplicável</div></div>
         </div>
       </div>
@@ -435,89 +377,59 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
     <article class="fase-card" id="fase3" data-perfis="candidato">
       <div class="fase-header" onclick="toggleFase(this)" aria-expanded="false">
         <div class="fase-num" style="background:var(--fase3-l);color:var(--fase3)">3</div>
-        <div class="fase-info">
-          <h2>Campanha no ar</h2>
-          <p>16/08 à véspera da eleição · Propaganda, IA, financiamento e prestação de contas parcial</p>
-        </div>
+        <div class="fase-info"><h2>Campanha Eleitoral</h2><p>16/08 à véspera da eleição · Propaganda, IA, financiamento e prestação de contas parcial</p></div>
         <i class="ti ti-chevron-down fase-toggle" aria-hidden="true"></i>
       </div>
       <div class="fase-divider"></div>
       <div class="fase-body">
         <div class="secao">
           <div class="secao-title">Inteligência artificial — regras 2026</div>
-          <div class="novidade">
-            <strong>Novidade 2026 — Rotulagem obrigatória de IA</strong>
-            Todo conteúdo gerado ou significativamente alterado por IA deve ter aviso explícito: no início de áudios, por marca d'água em imagens e vídeos, em cada página de impresso. Chatbots e avatares também entram. Os provedores de impulsionamento devem disponibilizar campo específico para declarar uso de IA.
-          </div>
+          <div class="novidade"><strong>Novidade 2026 — Rotulagem obrigatória de IA</strong>Todo conteúdo gerado ou significativamente alterado por IA deve ter aviso explícito: no início de áudios, por marca d'água em imagens e vídeos, em cada página de impresso. Os provedores de impulsionamento devem disponibilizar campo específico para declarar uso de IA.</div>
           <div class="perms-grid">
-            <div class="perm-col ok">
-              <h4>IA permitida</h4>
-              <ul>
-                <li>Conteúdo rotulado corretamente</li>
-                <li>Ajustes técnicos de qualidade</li>
-                <li>Identidade visual e montagens usuais</li>
-                <li>Chatbots identificados como IA</li>
-              </ul>
-            </div>
-            <div class="perm-col nao">
-              <h4>IA proibida</h4>
-              <ul>
-                <li>Deepfake — alterar voz/imagem de candidato mesmo com autorização</li>
-                <li>Simular diálogo com candidato ou pessoa real</li>
-                <li>Fatos inverídicos com potencial de dano ao pleito</li>
-                <li>Conteúdo novo de IA nas 72h finais (apagão)</li>
-              </ul>
-            </div>
+            <div class="perm-col ok"><h4>IA permitida</h4><ul>
+              <li>Conteúdo rotulado corretamente</li>
+              <li>Ajustes técnicos de qualidade</li>
+              <li>Identidade visual e montagens usuais</li>
+              <li>Chatbots identificados como IA</li>
+            </ul></div>
+            <div class="perm-col nao"><h4>IA proibida</h4><ul>
+              <li>Deepfake — alterar voz/imagem de candidato mesmo com autorização</li>
+              <li>Simular diálogo com candidato ou pessoa real</li>
+              <li>Fatos inverídicos com potencial de dano ao pleito</li>
+              <li>Conteúdo novo de IA nas 72h finais (apagão)</li>
+            </ul></div>
           </div>
-          <div class="atencao">
-            <strong>Atenção — Ônus da prova invertido</strong>
-            Nas representações sobre IA, o juiz pode inverter o ônus da prova: o representado é que prova a licitude. Documente e preserve prompts, versões e edições do processo criativo.
-          </div>
+          <div class="atencao"><strong>Atenção — Ônus da prova invertido</strong>Nas representações sobre IA, o juiz pode inverter o ônus da prova. Documente e preserve prompts, versões e edições do processo criativo.</div>
         </div>
         <div class="secao">
           <div class="secao-title">Financiamento da campanha</div>
-          <div class="resumo">
-            <strong>Limites de doação — pessoa física</strong>
-            Até 10% dos rendimentos brutos do ano anterior em dinheiro · Bens estimáveis até R$ 40.000,00 · Doação ≥ R$ 1.064,10 só por transferência ou cheque nominal · Recursos próprios: até 10% do teto do cargo.
-          </div>
-          <div class="novidade">
-            <strong>Novidade 2026 — Pix</strong>
-            O Pix pode ser usado para arrecadar (chave = CNPJ de campanha) e para pagar gastos. Dispensa-se recibo em doações recebidas por Pix, mas é obrigatório manter relatório com CPF e valor de cada doação.
-          </div>
-          <div class="atencao">
-            <strong>Fontes proibidas</strong>
-            Pessoas jurídicas · Origem estrangeira · Quem exerce atividade por concessão pública · Recursos de origem não identificada (vão ao Tesouro). Se receber fonte vedada, devolva imediatamente e registre na prestação de contas.
-          </div>
+          <div class="resumo"><strong>Limites de doação — pessoa física</strong>Até 10% dos rendimentos brutos do ano anterior em dinheiro · Bens estimáveis até R$ 40.000,00 · Doação ≥ R$ 1.064,10 só por transferência ou cheque nominal · Recursos próprios: até 10% do teto do cargo.</div>
+          <div class="novidade"><strong>Novidade 2026 — Pix</strong>O Pix pode ser usado para arrecadar (chave = CNPJ de campanha) e para pagar gastos. Dispensa-se recibo em doações recebidas por Pix, mas é obrigatório manter relatório com CPF e valor de cada doação.</div>
+          <div class="atencao"><strong>Fontes proibidas</strong>Pessoas jurídicas · Origem estrangeira · Quem exerce atividade por concessão pública · Recursos de origem não identificada (vão ao Tesouro).</div>
         </div>
         <div class="secao">
           <div class="secao-title">Propaganda: permissões e vedações</div>
           <div class="perms-grid">
-            <div class="perm-col ok">
-              <h4>Permitido</h4>
-              <ul>
-                <li>Comícios das 8h às 24h, comunicado com 24h de antecedência</li>
-                <li>Adesivo microperfurado no para-brisa traseiro inteiro</li>
-                <li>Folhetos e santinhos com CNPJ/CPF e tiragem</li>
-                <li>Carreatas e passeatas das 8h às 22h da véspera</li>
-                <li>Bandeiras ao longo das vias das 6h às 22h</li>
-                <li>Impulsionamento com CNPJ e "Propaganda Eleitoral"</li>
-              </ul>
-            </div>
-            <div class="perm-col nao">
-              <h4>Proibido</h4>
-              <ul>
-                <li>Outdoor em qualquer lugar (inclusive eletrônico)</li>
-                <li>Telemarketing em qualquer horário</li>
-                <li>Showmício com artistas para animar o público</li>
-                <li>Distribuição de brindes ou bens ao eleitor</li>
-                <li>Propaganda negativa no impulsionamento</li>
-                <li>Robôs, perfis falsos e disparo em massa</li>
-              </ul>
-            </div>
+            <div class="perm-col ok"><h4>Permitido</h4><ul>
+              <li>Comícios das 8h às 24h, comunicado com 24h de antecedência</li>
+              <li>Adesivo microperfurado no para-brisa traseiro inteiro</li>
+              <li>Folhetos e santinhos com CNPJ/CPF e tiragem</li>
+              <li>Carreatas e passeatas das 8h às 22h da véspera</li>
+              <li>Bandeiras ao longo das vias das 6h às 22h</li>
+              <li>Impulsionamento com CNPJ e "Propaganda Eleitoral"</li>
+            </ul></div>
+            <div class="perm-col nao"><h4>Proibido</h4><ul>
+              <li>Outdoor em qualquer lugar (inclusive eletrônico)</li>
+              <li>Telemarketing em qualquer horário</li>
+              <li>Showmício com artistas para animar o público</li>
+              <li>Distribuição de brindes ou bens ao eleitor</li>
+              <li>Propaganda negativa no impulsionamento</li>
+              <li>Robôs, perfis falsos e disparo em massa</li>
+            </ul></div>
           </div>
         </div>
         <div class="checklist">
-          <div class="checklist-header"><i class="ti ti-list-check" aria-hidden="true" style="font-size:15px;color:var(--verde)"></i><span>Checklist — Fase 3</span></div>
+          <div class="checklist-header"><i class="ti ti-list-check" style="font-size:15px;color:var(--verde)"></i><span>Fase 3</span></div>
           <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Propaganda em língua nacional com nome do candidato e legenda; imagens de terceiros autorizadas</div></div>
           <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">URLs de todas as redes/sites comunicadas no registro ou em até 24h da criação</div></div>
           <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Conteúdo de IA rotulado de forma destacada; registros do processo criativo guardados</div></div>
@@ -536,57 +448,42 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
     <article class="fase-card" id="fase4" data-perfis="candidato,eleitor">
       <div class="fase-header" onclick="toggleFase(this)" aria-expanded="false">
         <div class="fase-num" style="background:var(--fase4-l);color:var(--fase4)">4</div>
-        <div class="fase-info">
-          <h2>Reta final e dia do voto</h2>
-          <p>72h antes até a apuração · Apagão da IA, regras do dia e fiscalização</p>
-        </div>
+        <div class="fase-info"><h2>Reta final e dia do voto</h2><p>72h antes até a apuração · Apagão da IA, regras do dia e fiscalização</p></div>
         <i class="ti ti-chevron-down fase-toggle" aria-hidden="true"></i>
       </div>
       <div class="fase-divider"></div>
       <div class="fase-body">
         <div class="secao">
           <div class="secao-title">O "apagão da IA"</div>
-          <div class="atencao">
-            <strong>Principal novidade do ciclo</strong>
-            Ficam vedados publicar, republicar e impulsionar novos conteúdos sintéticos de IA que usem imagem, voz ou manifestação de candidato ou pessoa pública — mesmo rotulados — nas janelas abaixo.
-          </div>
+          <div class="atencao"><strong>Principal novidade do ciclo</strong>Ficam vedados publicar, republicar e impulsionar novos conteúdos sintéticos de IA que usem imagem, voz ou manifestação de candidato ou pessoa pública — mesmo rotulados — nas janelas abaixo.</div>
           <div class="datas-grid">
-            <div class="data-card"><div class="d"><i class="ti ti-calendar-event" aria-hidden="true"></i> 1º turno</div><div class="e">01/10 às 17h até 05/10 às 17h</div></div>
-            <div class="data-card"><div class="d"><i class="ti ti-calendar-event" aria-hidden="true"></i> 2º turno</div><div class="e">22/10 às 17h até 26/10 às 17h</div></div>
-            <div class="data-card"><div class="d"><i class="ti ti-ban" aria-hidden="true"></i> Impulsionamento</div><div class="e">Suspenso de 48h antes a 24h depois da eleição</div></div>
+            <div class="data-card"><div class="d"><i class="ti ti-calendar-event"></i> 1º turno</div><div class="e">01/10 às 17h até 05/10 às 17h</div></div>
+            <div class="data-card"><div class="d"><i class="ti ti-calendar-event"></i> 2º turno</div><div class="e">22/10 às 17h até 26/10 às 17h</div></div>
+            <div class="data-card"><div class="d"><i class="ti ti-ban"></i> Impulsionamento</div><div class="e">Suspenso de 48h antes a 24h depois da eleição</div></div>
           </div>
         </div>
         <div class="secao">
           <div class="secao-title">No dia da eleição</div>
           <div class="perms-grid">
-            <div class="perm-col ok">
-              <h4>Permitido</h4>
-              <ul>
-                <li>Manifestação individual e silenciosa (bandeira, broche, adesivo, camiseta)</li>
-                <li>Manter conteúdos já publicados online</li>
-                <li>Foto do candidato votando, sem conteúdo eleitoral</li>
-                <li>Fotos e cumprimentos cordiais</li>
-                <li>Fiscais com crachá de 12×10 cm (nome e sigla)</li>
-              </ul>
-            </div>
-            <div class="perm-col nao">
-              <h4>Proibido</h4>
-              <ul>
-                <li>Boca de urna · distribuição de qualquer bem · som e carreatas</li>
-                <li>Impulsionar conteúdo (de 48h antes a 24h depois)</li>
-                <li>Publicar conteúdo eleitoral novo</li>
-                <li>Fornecer transporte a eleitores</li>
-                <li>Abordagem, aliciamento ou tentativa de convencimento</li>
-              </ul>
-            </div>
+            <div class="perm-col ok"><h4>Permitido</h4><ul>
+              <li>Manifestação individual e silenciosa (bandeira, broche, adesivo, camiseta)</li>
+              <li>Manter conteúdos já publicados online</li>
+              <li>Foto do candidato votando, sem conteúdo eleitoral</li>
+              <li>Fotos e cumprimentos cordiais</li>
+              <li>Fiscais com crachá de 12×10 cm (nome e sigla)</li>
+            </ul></div>
+            <div class="perm-col nao"><h4>Proibido</h4><ul>
+              <li>Boca de urna · distribuição de qualquer bem · som e carreatas</li>
+              <li>Impulsionar conteúdo (de 48h antes a 24h depois)</li>
+              <li>Publicar conteúdo eleitoral novo</li>
+              <li>Fornecer transporte a eleitores</li>
+              <li>Abordagem, aliciamento ou tentativa de convencimento</li>
+            </ul></div>
           </div>
-          <div class="novidade">
-            <strong>Novidade 2026 — "Seu Voto Importa"</strong>
-            Transporte individual gratuito a eleitores com deficiência ou mobilidade reduzida. Pedido até <strong>14/09/2026</strong>. Vedado a candidatos e partidos se envolverem — pode caracterizar abuso de poder econômico.
-          </div>
+          <div class="novidade"><strong>Novidade 2026 — "Seu Voto Importa"</strong>Transporte individual gratuito a eleitores com deficiência ou mobilidade reduzida. Pedido até <strong>14/09/2026</strong>. Vedado a candidatos e partidos se envolverem — pode caracterizar abuso de poder econômico.</div>
         </div>
         <div class="checklist">
-          <div class="checklist-header"><i class="ti ti-list-check" aria-hidden="true" style="font-size:15px;color:var(--verde)"></i><span>Checklist — Fase 4</span></div>
+          <div class="checklist-header"><i class="ti ti-list-check" style="font-size:15px;color:var(--verde)"></i><span>Fase 4</span></div>
           <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Apagão da IA: nenhum conteúdo novo de IA nas 72h finais de cada turno</div></div>
           <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Impulsionamento suspenso de 48h antes a 24h depois da eleição</div></div>
           <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">No dia: sem boca de urna, sem distribuição de bens, sem transporte de eleitores</div></div>
@@ -600,55 +497,43 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
     <article class="fase-card" id="fase5" data-perfis="candidato">
       <div class="fase-header" onclick="toggleFase(this)" aria-expanded="false">
         <div class="fase-num" style="background:var(--fase5-l);color:var(--fase5)">5</div>
-        <div class="fase-info">
-          <h2>Depois das urnas</h2>
-          <p>Prestação de contas final — até 3 e 14/11 · Regularidade jurídico-contábil de tudo que foi feito</p>
-        </div>
+        <div class="fase-info"><h2>Depois das urnas</h2><p>Prestação de contas final — até 3 e 14/11 · Regularidade jurídico-contábil de tudo que foi feito</p></div>
         <i class="ti ti-chevron-down fase-toggle" aria-hidden="true"></i>
       </div>
       <div class="fase-divider"></div>
       <div class="fase-body">
         <div class="secao">
           <div class="secao-title">Quem presta contas</div>
-          <div class="resumo">
-            <strong>Em resumo</strong>
-            Todos os candidatos — inclusive quem renunciou, desistiu, foi substituído ou teve registro indeferido, mesmo sem fazer campanha — e todos os órgãos partidários de todas as esferas, ainda que provisórios e sem movimentação.
-          </div>
+          <div class="resumo"><strong>Em resumo</strong>Todos os candidatos — inclusive quem renunciou, desistiu, foi substituído ou teve registro indeferido, mesmo sem fazer campanha — e todos os órgãos partidários de todas as esferas, ainda que provisórios e sem movimentação.</div>
         </div>
         <div class="secao">
           <div class="secao-title">Prazos finais</div>
           <div class="datas-grid">
-            <div class="data-card"><div class="d"><i class="ti ti-calendar-event" aria-hidden="true"></i> 1º turno</div><div class="e">Até 03/11/2026</div></div>
-            <div class="data-card"><div class="d"><i class="ti ti-calendar-event" aria-hidden="true"></i> 2º turno</div><div class="e">Até 14/11/2026 (com os dois turnos)</div></div>
-            <div class="data-card"><div class="d"><i class="ti ti-clock" aria-hidden="true"></i> Recebimentos</div><div class="e">Informar à JE em até 72h durante toda a campanha</div></div>
+            <div class="data-card"><div class="d"><i class="ti ti-calendar-event"></i> 1º turno</div><div class="e">Até 03/11/2026</div></div>
+            <div class="data-card"><div class="d"><i class="ti ti-calendar-event"></i> 2º turno</div><div class="e">Até 14/11/2026 (com os dois turnos)</div></div>
+            <div class="data-card"><div class="d"><i class="ti ti-clock"></i> Recebimentos</div><div class="e">Informar à JE em até 72h durante toda a campanha</div></div>
           </div>
         </div>
         <div class="secao">
           <div class="secao-title">Dicas práticas</div>
           <div class="perms-grid">
-            <div class="perm-col ok">
-              <h4>Boas práticas</h4>
-              <ul>
-                <li>Coletar, guardar e digitalizar comprovantes a cada pagamento</li>
-                <li>Registrar carreatas, eventos e gravações</li>
-                <li>Conferir NFs com o CNPJ de campanha diariamente</li>
-                <li>Devolver impulsionamento pago e não usado ao fim da campanha</li>
-                <li>Comunicar carreatas 24h antes (combustível sem comunicação = gasto irregular)</li>
-              </ul>
-            </div>
-            <div class="perm-col nao">
-              <h4>Riscos comuns</h4>
-              <ul>
-                <li>NFs com CNPJ de campanha não declaradas</li>
-                <li>Locação sem comprovação de propriedade do cedente</li>
-                <li>Sobras do FEFC não devolvidas ao Tesouro</li>
-                <li>Sobras do Fundo Partidário não devolvidas ao partido</li>
-              </ul>
-            </div>
+            <div class="perm-col ok"><h4>Boas práticas</h4><ul>
+              <li>Coletar, guardar e digitalizar comprovantes a cada pagamento</li>
+              <li>Registrar carreatas, eventos e gravações</li>
+              <li>Conferir NFs com o CNPJ de campanha diariamente</li>
+              <li>Devolver impulsionamento pago e não usado ao fim da campanha</li>
+              <li>Comunicar carreatas 24h antes (combustível sem comunicação = gasto irregular)</li>
+            </ul></div>
+            <div class="perm-col nao"><h4>Riscos comuns</h4><ul>
+              <li>NFs com CNPJ de campanha não declaradas</li>
+              <li>Locação sem comprovação de propriedade do cedente</li>
+              <li>Sobras do FEFC não devolvidas ao Tesouro</li>
+              <li>Sobras do Fundo Partidário não devolvidas ao partido</li>
+            </ul></div>
           </div>
         </div>
         <div class="checklist">
-          <div class="checklist-header"><i class="ti ti-list-check" aria-hidden="true" style="font-size:15px;color:var(--verde)"></i><span>Checklist — Fase 5</span></div>
+          <div class="checklist-header"><i class="ti ti-list-check" style="font-size:15px;color:var(--verde)"></i><span>Fase 5</span></div>
           <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Contas finais: 1º turno até 03/11; 2º turno até 14/11</div></div>
           <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Contador e advogado constituídos e atuantes desde o início da campanha</div></div>
           <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Documentos, recibos e NFs conferidos, digitalizados e enviados ao contador</div></div>
@@ -662,42 +547,30 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
     <article class="fase-card" id="especial" data-perfis="agente">
       <div class="fase-header" onclick="toggleFase(this)" aria-expanded="false">
         <div class="fase-num" style="background:var(--especial-l);color:var(--especial);font-size:20px">⚑</div>
-        <div class="fase-info">
-          <h2>Condutas vedadas — agentes públicos</h2>
-          <p>O ano eleitoral inteiro · Eleição geral: o que se aplica ou não ao município</p>
-        </div>
+        <div class="fase-info"><h2>Condutas vedadas — agentes públicos</h2><p>O ano eleitoral inteiro · Eleição geral: o que se aplica ou não ao município</p></div>
         <i class="ti ti-chevron-down fase-toggle" aria-hidden="true"></i>
       </div>
       <div class="fase-divider"></div>
       <div class="fase-body">
         <div class="secao">
           <div class="secao-title">Ponto central numa eleição geral</div>
-          <div class="novidade">
-            <strong>Novidade 2026 — Agentes municipais</strong>
-            Em 2026 é eleição geral (presidente, governador, senador, deputados — sem cargo municipal em disputa). Os agentes municipais ainda se sujeitam às condutas vedadas, mas algumas vedações são vinculadas à circunscrição do pleito e não recaem automaticamente sobre o município.
-          </div>
-          <div class="atencao">
-            <strong>Atenção — Isso não é salvo-conduto</strong>
-            A dispensa de algumas regras automáticas não autoriza usar a máquina pública. Permanece proibido qualquer ato que configure promoção pessoal ou favorecimento de candidatura.
-          </div>
+          <div class="novidade"><strong>Novidade 2026 — Agentes municipais</strong>Em 2026 é eleição geral (presidente, governador, senador, deputados — sem cargo municipal em disputa). Os agentes municipais ainda se sujeitam às condutas vedadas, mas algumas vedações são vinculadas à circunscrição do pleito e não recaem automaticamente sobre o município.</div>
+          <div class="atencao"><strong>Atenção — Isso não é salvo-conduto</strong>A dispensa de algumas regras automáticas não autoriza usar a máquina pública. Permanece proibido qualquer ato que configure promoção pessoal ou favorecimento de candidatura.</div>
         </div>
         <div class="secao">
           <div class="secao-title">Marcos no tempo</div>
           <div class="datas-grid">
-            <div class="data-card"><div class="d"><i class="ti ti-calendar" aria-hidden="true"></i> O ano todo</div><div class="e">Uso de bens públicos · cessão de servidores · promoção pessoal · distribuição de benefícios</div></div>
-            <div class="data-card"><div class="d"><i class="ti ti-calendar-event" aria-hidden="true"></i> A partir de 07/04</div><div class="e">Revisão geral da remuneração acima da reposição</div></div>
-            <div class="data-card"><div class="d"><i class="ti ti-calendar-event" aria-hidden="true"></i> A partir de 04/07</div><div class="e">Publicidade institucional · transferências voluntárias · inaugurações com candidatos · gestão de pessoal</div></div>
+            <div class="data-card"><div class="d"><i class="ti ti-calendar"></i> O ano todo</div><div class="e">Uso de bens públicos · cessão de servidores · promoção pessoal · distribuição de benefícios</div></div>
+            <div class="data-card"><div class="d"><i class="ti ti-calendar-event"></i> A partir de 07/04</div><div class="e">Revisão geral da remuneração acima da reposição</div></div>
+            <div class="data-card"><div class="d"><i class="ti ti-calendar-event"></i> A partir de 04/07</div><div class="e">Publicidade institucional · transferências voluntárias · inaugurações com candidatos · gestão de pessoal</div></div>
           </div>
         </div>
         <div class="secao">
           <div class="secao-title">O que não se aplica automaticamente ao município</div>
-          <div class="resumo">
-            <strong>Vinculadas à circunscrição do pleito (art. 73, §3º)</strong>
-            Publicidade institucional (art. 73, VI, "b") · Pronunciamento em cadeia de rádio e TV (art. 73, VI, "c") · Revisão geral da remuneração (art. 73, VIII) · Gestão de pessoal: nomear, demitir sem justa causa, remover, transferir (art. 73, V). As duas últimas ficam permitidas com ressalvas — há responsabilização se usadas para favorecer candidatura.
-          </div>
+          <div class="resumo"><strong>Vinculadas à circunscrição do pleito (art. 73, §3º)</strong>Publicidade institucional (art. 73, VI, "b") · Pronunciamento em cadeia de rádio e TV (art. 73, VI, "c") · Revisão geral da remuneração (art. 73, VIII) · Gestão de pessoal: nomear, demitir sem justa causa, remover, transferir (art. 73, V). As duas últimas ficam permitidas com ressalvas.</div>
         </div>
         <div class="checklist">
-          <div class="checklist-header"><i class="ti ti-list-check" aria-hidden="true" style="font-size:15px;color:var(--verde)"></i><span>Checklist — Agentes municipais</span></div>
+          <div class="checklist-header"><i class="ti ti-list-check" style="font-size:15px;color:var(--verde)"></i><span>Agentes municipais</span></div>
           <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Bens públicos nunca usados em favor de candidatura (o ano todo)</div></div>
           <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Servidores sem atividade eleitoral no expediente; redes pessoais só fora do horário</div></div>
           <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Sem distribuição gratuita de bens/valores (salvo programas sociais pré-existentes e emergência)</div></div>
@@ -712,15 +585,13 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
 
     <!-- GLOSSÁRIO -->
     <div class="glossario-card">
-      <div class="glossario-top">
+      <div style="display:flex;align-items:center;justify-content:space-between">
         <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3)">Glossário de termos</span>
-        <button class="glossario-toggle" id="gloss-btn" onclick="toggleGlossario()">
-          <i class="ti ti-book" aria-hidden="true"></i> Expandir
-        </button>
+        <button class="glossario-toggle" id="gloss-btn" onclick="toggleGlossario()"><i class="ti ti-book"></i> Expandir</button>
       </div>
       <div class="glossario-box" id="glossario">
         <div class="gloss-item"><strong>CANDex</strong>Sistema digital da Justiça Eleitoral para envio de candidaturas e documentos</div>
-        <div class="gloss-item"><strong>DRAP</strong>Demonstrativo de Regularidade dos Atos Partidários — abre a análise individual de cada candidatura</div>
+        <div class="gloss-item"><strong>DRAP</strong>Demonstrativo de Regularidade dos Atos Partidários — abre a análise de cada candidatura</div>
         <div class="gloss-item"><strong>RRC</strong>Requerimento de Registro de Candidatura — formulário individual por candidato</div>
         <div class="gloss-item"><strong>RDE</strong>Declaração de Elegibilidade — novidade 2026 para esclarecer dúvidas antes do registro</div>
         <div class="gloss-item"><strong>FEFC</strong>Fundo Especial de Financiamento de Campanha — recurso público repassado a candidaturas</div>
@@ -729,7 +600,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
         <div class="gloss-item"><strong>Deepfake eleitoral</strong>Uso de IA para alterar imagem ou voz de candidato — proibido mesmo com autorização</div>
         <div class="gloss-item"><strong>Desincompatibilização</strong>Afastamento do cargo público no prazo legal para poder se candidatar</div>
         <div class="gloss-item"><strong>Crowdfunding eleitoral</strong>Vaquinha virtual permitida a partir de 15/05/2026 com empresa cadastrada no TSE</div>
-        <div class="gloss-item"><strong>Cota de gênero</strong>Mínimo de 30% e máximo de 70% de candidatos de cada gênero por lista</div>
+        <div class="gloss-item"><strong>Cota de gênero</strong>Mínimo 30% e máximo 70% de candidatos de cada gênero por lista</div>
         <div class="gloss-item"><strong>Impulsionamento</strong>Divulgação paga de conteúdo em plataformas digitais, restrita a candidatos e partidos</div>
       </div>
     </div>
@@ -744,17 +615,17 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
       <div class="footer-nome">Sheila Casaril</div>
       <div class="footer-cargo">Advogada — Consultoria e Assessoria Jurídica e Eleitoral</div>
     </div>
-    <div class="footer-desc">Especialista em direito eleitoral, com atuação em consultoria, assessoria e acompanhamento de candidaturas. Este guia foi elaborado para orientar candidatos, coordenadores e agentes públicos nas Eleições 2026.</div>
+    <div class="footer-desc">Especialista em direito eleitoral, com atuação em consultoria, assessoria e acompanhamento de candidaturas. Este guia orienta candidatos, coordenadores e agentes públicos nas Eleições 2026.</div>
     <div class="footer-links">
       <a class="footer-link whatsapp" href="https://wa.me/554598493273" target="_blank" rel="noopener">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.121 1.532 5.855L.057 23.455a.5.5 0 0 0 .488.609l5.758-1.51A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.6a9.6 9.6 0 0 1-4.9-1.343l-.35-.208-3.617.948.966-3.524-.228-.362A9.6 9.6 0 0 1 2.4 12c0-5.295 4.305-9.6 9.6-9.6s9.6 4.305 9.6 9.6-4.305 9.6-9.6 9.6z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.121 1.532 5.855L.057 23.455a.5.5 0 0 0 .488.609l5.758-1.51A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.6a9.6 9.6 0 0 1-4.9-1.343l-.35-.208-3.617.948.966-3.524-.228-.362A9.6 9.6 0 0 1 2.4 12c0-5.295 4.305-9.6 9.6-9.6s9.6 4.305 9.6 9.6-4.305 9.6-9.6 9.6z"/></svg>
         WhatsApp
       </a>
       <a class="footer-link email" href="mailto:sheilacasaril.adv@gmail.com" target="_blank" rel="noopener">
-        <i class="ti ti-mail" aria-hidden="true"></i> E-mail
+        <i class="ti ti-mail"></i> E-mail
       </a>
       <a class="footer-link instagram" href="https://www.instagram.com/sheilacasaril_advogada/" target="_blank" rel="noopener">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         Instagram
       </a>
     </div>
@@ -763,76 +634,142 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
 </footer>
 
 <script>
+// CONTADOR PRÓXIMO PRAZO
 const prazos=[
-  {data:new Date('2026-04-04'),label:'Estatuto da federação no TSE'},
-  {data:new Date('2026-05-15'),label:'Início da arrecadação (vaquinha)'},
-  {data:new Date('2026-07-04'),label:'Condutas vedadas — 3 meses'},
-  {data:new Date('2026-07-20'),label:'Início das convenções'},
-  {data:new Date('2026-08-05'),label:'Fim das convenções'},
-  {data:new Date('2026-08-15'),label:'Prazo de registro — 19h'},
-  {data:new Date('2026-08-16'),label:'Início da campanha'},
-  {data:new Date('2026-09-09'),label:'Início da conta parcial'},
-  {data:new Date('2026-09-13'),label:'Fim da conta parcial'},
-  {data:new Date('2026-09-14'),label:'Prazo "Seu Voto Importa"'},
-  {data:new Date('2026-10-01'),label:'Apagão da IA — 1º turno'},
-  {data:new Date('2026-10-04'),label:'1º turno'},
-  {data:new Date('2026-10-22'),label:'Apagão da IA — 2º turno'},
-  {data:new Date('2026-10-25'),label:'2º turno'},
-  {data:new Date('2026-11-03'),label:'Contas finais — 1º turno'},
-  {data:new Date('2026-11-14'),label:'Contas finais — 2º turno'},
+  {data:[2026,4,4],label:'Estatuto da federação no TSE'},
+  {data:[2026,5,15],label:'Início da arrecadação (vaquinha)'},
+  {data:[2026,7,4],label:'Condutas vedadas — 3 meses'},
+  {data:[2026,7,20],label:'Início das convenções'},
+  {data:[2026,8,5],label:'Fim das convenções'},
+  {data:[2026,8,15],label:'Prazo de registro — 19h'},
+  {data:[2026,8,16],label:'Início da campanha'},
+  {data:[2026,9,9],label:'Início da conta parcial'},
+  {data:[2026,9,13],label:'Fim da conta parcial'},
+  {data:[2026,9,14],label:'Prazo "Seu Voto Importa"'},
+  {data:[2026,10,1],label:'Apagão da IA — 1º turno'},
+  {data:[2026,10,4],label:'1º turno'},
+  {data:[2026,10,22],label:'Apagão da IA — 2º turno'},
+  {data:[2026,10,25],label:'2º turno'},
+  {data:[2026,11,3],label:'Contas finais — 1º turno'},
+  {data:[2026,11,14],label:'Contas finais — 2º turno'},
 ];
+function hoje0(){const h=new Date();h.setHours(0,0,0,0);return h;}
+function mkDate(arr){return new Date(arr[0],arr[1]-1,arr[2]);}
+function fmtDate(arr){return String(arr[2]).padStart(2,'0')+'/'+String(arr[1]).padStart(2,'0')+'/'+arr[0];}
+function diffDias(arr){return Math.round((mkDate(arr)-hoje0())/864e5);}
 function calcContador(){
-  const hoje=new Date();hoje.setHours(0,0,0,0);
-  const prox=prazos.find(p=>p.data>=hoje);
-  if(!prox){document.getElementById('count-dias').textContent='Encerrado';document.getElementById('count-desc').textContent='Ciclo eleitoral finalizado';return;}
-  const diff=Math.round((prox.data-hoje)/(1000*60*60*24));
-  document.getElementById('count-dias').textContent=diff===0?'Hoje':diff+'d';
-  const d=prox.data;
-  const dd=String(d.getUTCDate()).padStart(2,'0');
-  const mm=String(d.getUTCMonth()+1).padStart(2,'0');
-  const aa=d.getUTCFullYear();
-  document.getElementById('count-desc').textContent=prox.label+' · '+dd+'/'+mm+'/'+aa;
+  const h=hoje0();
+  const prox=prazos.find(p=>mkDate(p.data)>=h);
+  if(!prox){document.getElementById('count-dias').textContent='—';document.getElementById('count-desc').textContent='Ciclo encerrado';return;}
+  const d=diffDias(prox.data);
+  document.getElementById('count-dias').textContent=d===0?'Hoje':d+'d';
+  document.getElementById('count-desc').textContent=prox.label+' · '+fmtDate(prox.data);
 }
 calcContador();
 
+// FASE ATUAL
 const fasesPeriodo=[
-  {id:'tl-fase1',nome:'Pré-campanha',desc:'Vigente até 15/08/2026',inicio:new Date('2026-01-01'),fim:new Date('2026-08-15')},
-  {id:'tl-fase2',nome:'Convenção e registro',desc:'Vigente de 20/07 a 15/08/2026',inicio:new Date('2026-07-20'),fim:new Date('2026-08-15')},
-  {id:'tl-fase3',nome:'Campanha no ar',desc:'Vigente de 16/08 a 03/10/2026',inicio:new Date('2026-08-16'),fim:new Date('2026-10-03')},
-  {id:'tl-fase4',nome:'Reta final e dia do voto',desc:'Vigente de 01/10 a 26/10/2026',inicio:new Date('2026-10-01'),fim:new Date('2026-10-26')},
-  {id:'tl-fase5',nome:'Depois das urnas',desc:'Vigente até 14/11/2026',inicio:new Date('2026-10-27'),fim:new Date('2026-11-14')},
+  {id:'tl-fase1',nome:'Pré-campanha',desc:'Vigente até 15/08/2026',ini:[2026,1,1],fim:[2026,8,15]},
+  {id:'tl-fase2',nome:'Convenção e registro',desc:'20/07 a 15/08/2026',ini:[2026,7,20],fim:[2026,8,15]},
+  {id:'tl-fase3',nome:'Campanha Eleitoral',desc:'16/08 a 03/10/2026',ini:[2026,8,16],fim:[2026,10,3]},
+  {id:'tl-fase4',nome:'Reta final e dia do voto',desc:'01/10 a 26/10/2026',ini:[2026,10,1],fim:[2026,10,26]},
+  {id:'tl-fase5',nome:'Depois das urnas',desc:'Vigente até 14/11/2026',ini:[2026,10,27],fim:[2026,11,14]},
 ];
 function calcFaseAtual(){
-  const hoje=new Date();hoje.setHours(0,0,0,0);
-  const ativas=fasesPeriodo.filter(f=>hoje>=f.inicio&&hoje<=f.fim);
-  fasesPeriodo.forEach(f=>{
-    const el=document.getElementById(f.id);
-    if(el){el.classList.remove('fase-ativa');const b=el.querySelector('.badge-ativa');if(b)b.remove();}
-  });
+  const h=hoje0();
+  fasesPeriodo.forEach(f=>{const el=document.getElementById(f.id);if(el){el.classList.remove('fase-ativa');const b=el.querySelector('.badge-ativa');if(b)b.remove();}});
+  const ativas=fasesPeriodo.filter(f=>h>=mkDate(f.ini)&&h<=mkDate(f.fim));
   if(!ativas.length){
-    const enc=hoje>new Date('2026-11-14');
-    document.getElementById('fase-atual-nome').textContent=enc?'Ciclo encerrado':'Aguardando início';
-    document.getElementById('fase-atual-desc').textContent=enc?'Eleições 2026 concluídas':'—';
-    return;
+    document.getElementById('fase-atual-nome').textContent=h>mkDate([2026,11,14])?'Ciclo encerrado':'Aguardando';
+    document.getElementById('fase-atual-desc').textContent='';return;
   }
   const f=ativas[ativas.length-1];
   document.getElementById('fase-atual-nome').textContent=f.nome;
   document.getElementById('fase-atual-desc').textContent=f.desc;
   const el=document.getElementById(f.id);
-  if(el){
-    el.classList.add('fase-ativa');
-    const badge=document.createElement('span');
-    badge.className='badge-ativa';badge.textContent='Agora';
-    el.appendChild(badge);
-  }
+  if(el){el.classList.add('fase-ativa');const b=document.createElement('span');b.className='badge-ativa';b.textContent='Agora';el.appendChild(b);}
 }
 calcFaseAtual();
 
-function marcar(item){
-  item.classList.toggle('checked');
+// CRONOGRAMA INLINE
+const cronPrazos=[
+  {fase:'Pré-campanha',cor:'#534AB7',itens:[
+    {data:[2026,1,1],label:'Condutas vedadas — início do ano eleitoral'},
+    {data:[2026,4,4],label:'Prazo final: estatuto da federação no TSE'},
+    {data:[2026,4,7],label:'Revisão da remuneração — vedação a partir de 180 dias'},
+    {data:[2026,5,15],label:'Início da arrecadação antecipada (vaquinha)'},
+    {data:[2026,7,4],label:'Condutas vedadas ampliadas — publicidade, transferências, inaugurações, gestão de pessoal'},
+  ]},
+  {fase:'Convenção e registro',cor:'#0F6E56',itens:[
+    {data:[2026,7,20],label:'Início das convenções partidárias'},
+    {data:[2026,7,20],label:'TSE divulga tetos de gastos por cargo'},
+    {data:[2026,8,5],label:'Fim das convenções — último dia para escolha de candidatos'},
+    {data:[2026,8,15],label:'Prazo final: registro de candidatura (19h) via CANDex'},
+  ]},
+  {fase:'Campanha Eleitoral',cor:'#BA7517',itens:[
+    {data:[2026,8,16],label:'Início oficial da campanha eleitoral'},
+    {data:[2026,8,28],label:'Início do horário eleitoral gratuito no rádio e TV'},
+    {data:[2026,9,9],label:'Início da prestação de contas parcial'},
+    {data:[2026,9,13],label:'Fim da prestação de contas parcial'},
+    {data:[2026,9,14],label:'Prazo final: pedido "Seu Voto Importa"'},
+    {data:[2026,10,1],label:'Apagão da IA — início (72h antes do 1º turno)'},
+    {data:[2026,10,2],label:'Fim do horário gratuito e impulsionamento suspenso (48h antes)'},
+    {data:[2026,10,2],label:'Credenciamento de fiscais — prazo final 1º turno'},
+  ]},
+  {fase:'Reta final e dia do voto',cor:'#A32D2D',itens:[
+    {data:[2026,10,4],label:'1º turno das eleições'},
+    {data:[2026,10,5],label:'Fim do apagão da IA — 1º turno'},
+    {data:[2026,10,22],label:'Apagão da IA — início (72h antes do 2º turno)'},
+    {data:[2026,10,23],label:'Impulsionamento suspenso — 48h antes do 2º turno'},
+    {data:[2026,10,25],label:'2º turno das eleições'},
+    {data:[2026,10,25],label:'Credenciamento de fiscais — prazo final 2º turno'},
+    {data:[2026,10,26],label:'Fim do apagão da IA — 2º turno'},
+  ]},
+  {fase:'Depois das urnas',cor:'#185FA5',itens:[
+    {data:[2026,11,3],label:'Prazo final: prestação de contas — 1º turno'},
+    {data:[2026,11,14],label:'Prazo final: prestação de contas — 2º turno'},
+  ]},
+];
+function buildCronograma(){
+  const panel=document.getElementById('cron-panel');
+  panel.innerHTML='';
+  cronPrazos.forEach(grupo=>{
+    const gl=document.createElement('div');
+    gl.className='cron-grupo-label';
+    gl.innerHTML=`<span style="width:7px;height:7px;border-radius:50%;background:${grupo.cor};display:inline-block;flex-shrink:0"></span>${grupo.fase}`;
+    panel.appendChild(gl);
+    grupo.itens.forEach(item=>{
+      const diff=diffDias(item.data);
+      const row=document.createElement('div');row.className='cron-item';
+      const dt=document.createElement('div');dt.className='cron-data';
+      dt.textContent=String(item.data[2]).padStart(2,'0')+'/'+String(item.data[1]).padStart(2,'0');
+      const lb=document.createElement('div');lb.className='cron-label';lb.textContent=item.label;
+      const dv=document.createElement('div');dv.className='cron-dias';
+      if(diff<0){dv.classList.add('passado');dv.textContent='✓';}
+      else if(diff===0){dv.classList.add('hoje');dv.textContent='Hoje';}
+      else if(diff<=21){dv.classList.add('breve');dv.textContent=diff+'d';}
+      else{dv.classList.add('futuro');dv.textContent=diff+'d';}
+      row.appendChild(dt);row.appendChild(lb);row.appendChild(dv);
+      panel.appendChild(row);
+    });
+  });
 }
+function toggleCronograma(){
+  const panel=document.getElementById('cron-panel');
+  const icon=document.getElementById('cron-icon');
+  const aberto=panel.style.display==='block';
+  panel.style.display=aberto?'none':'block';
+  icon.style.transform=aberto?'':'rotate(180deg)';
+  if(!aberto)buildCronograma();
+}
+
+// CHECKLIST
+function marcar(item){item.classList.toggle('checked');}
+
+// ACORDEÃO
 function toggleFase(header){
-  const body=header.nextElementSibling.nextElementSibling;
+  const card=header.closest('.fase-card');
+  const body=card.querySelector('.fase-body');
   const icon=header.querySelector('.fase-toggle');
   const aberto=body.classList.contains('aberto');
   body.classList.toggle('aberto',!aberto);
@@ -840,32 +777,32 @@ function toggleFase(header){
   header.setAttribute('aria-expanded',String(!aberto));
 }
 function irParaFase(id){
-  const el=document.getElementById(id);
-  if(!el)return;
+  const el=document.getElementById(id);if(!el)return;
   const body=el.querySelector('.fase-body');
   const icon=el.querySelector('.fase-toggle');
   const header=el.querySelector('.fase-header');
-  if(!body.classList.contains('aberto')){
-    body.classList.add('aberto');icon.classList.add('aberto');
-    header.setAttribute('aria-expanded','true');
-  }
+  if(!body.classList.contains('aberto')){body.classList.add('aberto');icon.classList.add('aberto');header.setAttribute('aria-expanded','true');}
   setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),50);
 }
+
+// FILTRO PERFIL
 function setPerfil(p,btn){
   document.querySelectorAll('.btn-perfil').forEach(b=>b.classList.remove('ativo'));
   btn.classList.add('ativo');
   document.querySelectorAll('.fase-card').forEach(card=>{
     if(p==='todos'){card.classList.remove('hidden-perfil');return;}
-    const dp=card.dataset.perfis||'todos';
-    card.classList.toggle('hidden-perfil',!dp.includes(p));
+    card.classList.toggle('hidden-perfil',!(card.dataset.perfis||'').includes(p));
   });
 }
+
+// BUSCA
 function buscar(q){
   const t=q.toLowerCase().trim();
-  if(t.length<3)return;
+  if(t.length<2){document.querySelectorAll('.fase-card').forEach(c=>c.classList.remove('hidden-perfil'));return;}
   document.querySelectorAll('.fase-card').forEach(card=>{
-    if(card.textContent.toLowerCase().includes(t)){
-      card.classList.remove('hidden-perfil');
+    const encontrou=card.textContent.toLowerCase().includes(t);
+    card.classList.toggle('hidden-perfil',!encontrou);
+    if(encontrou){
       const body=card.querySelector('.fase-body');
       const icon=card.querySelector('.fase-toggle');
       const header=card.querySelector('.fase-header');
@@ -873,22 +810,14 @@ function buscar(q){
     }
   });
 }
+
+// GLOSSÁRIO
 function toggleGlossario(){
   const box=document.getElementById('glossario');
   const btn=document.getElementById('gloss-btn');
   const aberto=box.classList.toggle('aberto');
-  btn.innerHTML=aberto?'<i class="ti ti-book" aria-hidden="true"></i> Recolher':'<i class="ti ti-book" aria-hidden="true"></i> Expandir';
+  btn.innerHTML=aberto?'<i class="ti ti-book"></i> Recolher':'<i class="ti ti-book"></i> Expandir';
 }
 </script>
-<!-- PAINEL DE PRAZOS -->
-<div class="prazos-overlay" id="prazos-overlay" onclick="fecharPrazosOverlay(event)">
-  <div class="prazos-panel">
-    <div class="prazos-panel-header">
-      <h2><i class="ti ti-calendar-time" aria-hidden="true" style="color:var(--verde);margin-right:6px"></i>Cronograma — Eleições 2026</h2>
-      <button class="prazos-close" onclick="togglePrazos()" aria-label="Fechar">&#x2715;</button>
-    </div>
-    <div class="prazos-body" id="prazos-body"></div>
-  </div>
-</div>
 </body>
 </html>
