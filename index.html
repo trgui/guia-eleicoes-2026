@@ -207,35 +207,29 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:var(--text)}
   <!-- SIDEBAR -->
   <aside class="sidebar">
     <nav class="timeline" aria-label="Fases da campanha">
-      <div class="tl-fase" onclick="irParaFase('fase1')" style="border-left:3px solid var(--fase1)">
+      <div class="tl-fase" onclick="irParaFase('fase1') id="tl-fase1"" style="border-left:3px solid var(--fase1)">
         <div class="tl-dot" style="background:var(--fase1)"></div>
         <div class="tl-label">Pré-campanha<small>Até 15/08/2026</small></div>
-        <span class="tl-check" id="prog1">0/7</span>
       </div>
-      <div class="tl-fase" onclick="irParaFase('fase2')" style="border-left:3px solid var(--fase2)">
+      <div class="tl-fase" onclick="irParaFase('fase2') id="tl-fase2"" style="border-left:3px solid var(--fase2)">
         <div class="tl-dot" style="background:var(--fase2)"></div>
         <div class="tl-label">Convenção e registro<small>20/07 a 15/08</small></div>
-        <span class="tl-check" id="prog2">0/8</span>
       </div>
-      <div class="tl-fase" onclick="irParaFase('fase3')" style="border-left:3px solid var(--fase3)">
+      <div class="tl-fase" onclick="irParaFase('fase3') id="tl-fase3"" style="border-left:3px solid var(--fase3)">
         <div class="tl-dot" style="background:var(--fase3)"></div>
         <div class="tl-label">Campanha no ar<small>16/08 à véspera</small></div>
-        <span class="tl-check" id="prog3">0/10</span>
       </div>
-      <div class="tl-fase" onclick="irParaFase('fase4')" style="border-left:3px solid var(--fase4)">
+      <div class="tl-fase" onclick="irParaFase('fase4') id="tl-fase4"" style="border-left:3px solid var(--fase4)">
         <div class="tl-dot" style="background:var(--fase4)"></div>
         <div class="tl-label">Reta final e dia do voto<small>72h antes até apuração</small></div>
-        <span class="tl-check" id="prog4">0/5</span>
       </div>
-      <div class="tl-fase" onclick="irParaFase('fase5')" style="border-left:3px solid var(--fase5)">
+      <div class="tl-fase" onclick="irParaFase('fase5') id="tl-fase5"" style="border-left:3px solid var(--fase5)">
         <div class="tl-dot" style="background:var(--fase5)"></div>
         <div class="tl-label">Depois das urnas<small>Até 3 e 14/11</small></div>
-        <span class="tl-check" id="prog5">0/5</span>
       </div>
-      <div class="tl-fase" onclick="irParaFase('especial')" style="border-left:3px solid var(--especial)">
+      <div class="tl-fase" onclick="irParaFase('especial') id="tl-especial"" style="border-left:3px solid var(--especial)">
         <div class="tl-dot" style="background:var(--especial)"></div>
         <div class="tl-label">Condutas vedadas<small>O ano todo</small></div>
-        <span class="tl-check">—</span>
       </div>
     </nav>
 
@@ -246,9 +240,9 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:var(--text)}
     </div>
 
     <div class="widget-box">
-      <div class="widget-label">Progresso total</div>
-      <div class="widget-val" id="count-total">0/43</div>
-      <div class="progress-bar"><div class="progress-fill" id="prog-total" style="width:0%"></div></div>
+      <div class="widget-label">Fase atual</div>
+      <div class="widget-val" id="fase-atual-nome" style="font-size:14px;line-height:1.4">—</div>
+      <div class="widget-sub" id="fase-atual-desc"></div>
     </div>
   </aside>
 
@@ -770,23 +764,38 @@ function marcar(item){
   const cb=item.querySelector('input');
   cb.checked=!cb.checked;
   item.classList.toggle('checked',cb.checked);
-  atualizarProg();
 }
-function atualizarProg(){
-  let total=0,feito=0;
-  ['cl1','cl2','cl3','cl4','cl5','cl6'].forEach((id,i)=>{
-    const cl=document.getElementById(id);
-    if(!cl)return;
-    const t=cl.querySelectorAll('.check-item').length;
-    const f=cl.querySelectorAll('.check-item.checked').length;
-    total+=t;feito+=f;
-    const progId='prog'+(i+1);
-    const el=document.getElementById(progId);
-    if(el)el.textContent=f+'/'+t;
+
+// FASE ATUAL
+const fasesPeriodo=[
+  {id:'tl-fase1',nome:'Pré-campanha',desc:'Vigente até 15/08/2026',inicio:new Date('2026-01-01'),fim:new Date('2026-08-15')},
+  {id:'tl-fase2',nome:'Convenção e registro',desc:'Vigente de 20/07 a 15/08/2026',inicio:new Date('2026-07-20'),fim:new Date('2026-08-15')},
+  {id:'tl-fase3',nome:'Campanha no ar',desc:'Vigente de 16/08 até 03/10/2026',inicio:new Date('2026-08-16'),fim:new Date('2026-10-03')},
+  {id:'tl-fase4',nome:'Reta final e dia do voto',desc:'Vigente 01/10 a 26/10/2026',inicio:new Date('2026-10-01'),fim:new Date('2026-10-26')},
+  {id:'tl-fase5',nome:'Depois das urnas',desc:'Vigente até 14/11/2026',inicio:new Date('2026-10-27'),fim:new Date('2026-11-14')},
+];
+function calcFaseAtual(){
+  const hoje=new Date();hoje.setHours(0,0,0,0);
+  const ativa=fasesPeriodo.filter(f=>hoje>=f.inicio&&hoje<=f.fim);
+  // destacar na sidebar
+  fasesPeriodo.forEach(f=>{
+    const el=document.getElementById(f.id);
+    if(el)el.style.background='';
   });
-  document.getElementById('count-total').textContent=feito+'/'+total;
-  document.getElementById('prog-total').style.width=Math.round((feito/total)*100)+'%';
+  if(ativa.length===0){
+    const encerrado=hoje>new Date('2026-11-14');
+    document.getElementById('fase-atual-nome').textContent=encerrado?'Ciclo encerrado':'Fora do período';
+    document.getElementById('fase-atual-desc').textContent=encerrado?'Eleições 2026 concluídas':'Aguardando início das fases';
+    return;
+  }
+  // usa a fase mais avançada se houver sobreposição (fase 2 e 1 se sobrepõem)
+  const f=ativa[ativa.length-1];
+  document.getElementById('fase-atual-nome').textContent=f.nome;
+  document.getElementById('fase-atual-desc').textContent=f.desc;
+  const el=document.getElementById(f.id);
+  if(el)el.style.background='var(--bg3)';
 }
+calcFaseAtual();
 
 // ACORDEÃO
 function toggleFase(header){
