@@ -90,7 +90,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .widget-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);margin-bottom:6px}
 .widget-val{font-size:26px;font-weight:700;color:var(--verde);font-variant-numeric:tabular-nums;line-height:1}
 .widget-sub{font-size:12px;color:var(--text2);margin-top:5px;line-height:1.4}
-.widget-fase-nome{font-size:14px;font-weight:600;color:var(--text);line-height:1.3;margin-bottom:3px}
+.widget-fase-nome{font-size:14px;font-weight:600;color:var(--verde);line-height:1.3;margin-bottom:3px}
 .widget-fase-desc{font-size:12px;color:var(--text2)}
 
 .fase-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-xl);margin-bottom:1.25rem;overflow:hidden;box-shadow:var(--shadow)}
@@ -121,30 +121,36 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .resumo{border-left:3px solid var(--border2);background:var(--bg3);border-radius:0 var(--radius) var(--radius) 0;padding:10px 14px;margin:.75rem 0;font-size:13px;line-height:1.65;color:var(--text)}
 .resumo strong{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;color:var(--text3);font-weight:700}
 @media(prefers-color-scheme:dark){
-  .novidade{background:#2a1e00;border-color:#BA7517;color:#FAC775}
-  .novidade strong{color:#EF9F27}
-  .atencao{background:#2a0a0a;border-color:#A32D2D;color:#F09595}
-  .atencao strong{color:#E24B4A}
+  .novidade{background:#1e1500;border-color:#d4890a;color:#f5c842}
+  .novidade strong{color:#f0a820}
+  .atencao{background:#1a0404;border-color:#c0392b;color:#f09090}
+  .atencao strong{color:#e85050}
+  .resumo{background:#1a1a18;border-color:#4a4a47;color:var(--text2)}
+  .resumo strong{color:var(--text3)}
 }
 
 .perms-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:.75rem 0}
 .perm-col{border-radius:var(--radius);padding:12px 14px;font-size:13px}
-.perm-col.ok{background:#EAF3DE;border:1px solid #97C459;color:#173404}
-.perm-col.nao{background:#FCEBEB;border:1px solid #E24B4A;color:#501313}
+.perm-col.ok{background:#EAF3DE;border:1px solid #639922;color:#173404}
+.perm-col.nao{background:#FEF0F0;border:1px solid #C0392B;color:#4a0f0f}
 .perm-col h4{font-size:11px;font-weight:700;margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em}
-.perm-col.ok h4{color:#27500A}
-.perm-col.nao h4{color:#791F1F}
+.perm-col.ok h4{color:#1e4d0a;display:flex;align-items:center;gap:5px}
+.perm-col.nao h4{color:#7a1515;display:flex;align-items:center;gap:5px}
 .perm-col ul{list-style:none;padding:0}
 .perm-col li{margin-bottom:6px;line-height:1.45;padding-left:18px;position:relative}
-.perm-col.ok li::before{content:"✓";position:absolute;left:0;color:#3B6D11;font-weight:700}
-.perm-col.nao li::before{content:"✕";position:absolute;left:0;color:#A32D2D;font-weight:700}
+.perm-col.ok li{color:#1a3d08}
+.perm-col.nao li{color:#4a0f0f}
+.perm-col.ok li::before{content:"✓";position:absolute;left:0;color:#2d7a0a;font-weight:700}
+.perm-col.nao li::before{content:"✕";position:absolute;left:0;color:#c0392b;font-weight:700}
 @media(prefers-color-scheme:dark){
-  .perm-col.ok{background:#0d1f00;border-color:#639922;color:#C0DD97}
-  .perm-col.ok h4{color:#97C459}
-  .perm-col.ok li::before{color:#97C459}
-  .perm-col.nao{background:#280a0a;border-color:#E24B4A;color:#F7C1C1}
-  .perm-col.nao h4{color:#F09595}
-  .perm-col.nao li::before{color:#E24B4A}
+  .perm-col.ok{background:#0a1a00;border-color:#4a8c1a;color:#a8d870}
+  .perm-col.ok h4{color:#7ec832}
+  .perm-col.ok li{color:#a8d870}
+  .perm-col.ok li::before{color:#7ec832}
+  .perm-col.nao{background:#1a0505;border-color:#c0392b;color:#f0a0a0}
+  .perm-col.nao h4{color:#e85050}
+  .perm-col.nao li{color:#f0a0a0}
+  .perm-col.nao li::before{color:#e85050}
 }
 
 .checklist{margin-top:1.25rem;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
@@ -317,7 +323,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
         <div class="secao">
           <div class="secao-title">Novidades 2026</div>
           <div class="novidade"><strong>Novidade 2026 — RDE (Declaração de Elegibilidade)</strong>O <span class="termo">RDE<span class="tooltip-box">Criado pela LC 219/2025. Permite ao pré-candidato levar dúvida sobre elegibilidade à Justiça Eleitoral antes da campanha.</span></span> permite levar dúvidas sobre elegibilidade à Justiça Eleitoral ainda na pré-campanha. Quem tem incertezas sobre condenações, contas rejeitadas ou Lei da Ficha Limpa pode pedir uma declaração prévia. Exige anuência expressa do partido ou federação.</div>
-          <div class="novidade"><strong>Novidade 2026 — Arrecadação antecipada</strong>A partir de <strong>15/05/2026</strong>, o pré-candidato já pode arrecadar por <span class="termo">crowdfunding<span class="tooltip-box">Financiamento coletivo pela internet. Valores liberados apenas após cumprimento dos requisitos: registro pedido, CNPJ ativo e recibos emitidos.</span></span>. Os valores são liberados apenas após o cumprimento dos requisitos de registro.</div>
+          <div class="novidade"><strong>Novidade 2026 — Arrecadação antecipada</strong>A partir de <strong>15/05/2026</strong> o pré-candidato já pode arrecadar por crowdfunding (vaquinha virtual). Os valores são liberados apenas após o cumprimento dos requisitos de registro: CNPJ ativo, pedido protocolado e recibos emitidos.</div>
         </div>
         <div class="secao">
           <div class="secao-title">Federações partidárias</div>
