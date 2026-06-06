@@ -236,6 +236,26 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .footer-aviso{font-size:11px;color:var(--text3);line-height:1.6;max-width:480px;padding-top:.5rem;border-top:1px solid var(--border)}
 
 .hidden-perfil{display:none!important}
+
+/* WHATSAPP FLUTUANTE */
+.whatsapp-float{position:fixed;bottom:24px;right:24px;z-index:500;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.whatsapp-float-btn{width:54px;height:54px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.4);cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s;border:none}
+.whatsapp-float-btn:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(37,211,102,.5)}
+.whatsapp-float-btn svg{width:28px;height:28px;fill:#fff}
+.whatsapp-tooltip{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:7px 12px;font-size:12px;font-weight:500;color:var(--text);white-space:nowrap;box-shadow:var(--shadow);opacity:0;transform:translateX(8px);transition:all .2s;pointer-events:none}
+.whatsapp-float:hover .whatsapp-tooltip{opacity:1;transform:translateX(0)}
+
+/* BOTÃO IMPRIMIR */
+.btn-print{display:flex;align-items:center;gap:6px;padding:6px 13px;border:1px solid var(--border2);border-radius:99px;font-size:12px;font-weight:500;cursor:pointer;background:transparent;color:var(--text2);transition:all .15s;font-family:var(--font);white-space:nowrap}
+.btn-print:hover{background:var(--bg3);color:var(--text)}
+
+/* HIGHLIGHT BUSCA */
+.search-highlight{background:#FAE6A0;border-radius:2px;padding:0 2px;color:#412402}
+@media(prefers-color-scheme:dark){.search-highlight{background:#5A4200;color:#FAC750}}
+
+/* CONTADOR BUSCA */
+.search-count{font-size:11px;color:var(--text3);margin-top:4px;display:none;padding:0 4px}
+.search-count.visivel{display:block}
 mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
 
 @media(max-width:720px){
@@ -264,6 +284,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
     <div class="search-wrap">
       <i class="ti ti-search" aria-hidden="true"></i>
       <input type="text" id="busca" placeholder="Buscar... ex: deepfake, Pix, cota de gênero" oninput="buscar(this.value)" autocomplete="off">
+      <div class="search-count" id="search-count"></div>
     </div>
     <div class="perfil-wrap">
       <span class="perfil-label">Perfil</span>
@@ -272,6 +293,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
       <button class="btn-perfil" onclick="setPerfil('agente',this)">Agente público</button>
       <button class="btn-perfil" onclick="setPerfil('eleitor',this)">Eleitor</button>
     </div>
+    <button class="btn-print" onclick="window.print()" title="Imprimir guia completo"><i class="ti ti-printer"></i> Imprimir</button>
   </div>
 </header>
 
@@ -659,6 +681,14 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
   </main>
 </div>
 
+<!-- WHATSAPP FLUTUANTE -->
+<div class="whatsapp-float">
+  <div class="whatsapp-tooltip">Fale com a Sheila</div>
+  <a class="whatsapp-float-btn" href="https://wa.me/554598493273" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 23.954l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
 <footer class="footer">
   <div class="footer-inner">
     <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
@@ -849,19 +879,67 @@ function setPerfil(p,btn){
   });
 }
 
-// BUSCA
+// BUSCA COM HIGHLIGHT E CONTADOR
 function buscar(q){
   const t=q.toLowerCase().trim();
-  if(t.length<2){document.querySelectorAll('.fase-card').forEach(c=>c.classList.remove('hidden-perfil'));return;}
+  const countEl=document.getElementById('search-count');
+
+  // Limpar highlights anteriores
+  document.querySelectorAll('.search-highlight').forEach(el=>{
+    const parent=el.parentNode;
+    parent.replaceChild(document.createTextNode(el.textContent),el);
+    parent.normalize();
+  });
+
+  if(t.length<2){
+    document.querySelectorAll('.fase-card').forEach(c=>c.classList.remove('hidden-perfil'));
+    countEl.classList.remove('visivel');
+    return;
+  }
+
+  let count=0;
   document.querySelectorAll('.fase-card').forEach(card=>{
     const encontrou=card.textContent.toLowerCase().includes(t);
     card.classList.toggle('hidden-perfil',!encontrou);
     if(encontrou){
+      count++;
       const body=card.querySelector('.fase-body');
       const icon=card.querySelector('.fase-toggle');
       const header=card.querySelector('.fase-header');
       if(!body.classList.contains('aberto')){body.classList.add('aberto');icon.classList.add('aberto');header.setAttribute('aria-expanded','true');}
+      // Highlight nos textos visíveis
+      highlightTexto(body, t);
     }
+  });
+
+  countEl.textContent=count===0?'Nenhum resultado encontrado':count===1?'1 fase encontrada':`${count} fases encontradas`;
+  countEl.classList.add('visivel');
+}
+
+function highlightTexto(el, termo){
+  const walker=document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
+    acceptNode: n=>{
+      const p=n.parentNode;
+      if(p.classList&&(p.classList.contains('search-highlight')||p.tagName==='SCRIPT'||p.tagName==='STYLE'))
+        return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    }
+  });
+  const nodes=[];
+  while(walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(node=>{
+    const idx=node.textContent.toLowerCase().indexOf(termo);
+    if(idx===-1)return;
+    const before=document.createTextNode(node.textContent.slice(0,idx));
+    const mark=document.createElement('mark');
+    mark.className='search-highlight';
+    mark.textContent=node.textContent.slice(idx,idx+termo.length);
+    const after=document.createTextNode(node.textContent.slice(idx+termo.length));
+    const parent=node.parentNode;
+    parent.insertBefore(before,node);
+    parent.insertBefore(mark,node);
+    parent.insertBefore(after,node);
+    parent.removeChild(node);
   });
 }
 
