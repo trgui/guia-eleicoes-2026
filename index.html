@@ -192,6 +192,33 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 
 /* ── MISC ── */
 .hidden-perfil{display:none!important}
+
+/* ── BOTÃO CRONOGRAMA ── */
+.btn-prazos{display:flex;align-items:center;gap:6px;padding:6px 14px;border:1px solid var(--verde);border-radius:99px;font-size:12px;font-weight:600;cursor:pointer;background:transparent;color:var(--verde);transition:all .15s;font-family:var(--font);white-space:nowrap}
+.btn-prazos:hover{background:var(--verde);color:#fff}
+.btn-prazos.ativo{background:var(--verde);color:#fff}
+
+/* ── PAINEL DE PRAZOS ── */
+.prazos-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200;align-items:flex-start;justify-content:center;padding:1.5rem}
+.prazos-overlay.aberto{display:flex}
+.prazos-panel{background:var(--bg2);border-radius:var(--radius-xl);width:100%;max-width:680px;max-height:85vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 40px rgba(0,0,0,.2);margin-top:60px}
+.prazos-panel-header{padding:1.1rem 1.4rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.prazos-panel-header h2{font-size:16px;font-weight:600;font-family:var(--font)}
+.prazos-close{background:none;border:none;cursor:pointer;color:var(--text3);font-size:22px;padding:0;line-height:1;font-family:var(--font)}
+.prazos-close:hover{color:var(--text)}
+.prazos-body{overflow-y:auto;padding:1rem 1.4rem 1.4rem;flex:1}
+.prazos-grupo{margin-bottom:1.25rem}
+.prazos-grupo-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);margin-bottom:.5rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}
+.prazo-item{display:flex;align-items:center;gap:14px;padding:9px 0;border-bottom:1px solid var(--border)}
+.prazo-item:last-child{border-bottom:none}
+.prazo-data{font-size:13px;font-weight:600;color:var(--verde);min-width:70px;flex-shrink:0;font-variant-numeric:tabular-nums}
+.prazo-label{font-size:13px;color:var(--text);flex:1;line-height:1.4}
+.prazo-badge{font-size:11px;font-weight:600;border-radius:99px;padding:3px 9px;white-space:nowrap;flex-shrink:0}
+.prazo-badge.passado{background:var(--bg3);color:var(--text3)}
+.prazo-badge.hoje{background:var(--verde);color:#fff}
+.prazo-badge.proximo{background:var(--fase3-l);color:var(--fase3)}
+.prazo-badge.futuro{background:var(--bg3);color:var(--text2)}
+.prazo-dias{font-size:12px;color:var(--text3);min-width:48px;text-align:right;flex-shrink:0;font-variant-numeric:tabular-nums}
 mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
 
 /* ── MOBILE ── */
@@ -228,6 +255,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
       <button class="btn-perfil" onclick="setPerfil('agente',this)">Agente público</button>
       <button class="btn-perfil" onclick="setPerfil('eleitor',this)">Eleitor</button>
     </div>
+    <button class="btn-prazos" onclick="togglePrazos()"><i class="ti ti-calendar-time" aria-hidden="true"></i> Cronograma</button>
   </div>
 </header>
 
@@ -759,7 +787,11 @@ function calcContador(){
   if(!prox){document.getElementById('count-dias').textContent='Encerrado';document.getElementById('count-desc').textContent='Ciclo eleitoral finalizado';return;}
   const diff=Math.round((prox.data-hoje)/(1000*60*60*24));
   document.getElementById('count-dias').textContent=diff===0?'Hoje':diff+'d';
-  document.getElementById('count-desc').textContent=prox.label+' · '+prox.data.toLocaleDateString('pt-BR');
+  const d=prox.data;
+  const dd=String(d.getUTCDate()).padStart(2,'0');
+  const mm=String(d.getUTCMonth()+1).padStart(2,'0');
+  const aa=d.getUTCFullYear();
+  document.getElementById('count-desc').textContent=prox.label+' · '+dd+'/'+mm+'/'+aa;
 }
 calcContador();
 
@@ -848,5 +880,15 @@ function toggleGlossario(){
   btn.innerHTML=aberto?'<i class="ti ti-book" aria-hidden="true"></i> Recolher':'<i class="ti ti-book" aria-hidden="true"></i> Expandir';
 }
 </script>
+<!-- PAINEL DE PRAZOS -->
+<div class="prazos-overlay" id="prazos-overlay" onclick="fecharPrazosOverlay(event)">
+  <div class="prazos-panel">
+    <div class="prazos-panel-header">
+      <h2><i class="ti ti-calendar-time" aria-hidden="true" style="color:var(--verde);margin-right:6px"></i>Cronograma — Eleições 2026</h2>
+      <button class="prazos-close" onclick="togglePrazos()" aria-label="Fechar">&#x2715;</button>
+    </div>
+    <div class="prazos-body" id="prazos-body"></div>
+  </div>
+</div>
 </body>
 </html>
