@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Guia por Fases — Eleições 2026. Da pré-campanha à prestação de contas, passo a passo. Organizado por Sheila Casaril, advogada eleitoral.">
 <title>Guia Eleições 2026 — Sheila Casaril</title>
+<!-- FAVICON SVG inline -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230F6E56'/><text x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='14' font-weight='bold' fill='white'>SC</text></svg>">
+
+<!-- OPEN GRAPH -->
+<meta property="og:title" content="Guia Eleições 2026 — Sheila Casaril">
+<meta property="og:description" content="Da pré-campanha à prestação de contas, passo a passo. Tudo que candidatos, agentes públicos e eleitores precisam saber sobre as Eleições 2026.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://guia-eleicoes-2026-production.up.railway.app">
+<meta property="og:image" content="https://guia-eleicoes-2026-production.up.railway.app/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Guia Eleições 2026 — Sheila Casaril">
+<meta name="twitter:description" content="Da pré-campanha à prestação de contas, passo a passo.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -36,6 +49,29 @@
   }
 }
 body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+
+/* BARRA DE LEITURA */
+.reading-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--verde-m),var(--verde));width:0%;z-index:999;transition:width .1s linear;border-radius:0 2px 2px 0}
+
+/* BOTÃO COMPARTILHAR */
+.btn-share{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--text3);background:none;border:none;cursor:pointer;padding:0;font-family:var(--font);transition:color .15s;text-transform:uppercase;letter-spacing:.04em}
+.btn-share:hover{color:var(--verde)}
+.btn-share.copiado{color:var(--verde)}
+.fase-header-bottom{display:flex;align-items:center;justify-content:space-between;padding:.5rem 1.4rem .75rem;border-bottom:1px solid var(--border)}
+
+/* PRINT */
+@media print{
+  .header,.sidebar,.footer,.reading-bar,.btn-share,.fase-toggle{display:none!important}
+  .main{display:block;padding:0;max-width:100%}
+  .fase-card{box-shadow:none;border:1px solid #ccc;margin-bottom:1rem;break-inside:avoid}
+  .fase-body{display:block!important}
+  .fase-header{cursor:default}
+  body{font-size:12px;color:#000;background:#fff}
+  .perm-col.ok{background:#f0fff0!important;-webkit-print-color-adjust:exact}
+  .perm-col.nao{background:#fff0f0!important;-webkit-print-color-adjust:exact}
+  .novidade{background:#fff8e8!important;-webkit-print-color-adjust:exact}
+  .atencao{background:#fff0f0!important;-webkit-print-color-adjust:exact}
+}
 
 .header{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 1.5rem;position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
 .header-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;gap:1rem;height:60px;flex-wrap:wrap}
@@ -94,6 +130,8 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .widget-fase-desc{font-size:12px;color:var(--text2)}
 
 .fase-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-xl);margin-bottom:1.25rem;overflow:hidden;box-shadow:var(--shadow)}
+.fade-card{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.fade-card.visivel{opacity:1;transform:translateY(0)}
 .fase-header{padding:1.1rem 1.4rem;display:flex;align-items:center;gap:14px;cursor:pointer;user-select:none;transition:background .15s}
 .fase-header:hover{background:var(--bg3)}
 .fase-num{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;flex-shrink:0;font-family:var(--font-serif)}
@@ -181,7 +219,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 
 .termo{border-bottom:1.5px dashed var(--border2);cursor:help;position:relative}
 .tooltip-box{display:none;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);padding:9px 13px;font-size:12px;width:240px;z-index:300;line-height:1.55;color:var(--text);pointer-events:none;box-shadow:0 4px 20px rgba(0,0,0,.12)}
-.termo:hover .tooltip-box{display:block}
+.termo:hover .tooltip-box,.termo.aberto-mobile .tooltip-box{display:block}
 
 .footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 1.5rem 2rem;margin-top:.5rem}
 .footer-inner{max-width:1040px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1.25rem;text-align:center}
@@ -213,6 +251,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
 </head>
 <body>
 
+<div class="reading-bar" id="reading-bar"></div>
 <header class="header">
   <div class="header-inner">
     <a class="header-brand" href="#">
@@ -289,13 +328,14 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
   <main>
 
     <!-- FASE 1 -->
-    <article class="fase-card" id="fase1" data-perfis="candidato,eleitor">
+    <article class="fase-card fade-card" id="fase1" data-perfis="candidato,eleitor">
       <div class="fase-header" onclick="toggleFase(this)" aria-expanded="true">
         <div class="fase-num" style="background:var(--fase1-l);color:var(--fase1)">1</div>
         <div class="fase-info"><h2>Pré-campanha</h2><p>Até 15 de agosto de 2026 · Organizar partido, testar elegibilidade, divulgar pré-candidatura</p></div>
         <i class="ti ti-chevron-down fase-toggle aberto" aria-hidden="true"></i>
       </div>
       <div class="fase-divider"></div>
+      <div class="fase-header-bottom"><button class="btn-share" onclick="compartilhar(this)"><i class="ti ti-link"></i> Copiar link desta fase</button></div>
       <div class="fase-body aberto">
         <div class="secao">
           <div class="secao-title">O que pode (e o que não pode)</div>
@@ -343,13 +383,14 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
     </article>
 
     <!-- FASE 2 -->
-    <article class="fase-card" id="fase2" data-perfis="candidato">
+    <article class="fase-card fade-card" id="fase2" data-perfis="candidato">
       <div class="fase-header" onclick="toggleFase(this)" aria-expanded="false">
         <div class="fase-num" style="background:var(--fase2-l);color:var(--fase2)">2</div>
         <div class="fase-info"><h2>Convenção e registro</h2><p>20/07 a 15/08/2026 · Escolha de candidatos, coligações e registro na Justiça Eleitoral</p></div>
         <i class="ti ti-chevron-down fase-toggle" aria-hidden="true"></i>
       </div>
       <div class="fase-divider"></div>
+      <div class="fase-header-bottom"><button class="btn-share" onclick="compartilhar(this)"><i class="ti ti-link"></i> Copiar link desta fase</button></div>
       <div class="fase-body">
         <div class="secao">
           <div class="secao-title">Convenções e ata</div>
@@ -380,13 +421,14 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
     </article>
 
     <!-- FASE 3 -->
-    <article class="fase-card" id="fase3" data-perfis="candidato">
+    <article class="fase-card fade-card" id="fase3" data-perfis="candidato">
       <div class="fase-header" onclick="toggleFase(this)" aria-expanded="false">
         <div class="fase-num" style="background:var(--fase3-l);color:var(--fase3)">3</div>
         <div class="fase-info"><h2>Campanha Eleitoral</h2><p>16/08 à véspera da eleição · Propaganda, IA, financiamento e prestação de contas parcial</p></div>
         <i class="ti ti-chevron-down fase-toggle" aria-hidden="true"></i>
       </div>
       <div class="fase-divider"></div>
+      <div class="fase-header-bottom"><button class="btn-share" onclick="compartilhar(this)"><i class="ti ti-link"></i> Copiar link desta fase</button></div>
       <div class="fase-body">
         <div class="secao">
           <div class="secao-title">Inteligência artificial — regras 2026</div>
@@ -451,13 +493,14 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
     </article>
 
     <!-- FASE 4 -->
-    <article class="fase-card" id="fase4" data-perfis="candidato,eleitor">
+    <article class="fase-card fade-card" id="fase4" data-perfis="candidato,eleitor">
       <div class="fase-header" onclick="toggleFase(this)" aria-expanded="false">
         <div class="fase-num" style="background:var(--fase4-l);color:var(--fase4)">4</div>
         <div class="fase-info"><h2>Reta final e dia do voto</h2><p>72h antes até a apuração · Apagão da IA, regras do dia e fiscalização</p></div>
         <i class="ti ti-chevron-down fase-toggle" aria-hidden="true"></i>
       </div>
       <div class="fase-divider"></div>
+      <div class="fase-header-bottom"><button class="btn-share" onclick="compartilhar(this)"><i class="ti ti-link"></i> Copiar link desta fase</button></div>
       <div class="fase-body">
         <div class="secao">
           <div class="secao-title">O "apagão da IA"</div>
@@ -500,13 +543,14 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
     </article>
 
     <!-- FASE 5 -->
-    <article class="fase-card" id="fase5" data-perfis="candidato">
+    <article class="fase-card fade-card" id="fase5" data-perfis="candidato">
       <div class="fase-header" onclick="toggleFase(this)" aria-expanded="false">
         <div class="fase-num" style="background:var(--fase5-l);color:var(--fase5)">5</div>
         <div class="fase-info"><h2>Depois das urnas</h2><p>Prestação de contas final — até 3 e 14/11 · Regularidade jurídico-contábil de tudo que foi feito</p></div>
         <i class="ti ti-chevron-down fase-toggle" aria-hidden="true"></i>
       </div>
       <div class="fase-divider"></div>
+      <div class="fase-header-bottom"><button class="btn-share" onclick="compartilhar(this)"><i class="ti ti-link"></i> Copiar link desta fase</button></div>
       <div class="fase-body">
         <div class="secao">
           <div class="secao-title">Quem presta contas</div>
@@ -550,13 +594,14 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
     </article>
 
     <!-- ESPECIAL -->
-    <article class="fase-card" id="especial" data-perfis="agente">
+    <article class="fase-card fade-card" id="especial" data-perfis="agente">
       <div class="fase-header" onclick="toggleFase(this)" aria-expanded="false">
         <div class="fase-num" style="background:var(--especial-l);color:var(--especial);font-size:20px">⚑</div>
         <div class="fase-info"><h2>Condutas vedadas — agentes públicos</h2><p>O ano eleitoral inteiro · Eleição geral: o que se aplica ou não ao município</p></div>
         <i class="ti ti-chevron-down fase-toggle" aria-hidden="true"></i>
       </div>
       <div class="fase-divider"></div>
+      <div class="fase-header-bottom"><button class="btn-share" onclick="compartilhar(this)"><i class="ti ti-link"></i> Copiar link desta fase</button></div>
       <div class="fase-body">
         <div class="secao">
           <div class="secao-title">Ponto central numa eleição geral</div>
@@ -815,6 +860,58 @@ function buscar(q){
       if(!body.classList.contains('aberto')){body.classList.add('aberto');icon.classList.add('aberto');header.setAttribute('aria-expanded','true');}
     }
   });
+}
+
+// BARRA DE LEITURA
+window.addEventListener('scroll',()=>{
+  const doc=document.documentElement;
+  const pct=(doc.scrollTop||document.body.scrollTop)/(doc.scrollHeight-doc.clientHeight)*100;
+  document.getElementById('reading-bar').style.width=Math.min(pct,100)+'%';
+});
+
+// COMPARTILHAR FASE
+function compartilhar(btn){
+  const card=btn.closest('.fase-card');
+  const id=card.id;
+  const url=window.location.origin+window.location.pathname+'#'+id;
+  navigator.clipboard.writeText(url).then(()=>{
+    btn.innerHTML='<i class="ti ti-check"></i> Link copiado!';
+    btn.classList.add('copiado');
+    setTimeout(()=>{btn.innerHTML='<i class="ti ti-link"></i> Copiar link desta fase';btn.classList.remove('copiado');},2000);
+  }).catch(()=>{
+    const el=document.createElement('input');el.value=url;document.body.appendChild(el);el.select();document.execCommand('copy');document.body.removeChild(el);
+    btn.innerHTML='<i class="ti ti-check"></i> Link copiado!';btn.classList.add('copiado');
+    setTimeout(()=>{btn.innerHTML='<i class="ti ti-link"></i> Copiar link desta fase';btn.classList.remove('copiado');},2000);
+  });
+}
+
+// FADE-IN AO ROLAR
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visivel');});
+},{threshold:.08});
+document.querySelectorAll('.fade-card').forEach(c=>observer.observe(c));
+
+// TOOLTIP MOBILE (clique)
+document.querySelectorAll('.termo').forEach(t=>{
+  t.addEventListener('click',e=>{
+    e.stopPropagation();
+    document.querySelectorAll('.termo.aberto-mobile').forEach(o=>{if(o!==t)o.classList.remove('aberto-mobile');});
+    t.classList.toggle('aberto-mobile');
+  });
+});
+document.addEventListener('click',()=>document.querySelectorAll('.termo.aberto-mobile').forEach(t=>t.classList.remove('aberto-mobile')));
+
+// ABRIR FASE PELO HASH DA URL
+if(window.location.hash){
+  const id=window.location.hash.slice(1);
+  const el=document.getElementById(id);
+  if(el){
+    const body=el.querySelector('.fase-body');
+    const icon=el.querySelector('.fase-toggle');
+    const header=el.querySelector('.fase-header');
+    if(body&&!body.classList.contains('aberto')){body.classList.add('aberto');if(icon)icon.classList.add('aberto');if(header)header.setAttribute('aria-expanded','true');}
+    setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),300);
+  }
 }
 
 // GLOSSÁRIO
