@@ -48,6 +48,7 @@
     --shadow:0 1px 3px rgba(0,0,0,.3),0 4px 12px rgba(0,0,0,.2);
   }
 }
+html,body{height:100%}
 body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
 
 /* BARRA DE LEITURA */
@@ -90,9 +91,9 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .btn-perfil.ativo{background:var(--verde);color:#fff;border-color:var(--verde)}
 .btn-perfil:hover:not(.ativo){background:var(--bg3)}
 
-.main{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:240px 1fr;gap:1.5rem;padding:1.5rem;align-items:start}
+.main{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:240px 1fr;gap:1.5rem;padding:1.5rem;align-items:start;min-height:100vh}
 
-.sidebar{position:sticky;top:76px;align-self:start;display:flex;flex-direction:column;gap:.875rem;max-height:calc(100vh - 90px);overflow-y:auto}
+.sidebar{position:sticky;top:76px;align-self:start;display:flex;flex-direction:column;gap:.875rem}
 .timeline{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow)}
 .tl-header{padding:10px 14px 8px;border-bottom:1px solid var(--border)}
 .tl-header-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3)}
@@ -112,7 +113,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .tl-cron:hover{background:var(--verde-l)}
 .tl-cron span{color:var(--verde)!important}
 .tl-cron .tl-dot{background:var(--platina,#B5B2A6)}
-.cron-panel{display:none;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow)}
+.cron-panel{display:none;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);max-height:40vh;overflow-y:auto}
 .cron-grupo-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);padding:8px 12px 4px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px}
 .cron-item{display:grid;grid-template-columns:38px 1fr auto;align-items:start;gap:5px;padding:6px 12px;border-bottom:1px solid var(--border);font-size:11px}
 .cron-item:last-child{border-bottom:none}
