@@ -4,23 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Guia por Fases — Eleições 2026. Da pré-campanha à prestação de contas, passo a passo. Organizado por Sheila Casaril, advogada eleitoral.">
-<title>Guia Eleições 2026 — Stonna &amp; Casaril</title>
+<title>Guia Eleições 2026 — Stona &amp; Casaril</title>
 <!-- FAVICON SVG inline -->
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
 <!-- OPEN GRAPH -->
-<meta property="og:title" content="Guia Eleições 2026 — Stonna &amp; Casaril">
+<meta property="og:title" content="Guia Eleições 2026 — Stona &amp; Casaril">
 <meta property="og:description" content="Da pré-campanha à prestação de contas, passo a passo. Tudo que candidatos, agentes públicos e eleitores precisam saber sobre as Eleições 2026.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://guia-eleicoes-2026-production.up.railway.app">
 <meta property="og:image" content="https://guia-eleicoes-2026-production.up.railway.app/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Guia Eleições 2026 — Stonna &amp; Casaril">
+<meta name="twitter:title" content="Guia Eleições 2026 — Stona &amp; Casaril">
 <meta name="twitter:description" content="Da pré-campanha à prestação de contas, passo a passo.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -42,34 +42,34 @@
 }
 @media(prefers-color-scheme:dark){
   :root:not(.light){
-    --bg:#0F1520;--bg2:#151D2A;--bg3:#1C2535;
-    --text:#E8DFC8;--text2:#B5B1A6;--text3:#7A8A9A;
-    --border:#1E2D3E;--border2:#2A3A4E;
-    --shadow:0 1px 3px rgba(0,0,0,.3),0 4px 12px rgba(0,0,0,.2);
-    --verde:#E8DFC8;--verde-m:#D4C9A8;--verde-d:#C0B090;--verde-l:#1C2535;
-    --platina:#E8DFC8;--platina-l:#1C2535;
+    --bg:#0F1520;--bg2:#151D2A;--bg3:#1A2535;
+    --text:#F5F1E8;--text2:#E8DFC8;--text3:#8A9AAA;
+    --border:#1E2D3E;--border2:#2A3B50;
+    --shadow:0 1px 3px rgba(0,0,0,.35),0 4px 12px rgba(0,0,0,.25);
+    --verde:#E8DFC8;--verde-m:#D4C9A8;--verde-d:#3A4A5C;--verde-l:#1A2535;
+    --platina:#E8DFC8;--platina-l:#1A2535;
   }
 }
 html.dark{
-  --bg:#0F1520;--bg2:#151D2A;--bg3:#1C2535;
-  --text:#E8DFC8;--text2:#B5B1A6;--text3:#7A8A9A;
-  --border:#1E2D3E;--border2:#2A3A4E;
-  --shadow:0 1px 3px rgba(0,0,0,.3),0 4px 12px rgba(0,0,0,.2);
-  --verde:#E8DFC8;--verde-m:#D4C9A8;--verde-d:#C0B090;--verde-l:#1C2535;
-  --platina:#E8DFC8;--platina-l:#1C2535;
+  --bg:#0F1520;--bg2:#151D2A;--bg3:#1A2535;
+  --text:#F5F1E8;--text2:#E8DFC8;--text3:#8A9AAA;
+  --border:#1E2D3E;--border2:#2A3B50;
+  --shadow:0 1px 3px rgba(0,0,0,.35),0 4px 12px rgba(0,0,0,.25);
+  --verde:#E8DFC8;--verde-m:#D4C9A8;--verde-d:#3A4A5C;--verde-l:#1A2535;
+  --platina:#E8DFC8;--platina-l:#1A2535;
 }
 html.light{
-  --bg:#F5F1E8;--bg2:#ffffff;--bg3:#EDE9DF;
-  --text:#1A2330;--text2:#3A4A5C;--text3:#7A8A9A;
-  --border:#DDD8CC;--border2:#C5BFB0;
-  --shadow:0 1px 3px rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.04);
-  --verde:#1A2330;--verde-m:#3A4A5C;--verde-d:#0D1218;--verde-l:#EEF0F2;
+  --bg:#F5F1E8;--bg2:#FFFFFF;--bg3:#EDE8DC;
+  --text:#1A2330;--text2:#3A4A5C;--text3:#7A8898;
+  --border:#DDD8CC;--border2:#C5BEB0;
+  --shadow:0 1px 3px rgba(26,35,48,.06),0 4px 12px rgba(26,35,48,.04);
+  --verde:#3A4A5C;--verde-m:#4A5A6C;--verde-d:#1A2330;--verde-l:#EAEDf1;
   --platina:#E8DFC8;--platina-l:#F5F1E8;
 }
 body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
 
 /* BARRA DE LEITURA */
-.reading-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#B5B1A6,#1A2B3C);width:0%;z-index:999;transition:width .1s linear;border-radius:0 2px 2px 0}
+.reading-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--platina),var(--verde));width:0%;z-index:999;transition:width .1s linear;border-radius:0 2px 2px 0}
 
 /* BOTÃO COMPARTILHAR */
 .btn-share{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--text3);background:none;border:none;cursor:pointer;padding:0;font-family:var(--font);transition:color .15s;text-transform:uppercase;letter-spacing:.04em}
@@ -91,12 +91,12 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
   .atencao{background:#fff0f0!important;-webkit-print-color-adjust:exact}
 }
 
-.header{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 1.5rem;position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
+.header{background:var(--bg2);border-bottom:1px solid var(--platina);padding:0 1.5rem;position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
 .header-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;gap:1rem;height:60px;flex-wrap:nowrap}
 .header-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .header-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--verde-m),var(--verde-d));display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);color:#fff;font-size:14px;flex-shrink:0}
 .header-titles{line-height:1.2}
-.header-logo{font-size:14px;font-weight:600;color:var(--text)}
+.header-logo{font-size:14px;font-weight:600;color:var(--verde);font-family:var(--font-serif);letter-spacing:.05em}
 .header-sub{font-size:11px;color:var(--text3)}
 .search-wrap{flex:1;min-width:180px;position:relative}
 .search-wrap input{width:100%;padding:8px 12px 8px 34px;border:1px solid var(--border2);border-radius:99px;background:var(--bg3);font-size:13px;color:var(--text);outline:none;font-family:var(--font);transition:border-color .2s}
@@ -144,7 +144,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 
 .widget-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:14px 16px;box-shadow:var(--shadow)}
 .widget-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);margin-bottom:6px}
-.widget-val{font-size:26px;font-weight:700;color:var(--verde);font-variant-numeric:tabular-nums;line-height:1}
+.widget-val{font-size:26px;font-weight:700;color:var(--verde);font-variant-numeric:tabular-nums;line-height:1;font-family:var(--font-serif)}
 .widget-sub{font-size:12px;color:var(--text2);margin-top:5px;line-height:1.4}
 .widget-fase-nome{font-size:14px;font-weight:600;color:var(--verde);line-height:1.3;margin-bottom:3px}
 .widget-fase-desc{font-size:12px;color:var(--text2)}
@@ -154,7 +154,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .fade-card.visivel{opacity:1;transform:none}
 
 /* RESUMO EM DESTAQUE */
-.fase-resumo{font-size:13px;color:var(--text2);background:var(--bg3);border-radius:var(--radius);padding:10px 14px;margin-bottom:1.25rem;line-height:1.6;border-left:3px solid var(--verde);font-style:italic}
+.fase-resumo{font-size:13px;color:var(--text2);background:var(--bg3);border-radius:var(--radius);padding:10px 14px;margin-bottom:1.25rem;line-height:1.6;border-left:3px solid var(--platina);font-style:italic;font-family:var(--font-serif);font-size:14px}
 
 /* URGÊNCIA NOS PRAZOS */
 .prazo-urgente{color:#A32D2D;font-weight:700}
@@ -175,9 +175,9 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .fase-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
 .fase-header{padding:1.1rem 1.4rem;display:flex;align-items:center;gap:14px;cursor:pointer;user-select:none;transition:background .15s}
 .fase-header:hover{background:var(--bg3)}
-.fase-num{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;flex-shrink:0;font-family:var(--font-serif)}
+.fase-num{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;flex-shrink:0;font-family:var(--font-serif);letter-spacing:.02em}
 .fase-info{flex:1}
-.fase-info h2{font-size:16px;font-weight:600;margin-bottom:2px;color:var(--text)}
+.fase-info h2{font-size:16px;font-weight:600;margin-bottom:2px;color:var(--text);font-family:var(--font-serif);letter-spacing:.03em}
 .fase-info p{font-size:12px;color:var(--text3);line-height:1.4}
 .fase-divider{height:1px;background:var(--border)}
 .fase-toggle{color:var(--text3);font-size:20px;transition:transform .25s;flex-shrink:0}
@@ -197,7 +197,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .novidade strong{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;color:#5A3A06;font-weight:700}
 .atencao{border-left:3px solid #A32D2D;background:#FCEBEB;border-radius:0 var(--radius) var(--radius) 0;padding:10px 14px;margin:.75rem 0;font-size:13px;line-height:1.65;color:#501313}
 .atencao strong{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;color:#791F1F;font-weight:700}
-.resumo{border-left:3px solid var(--border2);background:var(--bg3);border-radius:0 var(--radius) var(--radius) 0;padding:10px 14px;margin:.75rem 0;font-size:13px;line-height:1.65;color:var(--text)}
+.resumo{border-left:3px solid var(--platina);background:var(--bg3);border-radius:0 var(--radius) var(--radius) 0;padding:10px 14px;margin:.75rem 0;font-size:13px;line-height:1.65;color:var(--text)}
 .resumo strong{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;color:var(--text3);font-weight:700}
 @media(prefers-color-scheme:dark){
   :root:not(.light) .checklist-header{background:#1A2B3C!important;border-bottom:1px solid #2E3E4E}
@@ -298,8 +298,8 @@ html.dark .perm-col.nao li::before{color:#e85050}
 
 .footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 1.5rem 2rem;margin-top:.5rem}
 .footer-inner{max-width:1040px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1.25rem;text-align:center}
-.footer-avatar-wrap{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--verde-m),var(--verde-d));display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);color:#fff;font-size:26px;box-shadow:0 0 0 4px var(--verde-l)}
-.footer-nome{font-size:17px;font-weight:600;color:var(--text);font-family:var(--font-serif)}
+.footer-avatar-wrap{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--verde),var(--verde-d));display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);color:#fff;font-size:26px;box-shadow:0 0 0 4px var(--platina)}
+.footer-nome{font-size:20px;font-weight:600;color:var(--text);font-family:var(--font-serif);letter-spacing:.05em}
 .footer-cargo{font-size:13px;color:var(--text3);margin-top:2px}
 .footer-desc{font-size:13px;color:var(--text2);max-width:420px;line-height:1.6}
 .footer-links{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
@@ -368,10 +368,10 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
 <header class="header">
   <div class="header-inner">
     <a class="header-brand" href="#">
-      <img src="stonna-casaril-master-simbolo.svg" id="logo-header" alt="Stonna &amp; Casaril" style="height:44px;width:auto;object-fit:contain">
+      <img src="stonna-casaril-master-simbolo.svg" id="logo-header" alt="Stona &amp; Casaril" style="height:44px;width:auto;object-fit:contain">
       <div class="header-titles">
         <div class="header-logo">Guia Eleições 2026</div>
-        <div class="header-sub">Stonna &amp; Casaril · Advogados</div>
+        <div class="header-sub">Stona &amp; Casaril · Advogados</div>
       </div>
     </a>
     <div class="search-wrap">
@@ -849,9 +849,9 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
 
 <footer class="footer">
   <div class="footer-inner">
-    <img src="stonna-casaril-master-horizontal.svg" id="logo-footer" alt="Stonna &amp; Casaril" style="height:80px;width:auto;object-fit:contain">
+    <img src="stonna-casaril-master-horizontal.svg" id="logo-footer" alt="Stona &amp; Casaril" style="height:80px;width:auto;object-fit:contain">
     <div>
-      <div class="footer-nome">Stonna &amp; Casaril</div>
+      <div class="footer-nome">Stona &amp; Casaril</div>
       <div class="footer-cargo">Escritório de Advocacia</div>
     </div>
     <div class="footer-desc">Consultoria e assessoria jurídica especializada em direito eleitoral. Este guia orienta candidatos, coordenadores e agentes públicos nas Eleições 2026.</div>
