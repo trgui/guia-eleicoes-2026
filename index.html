@@ -74,7 +74,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 }
 
 .header{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 1.5rem;position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
-.header-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;gap:1rem;height:60px;flex-wrap:wrap}
+.header-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;gap:1rem;height:60px;flex-wrap:nowrap}
 .header-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .header-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--verde-m),var(--verde-d));display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);color:#fff;font-size:14px;flex-shrink:0}
 .header-titles{line-height:1.2}
@@ -90,9 +90,9 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .btn-perfil.ativo{background:var(--verde);color:#fff;border-color:var(--verde)}
 .btn-perfil:hover:not(.ativo){background:var(--bg3)}
 
-.main{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:240px 1fr;gap:1.5rem;padding:1.5rem;align-items:start;overflow:visible}
+.main{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:240px 1fr;gap:1.5rem;padding:1.5rem;align-items:start}
 
-.sidebar{position:-webkit-sticky;position:sticky;top:76px;align-self:start;display:flex;flex-direction:column;gap:.875rem}
+.sidebar{position:-webkit-sticky;position:sticky;top:72px;align-self:start;display:flex;flex-direction:column;gap:.875rem}
 .timeline{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow)}
 .tl-header{padding:10px 14px 8px;border-bottom:1px solid var(--border)}
 .tl-header-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3)}
@@ -293,10 +293,10 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
 
 @media(max-width:720px){
   .main{grid-template-columns:1fr;padding:1rem}
-  .sidebar{position:static}
+  .sidebar{position:static!important;top:auto!important}
   .perms-grid{grid-template-columns:1fr}
   .glossario-box.aberto{grid-template-columns:1fr}
-  .header-inner{height:auto;padding:.75rem 0;gap:.75rem}
+  .header-inner{height:auto;padding:.75rem 0;gap:.75rem;flex-wrap:wrap}
   .perfil-wrap{width:100%}
   .header{padding:0 1rem}
 }
@@ -330,7 +330,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
 </header>
 
 <div class="main">
-  <aside class="sidebar">
+  <aside class="sidebar" id="sidebar">
     <div class="timeline">
       <div class="tl-header"><span class="tl-header-label">Fases da campanha</span></div>
       <div class="tl-fase" onclick="irParaFase('fase1')" id="tl-fase1" style="border-left:3px solid var(--fase1)">
@@ -384,7 +384,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
     </div>
   </aside>
 
-  <main style="min-height:100vh">
+  <main>
 
     <!-- FASE 1 -->
     <article class="fase-card fade-card" id="fase1" data-perfis="candidato,eleitor">
@@ -1093,6 +1093,18 @@ function highlightTexto(el, termo){
   });
 }
 
+// AJUSTE DINÂMICO DO TOP DA SIDEBAR
+function ajustarSidebar(){
+  const header = document.querySelector('.header');
+  const sidebar = document.getElementById('sidebar');
+  if(header && sidebar && window.innerWidth > 720){
+    const h = header.offsetHeight;
+    sidebar.style.top = (h + 8) + 'px';
+  }
+}
+ajustarSidebar();
+window.addEventListener('resize', ajustarSidebar);
+
 // BARRA DE LEITURA
 window.addEventListener('scroll',()=>{
   const doc=document.documentElement;
@@ -1100,46 +1112,7 @@ window.addEventListener('scroll',()=>{
   document.getElementById('reading-bar').style.width=Math.min(pct,100)+'%';
 });
 
-// SIDEBAR STICKY FALLBACK
-(function(){
-  const sidebar=document.querySelector('.sidebar');
-  const header=document.querySelector('.header');
-  if(!sidebar||!header)return;
-  // Testar se sticky funciona nativamente
-  const style=window.getComputedStyle(sidebar);
-  if(style.position==='sticky'||style.position==='-webkit-sticky'){
-    // Sticky nativo funcionando — verificar se está realmente grudando
-    let lastTop=sidebar.getBoundingClientRect().top;
-    setTimeout(()=>{
-      window.scrollBy(0,100);
-      const newTop=sidebar.getBoundingClientRect().top;
-      window.scrollBy(0,-100);
-      if(Math.abs(newTop-lastTop)>50){
-        // Sticky não está funcionando — usar fallback JS
-        stickyFallback(sidebar,header);
-      }
-    },500);
-  } else {
-    stickyFallback(sidebar,header);
-  }
-  function stickyFallback(sidebar,header){
-    const headerH=header.offsetHeight;
-    const sidebarTop=sidebar.parentElement.getBoundingClientRect().top+window.scrollY;
-    sidebar.style.position='fixed';
-    sidebar.style.top=headerH+12+'px';
-    sidebar.style.width='240px';
-    sidebar.style.zIndex='10';
-    // Compensar no main
-    sidebar.parentElement.style.gridTemplateColumns='240px 1fr';
-    const spacer=document.createElement('div');
-    spacer.style.width='240px';
-    spacer.style.flexShrink='0';
-    sidebar.parentElement.insertBefore(spacer,sidebar);
-    window.addEventListener('resize',()=>{
-      sidebar.style.top=header.offsetHeight+12+'px';
-    });
-  }
-})();
+
 
 // COMPARTILHAR FASE
 function compartilhar(btn){
