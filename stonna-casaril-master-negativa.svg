@@ -19,7 +19,7 @@
   </defs>
 
   <g id="fundo">
-    <rect width="800" height="250" fill="var(--carvao)" />
+    <rect width="800" height="250" fill="transparent" />
   </g>
 
   <g id="simbolo" transform="translate(60, 45)">
