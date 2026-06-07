@@ -95,9 +95,8 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .header-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;gap:1rem;height:60px;flex-wrap:nowrap}
 .header-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .header-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--verde-m),var(--verde-d));display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);color:#fff;font-size:14px;flex-shrink:0}
-.header-titles{line-height:1.2}
-.header-logo{font-size:14px;font-weight:600;color:var(--verde);font-family:var(--font-serif);letter-spacing:.05em}
-.header-sub{font-size:11px;color:var(--text3)}
+.header-logo-wrap{display:flex;flex-direction:column;gap:3px}
+.header-logo{font-size:11px;font-weight:400;color:var(--text3);font-family:var(--font);letter-spacing:.06em;text-transform:uppercase}
 .search-wrap{flex:1;min-width:180px;position:relative}
 .search-wrap input{width:100%;padding:8px 12px 8px 34px;border:1px solid var(--border2);border-radius:99px;background:var(--bg3);font-size:13px;color:var(--text);outline:none;font-family:var(--font);transition:border-color .2s}
 .search-wrap input:focus{border-color:var(--verde);background:var(--bg2)}
@@ -368,10 +367,9 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
 <header class="header">
   <div class="header-inner">
     <a class="header-brand" href="#">
-      <img src="stonna-casaril-master-simbolo.svg" id="logo-header" alt="Stona &amp; Casaril" style="height:44px;width:auto;object-fit:contain">
-      <div class="header-titles">
+      <div class="header-logo-wrap">
+        <img src="stonna-casaril-master-horizontal.svg" id="logo-header" alt="Stona &amp; Casaril" style="height:38px;width:auto;object-fit:contain;display:block">
         <div class="header-logo">Guia Eleições 2026</div>
-        <div class="header-sub">Stona &amp; Casaril · Advogados</div>
       </div>
     </a>
     <div class="search-wrap">
@@ -1235,19 +1233,19 @@ function aplicarTema(tema){
   if(tema==='dark'){
     html.classList.add('dark');
     if(btn)btn.textContent='☀️';
-    if(logoH)logoH.src='stona-simbolo-negativo.svg';
+    if(logoH)logoH.src='stonna-casaril-master-negativa.svg';
   } else if(tema==='light'){
     html.classList.add('light');
     if(btn)btn.textContent='🌙';
-    if(logoH)logoH.src='stonna-casaril-master-simbolo.svg';
+    if(logoH)logoH.src='stonna-casaril-master-horizontal.svg';
   } else {
     // auto — seguir sistema
     if(getPrefersDark()){
       if(btn)btn.textContent='☀️';
-      if(logoH)logoH.src='stona-simbolo-negativo.svg';
+      if(logoH)logoH.src='stonna-casaril-master-negativa.svg';
     } else {
       if(btn)btn.textContent='🌙';
-      if(logoH)logoH.src='stonna-casaril-master-simbolo.svg';
+      if(logoH)logoH.src='stonna-casaril-master-horizontal.svg';
     }
   }
   localStorage.setItem('tema',tema);
