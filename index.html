@@ -91,10 +91,10 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
   .atencao{background:#fff0f0!important;-webkit-print-color-adjust:exact}
 }
 
-.header{background:var(--bg2);border-bottom:1px solid var(--platina);padding:0 1.5rem;position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
-.header-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;gap:1.25rem;padding:.625rem 0}
-.header-center{display:flex;flex-direction:column;gap:.35rem;flex:1;min-width:0}
-.header-right{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
+.header{background:var(--bg2);border-bottom:1px solid var(--platina);padding:0 2rem;position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
+.header-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:1rem;padding:.625rem 0}
+.header-center{display:flex;flex-direction:column;gap:.35rem;flex:1;min-width:160px}
+.header-right{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
 .header-brand{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
 .header-guia{font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;font-family:var(--font);line-height:1}
 .header-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--verde-m),var(--verde-d));display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);color:#fff;font-size:14px;flex-shrink:0}
@@ -105,8 +105,8 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .search-wrap input:focus{border-color:var(--verde);background:var(--bg2)}
 .search-wrap i{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:15px;pointer-events:none}
 .perfil-wrap{display:flex;gap:5px;flex-wrap:wrap;align-items:center}
-.perfil-label{font-size:11px;color:var(--text3);font-weight:500;text-transform:uppercase;letter-spacing:.04em}
-.btn-perfil{padding:5px 13px;border:1px solid var(--border2);border-radius:99px;font-size:12px;font-weight:500;cursor:pointer;background:transparent;color:var(--text2);transition:all .15s;font-family:var(--font)}
+.perfil-label{font-size:10px;color:var(--text3);font-weight:500;text-transform:uppercase;letter-spacing:.04em}
+.btn-perfil{padding:4px 10px;border:1px solid var(--border2);border-radius:99px;font-size:11px;font-weight:500;cursor:pointer;background:transparent;color:var(--text2);transition:all .15s;font-family:var(--font)}
 .btn-perfil.ativo{background:var(--verde);color:#fff;border-color:var(--verde)}
 .btn-perfil:hover:not(.ativo){background:var(--bg3)}
 
@@ -359,7 +359,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
   .perms-grid{grid-template-columns:1fr}
   .glossario-box.aberto{grid-template-columns:1fr}
   .header-inner{flex-wrap:wrap;gap:.5rem;padding:.5rem 0}
-  .header-brand img{width:140px!important}
+  .header-brand img{width:180px!important}
   .header-right{flex-wrap:wrap}
   .perfil-wrap{flex-wrap:wrap}
   .header{padding:0 1rem}
@@ -372,7 +372,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
 <header class="header">
   <div class="header-inner">
     <a class="header-brand" href="#">
-      <img src="stonna-casaril-master-horizontal.svg" id="logo-header" alt="Stona &amp; Casaril" style="width:200px;height:auto;object-fit:contain;display:block">
+      <img src="stonna-casaril-master-horizontal.svg" id="logo-header" alt="Stona &amp; Casaril" style="width:400px;height:auto;object-fit:contain;display:block">
     </a>
     <div class="header-center">
       <div class="header-guia">Guia Eleições 2026</div>
