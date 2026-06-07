@@ -849,7 +849,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
 
 <footer class="footer">
   <div class="footer-inner">
-    <img src="stonna-casaril-master-horizontal.svg" id="logo-footer" alt="Stona &amp; Casaril" style="height:80px;width:auto;object-fit:contain">
+    
     <div>
       <div class="footer-nome">Stona &amp; Casaril</div>
       <div class="footer-cargo">Escritório de Advocacia</div>
@@ -1229,29 +1229,25 @@ function aplicarTema(tema){
   const html=document.documentElement;
   const btn=document.getElementById('btn-tema');
   const logoH=document.getElementById('logo-header');
-  const logoF=document.getElementById('logo-footer');
+
   html.classList.remove('dark','light');
   const isDark=tema==='dark'||(tema==='auto'&&getPrefersDark());
   if(tema==='dark'){
     html.classList.add('dark');
     if(btn)btn.textContent='☀️';
     if(logoH)logoH.src='stona-simbolo-negativo.svg';
-    if(logoF)logoF.src='stonna-casaril-master-negativa.svg';
   } else if(tema==='light'){
     html.classList.add('light');
     if(btn)btn.textContent='🌙';
     if(logoH)logoH.src='stonna-casaril-master-simbolo.svg';
-    if(logoF)logoF.src='stonna-casaril-master-horizontal.svg';
   } else {
     // auto — seguir sistema
     if(getPrefersDark()){
       if(btn)btn.textContent='☀️';
       if(logoH)logoH.src='stona-simbolo-negativo.svg';
-      if(logoF)logoF.src='stonna-casaril-master-negativa.svg';
     } else {
       if(btn)btn.textContent='🌙';
       if(logoH)logoH.src='stonna-casaril-master-simbolo.svg';
-      if(logoF)logoF.src='stonna-casaril-master-horizontal.svg';
     }
   }
   localStorage.setItem('tema',tema);
