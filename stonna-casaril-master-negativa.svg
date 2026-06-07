@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="100%" height="100%">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&amp;family=Lato:wght@300;400&amp;display=swap');
+      
+      /* Variáveis de Cor Master */
+      :root {
+        --azul-aco: #3A4A5C;
+        --carvao: #1A2330;
+        --champagne: #E8DFC8;
+        --off-white: #F5F1E8;
+      }
+
+      /* Estilos Tipográficos */
+      .nome-master-neg { font-family: 'Cormorant Garamond', serif; font-size: 42px; fill: var(--champagne); font-weight: 600; letter-spacing: 3px; }
+      .slogan-master-neg { font-family: 'Lato', sans-serif; font-size: 14px; fill: var(--off-white); font-weight: 300; letter-spacing: 8px; }
+      .monograma-master-neg { font-family: 'Cormorant Garamond', serif; font-size: 90px; font-weight: 400; }
+    </style>
+  </defs>
+
+  <g id="fundo">
+    <rect width="800" height="250" fill="var(--carvao)" />
+  </g>
+
+  <g id="simbolo" transform="translate(60, 45)">
+    <text x="45" y="115" class="monograma-master-neg" fill="var(--azul-aco)">C</text>
+    <text x="15" y="105" class="monograma-master-neg" fill="var(--champagne)">S</text>
+    <line x1="135" y1="20" x2="135" y2="130" stroke="var(--azul-aco)" stroke-width="1.5" />
+  </g>
+
+  <g id="nome">
+    <text x="240" y="125" class="nome-master-neg">STONNA &amp; CASARIL</text>
+  </g>
+
+  <g id="slogan">
+    <text x="245" y="160" class="slogan-master-neg">ADVOGADOS</text>
+  </g>
+</svg>

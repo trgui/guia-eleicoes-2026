@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Guia por Fases — Eleições 2026. Da pré-campanha à prestação de contas, passo a passo. Organizado por Sheila Casaril, advogada eleitoral.">
-<title>Guia Eleições 2026 — Sheila Casaril</title>
+<title>Guia Eleições 2026 — Stonna &amp; Casaril</title>
 <!-- FAVICON SVG inline -->
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231A2B3C'/><text x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='14' font-weight='bold' fill='white'>SC</text></svg>">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 
 <!-- OPEN GRAPH -->
-<meta property="og:title" content="Guia Eleições 2026 — Sheila Casaril">
+<meta property="og:title" content="Guia Eleições 2026 — Stonna &amp; Casaril">
 <meta property="og:description" content="Da pré-campanha à prestação de contas, passo a passo. Tudo que candidatos, agentes públicos e eleitores precisam saber sobre as Eleições 2026.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://guia-eleicoes-2026-production.up.railway.app">
 <meta property="og:image" content="https://guia-eleicoes-2026-production.up.railway.app/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Guia Eleições 2026 — Sheila Casaril">
+<meta name="twitter:title" content="Guia Eleições 2026 — Stonna &amp; Casaril">
 <meta name="twitter:description" content="Da pré-campanha à prestação de contas, passo a passo.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,29 +42,29 @@
 }
 @media(prefers-color-scheme:dark){
   :root:not(.light){
-    --bg:#0D1420;--bg2:#121E2A;--bg3:#1A2535;
-    --text:#E8EEF4;--text2:#B5B1A6;--text3:#7A8A9A;
-    --border:#1E2E3E;--border2:#2E3E4E;
+    --bg:#0F1520;--bg2:#151D2A;--bg3:#1C2535;
+    --text:#E8DFC8;--text2:#B5B1A6;--text3:#7A8A9A;
+    --border:#1E2D3E;--border2:#2A3A4E;
     --shadow:0 1px 3px rgba(0,0,0,.3),0 4px 12px rgba(0,0,0,.2);
-    --verde:#B5B1A6;--verde-m:#C8C4BA;--verde-d:#9A968C;--verde-l:#1E2A38;
-    --platina:#B5B1A6;--platina-l:#1A2535;
+    --verde:#E8DFC8;--verde-m:#D4C9A8;--verde-d:#C0B090;--verde-l:#1C2535;
+    --platina:#E8DFC8;--platina-l:#1C2535;
   }
 }
 html.dark{
-  --bg:#0D1420;--bg2:#121E2A;--bg3:#1A2535;
-  --text:#E8EEF4;--text2:#B5B1A6;--text3:#7A8A9A;
-  --border:#1E2E3E;--border2:#2E3E4E;
+  --bg:#0F1520;--bg2:#151D2A;--bg3:#1C2535;
+  --text:#E8DFC8;--text2:#B5B1A6;--text3:#7A8A9A;
+  --border:#1E2D3E;--border2:#2A3A4E;
   --shadow:0 1px 3px rgba(0,0,0,.3),0 4px 12px rgba(0,0,0,.2);
-  --verde:#B5B1A6;--verde-m:#C8C4BA;--verde-d:#9A968C;--verde-l:#1E2A38;
-  --platina:#B5B1A6;--platina-l:#1A2535;
+  --verde:#E8DFC8;--verde-m:#D4C9A8;--verde-d:#C0B090;--verde-l:#1C2535;
+  --platina:#E8DFC8;--platina-l:#1C2535;
 }
 html.light{
-  --bg:#F4F3F0;--bg2:#ffffff;--bg3:#EDECEA;
-  --text:#1A2B3C;--text2:#4A5A6A;--text3:#8A9AAA;
-  --border:#DDE2E8;--border2:#BDC5CF;
+  --bg:#F5F1E8;--bg2:#ffffff;--bg3:#EDE9DF;
+  --text:#1A2330;--text2:#3A4A5C;--text3:#7A8A9A;
+  --border:#DDD8CC;--border2:#C5BFB0;
   --shadow:0 1px 3px rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.04);
-  --verde:#1A2B3C;--verde-m:#2C4A63;--verde-d:#0D1920;--verde-l:#E8ECF0;
-  --platina:#B5B1A6;--platina-l:#F0EFEC;
+  --verde:#1A2330;--verde-m:#3A4A5C;--verde-d:#0D1218;--verde-l:#EEF0F2;
+  --platina:#E8DFC8;--platina-l:#F5F1E8;
 }
 body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
 
@@ -96,7 +96,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .header-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .header-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--verde-m),var(--verde-d));display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);color:#fff;font-size:14px;flex-shrink:0}
 .header-titles{line-height:1.2}
-.header-logo{font-size:14px;font-weight:600;color:#B5B1A6}
+.header-logo{font-size:14px;font-weight:600;color:var(--text)}
 .header-sub{font-size:11px;color:var(--text3)}
 .search-wrap{flex:1;min-width:180px;position:relative}
 .search-wrap input{width:100%;padding:8px 12px 8px 34px;border:1px solid var(--border2);border-radius:99px;background:var(--bg3);font-size:13px;color:var(--text);outline:none;font-family:var(--font);transition:border-color .2s}
@@ -368,10 +368,10 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
 <header class="header">
   <div class="header-inner">
     <a class="header-brand" href="#">
-      <img src="logo-small.png" alt="Sheila Casaril" style="height:40px;width:auto;object-fit:contain">
+      <img src="stonna-casaril-master-simbolo.svg" id="logo-header" alt="Stonna &amp; Casaril" style="height:44px;width:auto;object-fit:contain">
       <div class="header-titles">
         <div class="header-logo">Guia Eleições 2026</div>
-        <div class="header-sub">Sheila Casaril · Advogada Eleitoral</div>
+        <div class="header-sub">Stonna &amp; Casaril · Advogados</div>
       </div>
     </a>
     <div class="search-wrap">
@@ -849,12 +849,12 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
 
 <footer class="footer">
   <div class="footer-inner">
-    <img src="logo.png" alt="Logo Sheila Casaril" style="height:72px;width:auto;object-fit:contain">
+    <img src="stonna-casaril-master-horizontal.svg" id="logo-footer" alt="Stonna &amp; Casaril" style="height:80px;width:auto;object-fit:contain">
     <div>
-      <div class="footer-nome">Sheila Casaril</div>
-      <div class="footer-cargo">Advogada — Consultoria e Assessoria Jurídica e Eleitoral</div>
+      <div class="footer-nome">Stonna &amp; Casaril</div>
+      <div class="footer-cargo">Escritório de Advocacia</div>
     </div>
-    <div class="footer-desc">Especialista em direito eleitoral, com atuação em consultoria, assessoria e acompanhamento de candidaturas. Este guia orienta candidatos, coordenadores e agentes públicos nas Eleições 2026.</div>
+    <div class="footer-desc">Consultoria e assessoria jurídica especializada em direito eleitoral. Este guia orienta candidatos, coordenadores e agentes públicos nas Eleições 2026.</div>
     <div class="footer-links">
       <a class="footer-link whatsapp" href="https://wa.me/554598493273" target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.121 1.532 5.855L.057 23.455a.5.5 0 0 0 .488.609l5.758-1.51A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.6a9.6 9.6 0 0 1-4.9-1.343l-.35-.208-3.617.948.966-3.524-.228-.362A9.6 9.6 0 0 1 2.4 12c0-5.295 4.305-9.6 9.6-9.6s9.6 4.305 9.6 9.6-4.305 9.6-9.6 9.6z"/></svg>
@@ -1228,10 +1228,32 @@ function getTema(){
 function aplicarTema(tema){
   const html=document.documentElement;
   const btn=document.getElementById('btn-tema');
+  const logoH=document.getElementById('logo-header');
+  const logoF=document.getElementById('logo-footer');
   html.classList.remove('dark','light');
-  if(tema==='dark'){html.classList.add('dark');if(btn)btn.textContent='☀️';}
-  else if(tema==='light'){html.classList.add('light');if(btn)btn.textContent='🌙';}
-  else{if(btn)btn.textContent=getPrefersDark()?'☀️':'🌙';}
+  const isDark=tema==='dark'||(tema==='auto'&&getPrefersDark());
+  if(tema==='dark'){
+    html.classList.add('dark');
+    if(btn)btn.textContent='☀️';
+    if(logoH)logoH.src='stonna-casaril-master-simbolo.svg';
+    if(logoF)logoF.src='stonna-casaril-master-negativa.svg';
+  } else if(tema==='light'){
+    html.classList.add('light');
+    if(btn)btn.textContent='🌙';
+    if(logoH)logoH.src='stonna-casaril-master-simbolo.svg';
+    if(logoF)logoF.src='stonna-casaril-master-horizontal.svg';
+  } else {
+    // auto — seguir sistema
+    if(getPrefersDark()){
+      if(btn)btn.textContent='☀️';
+      if(logoH)logoH.src='stonna-casaril-master-simbolo.svg';
+      if(logoF)logoF.src='stonna-casaril-master-negativa.svg';
+    } else {
+      if(btn)btn.textContent='🌙';
+      if(logoH)logoH.src='stonna-casaril-master-simbolo.svg';
+      if(logoF)logoF.src='stonna-casaril-master-horizontal.svg';
+    }
+  }
   localStorage.setItem('tema',tema);
 }
 function toggleTema(){

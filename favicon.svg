@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="32" height="32">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&amp;display=swap');
+      .monograma-favicon { font-family: 'Cormorant Garamond', serif; font-size: 240px; font-weight: 400; }
+    </style>
+  </defs>
+  <rect width="320" height="320" fill="transparent" />
+  
+  <g transform="translate(90, 240)">
+    <text x="50" y="0" class="monograma-favicon" fill="#3A4A5C">C</text>
+    <text x="-40" y="-30" class="monograma-favicon" fill="#1A2330">S</text>
+  </g>
+</svg>
