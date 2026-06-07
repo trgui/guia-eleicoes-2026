@@ -12,8 +12,8 @@
 <meta property="og:title" content="Guia Eleições 2026 — Stona &amp; Casaril">
 <meta property="og:description" content="Da pré-campanha à prestação de contas, passo a passo. Tudo que candidatos, agentes públicos e eleitores precisam saber sobre as Eleições 2026.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://guia-eleicoes-2026-production.up.railway.app">
-<meta property="og:image" content="https://guia-eleicoes-2026-production.up.railway.app/og-image.jpg">
+<meta property="og:url" content="https://stonacasaril.com.br">
+<meta property="og:image" content="https://stonacasaril.com.br/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Guia Eleições 2026 — Stona &amp; Casaril">
 <meta name="twitter:description" content="Da pré-campanha à prestação de contas, passo a passo.">
@@ -92,8 +92,11 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 }
 
 .header{background:var(--bg2);border-bottom:1px solid var(--platina);padding:0 1.5rem;position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
-.header-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;gap:1rem;height:60px;flex-wrap:nowrap}
-.header-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.header-inner{max-width:1040px;margin:0 auto;display:flex;align-items:center;gap:1.25rem;padding:.625rem 0}
+.header-center{display:flex;flex-direction:column;gap:.35rem;flex:1;min-width:0}
+.header-right{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
+.header-brand{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
+.header-guia{font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;font-family:var(--font);line-height:1}
 .header-avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--verde-m),var(--verde-d));display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);color:#fff;font-size:14px;flex-shrink:0}
 .header-logo-wrap{display:flex;flex-direction:column;gap:3px}
 .header-logo{font-size:11px;font-weight:400;color:var(--text3);font-family:var(--font);letter-spacing:.06em;text-transform:uppercase}
@@ -109,7 +112,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 
 .main{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:240px 1fr;gap:1.5rem;padding:1.5rem;align-items:start}
 
-.sidebar{position:-webkit-sticky;position:sticky;top:72px;align-self:start;display:flex;flex-direction:column;gap:.875rem}
+.sidebar{position:-webkit-sticky;position:sticky;top:82px;align-self:start;display:flex;flex-direction:column;gap:.875rem}
 .timeline{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow)}
 .tl-header{padding:10px 14px 8px;border-bottom:1px solid var(--border)}
 .tl-header-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3)}
@@ -355,8 +358,10 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
   .sidebar{position:static!important;top:auto!important}
   .perms-grid{grid-template-columns:1fr}
   .glossario-box.aberto{grid-template-columns:1fr}
-  .header-inner{height:auto;padding:.75rem 0;gap:.75rem;flex-wrap:wrap}
-  .perfil-wrap{width:100%}
+  .header-inner{flex-wrap:wrap;gap:.5rem;padding:.5rem 0}
+  .header-brand img{width:140px!important}
+  .header-right{flex-wrap:wrap}
+  .perfil-wrap{flex-wrap:wrap}
   .header{padding:0 1rem}
 }
 </style>
@@ -367,24 +372,26 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
 <header class="header">
   <div class="header-inner">
     <a class="header-brand" href="#">
-      <div class="header-logo-wrap">
-        <img src="stonna-casaril-master-horizontal.svg" id="logo-header" alt="Stona &amp; Casaril" style="height:38px;width:auto;object-fit:contain;display:block">
-        <div class="header-logo">Guia Eleições 2026</div>
-      </div>
+      <img src="stonna-casaril-master-horizontal.svg" id="logo-header" alt="Stona &amp; Casaril" style="width:200px;height:auto;object-fit:contain;display:block">
     </a>
-    <div class="search-wrap">
-      <i class="ti ti-search" aria-hidden="true"></i>
-      <input type="text" id="busca" placeholder="Buscar... ex: deepfake, Pix, cota de gênero" oninput="buscar(this.value)" autocomplete="off">
-      <div class="search-count" id="search-count"></div>
+    <div class="header-center">
+      <div class="header-guia">Guia Eleições 2026</div>
+      <div class="search-wrap">
+        <i class="ti ti-search" aria-hidden="true"></i>
+        <input type="text" id="busca" placeholder="Buscar... ex: deepfake, Pix, cota de gênero" oninput="buscar(this.value)" autocomplete="off">
+        <div class="search-count" id="search-count"></div>
+      </div>
     </div>
-    <div class="perfil-wrap">
-      <span class="perfil-label">Perfil</span>
-      <button class="btn-perfil ativo" onclick="setPerfil('todos',this)">Todos</button>
-      <button class="btn-perfil" onclick="setPerfil('candidato',this)">Candidato</button>
-      <button class="btn-perfil" onclick="setPerfil('agente',this)">Agente público</button>
-      <button class="btn-perfil" onclick="setPerfil('eleitor',this)">Eleitor</button>
+    <div class="header-right">
+      <div class="perfil-wrap">
+        <span class="perfil-label">Perfil</span>
+        <button class="btn-perfil ativo" onclick="setPerfil('todos',this)">Todos</button>
+        <button class="btn-perfil" onclick="setPerfil('candidato',this)">Candidato</button>
+        <button class="btn-perfil" onclick="setPerfil('agente',this)">Agente público</button>
+        <button class="btn-perfil" onclick="setPerfil('eleitor',this)">Eleitor</button>
+      </div>
+      <button class="btn-tema" id="btn-tema" onclick="toggleTema()" title="Alternar modo claro/escuro">🌙</button>
     </div>
-    <button class="btn-tema" id="btn-tema" onclick="toggleTema()" title="Alternar modo claro/escuro">🌙</button>
   </div>
 </header>
 
