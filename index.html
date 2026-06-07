@@ -134,6 +134,27 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .fase-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-xl);margin-bottom:1.25rem;overflow:hidden;box-shadow:var(--shadow)}
 .fade-card{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
 .fade-card.visivel{opacity:1;transform:translateY(0)}
+
+/* RESUMO EM DESTAQUE */
+.fase-resumo{font-size:13px;color:var(--text2);background:var(--bg3);border-radius:var(--radius);padding:10px 14px;margin-bottom:1.25rem;line-height:1.6;border-left:3px solid var(--verde);font-style:italic}
+
+/* URGÊNCIA NOS PRAZOS */
+.prazo-urgente{color:#A32D2D;font-weight:700}
+.prazo-atencao{color:#BA7517;font-weight:600}
+
+/* FILTRO CRONOGRAMA */
+.cron-filtro{display:flex;gap:6px;padding:8px 12px;border-bottom:1px solid var(--border);background:var(--bg3)}
+.cron-filtro button{font-size:11px;padding:3px 10px;border-radius:99px;border:1px solid var(--border2);background:transparent;cursor:pointer;font-family:var(--font);color:var(--text2);transition:all .15s}
+.cron-filtro button.ativo{background:var(--verde);color:#fff;border-color:var(--verde)}
+
+/* VER TAMBÉM */
+.ver-tambem{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text3);padding-top:.75rem;margin-top:.75rem;border-top:1px solid var(--border);flex-wrap:wrap}
+.ver-tambem span{font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+.ver-tambem a{color:var(--verde);text-decoration:none;font-weight:500;display:flex;align-items:center;gap:4px}
+.ver-tambem a:hover{text-decoration:underline}
+
+/* ÍCONE FASE NO HEADER */
+.fase-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
 .fase-header{padding:1.1rem 1.4rem;display:flex;align-items:center;gap:14px;cursor:pointer;user-select:none;transition:background .15s}
 .fase-header:hover{background:var(--bg3)}
 .fase-num{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;flex-shrink:0;font-family:var(--font-serif)}
@@ -194,18 +215,14 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 }
 
 .checklist{margin-top:1.25rem;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
-.checklist-header{padding:10px 16px;background:var(--bg3);display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border)}
-.checklist-header span{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3)}
-.check-item{display:flex;align-items:flex-start;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .15s;font-size:13px;line-height:1.5}
+.checklist-header{padding:10px 16px;background:var(--verde);display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border)}
+.checklist-header span{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#fff}
+.checklist-header i{color:#fff!important}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:9px 16px;border-bottom:1px solid var(--border);font-size:13px;line-height:1.55}
 .check-item:last-child{border-bottom:none}
-.check-item:hover{background:var(--bg3)}
-.check-item.checked{background:var(--bg3)}
-.check-toggle{width:20px;height:20px;border-radius:6px;border:1.5px solid var(--border2);flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all .15s;background:var(--bg2)}
-.check-item.checked .check-toggle{background:var(--verde);border-color:var(--verde)}
-.check-toggle i{font-size:13px;color:#fff;display:none}
-.check-item.checked .check-toggle i{display:block}
+.check-item::before{content:"→";color:var(--verde);font-weight:700;flex-shrink:0;margin-top:1px;font-size:13px}
 .check-label{color:var(--text);flex:1}
-.check-item.checked .check-label{color:var(--text3);text-decoration:line-through}
+.check-urgente .check-item::before{content:"!";color:#A32D2D}
 
 .datas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:.75rem 0}
 .data-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px}
@@ -238,6 +255,22 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .footer-aviso{font-size:11px;color:var(--text3);line-height:1.6;max-width:480px;padding-top:.5rem;border-top:1px solid var(--border)}
 
 .hidden-perfil{display:none!important}
+
+/* MODO FOCADO */
+.btn-foco{display:flex;align-items:center;gap:6px;padding:6px 13px;border:1px solid var(--border2);border-radius:99px;font-size:12px;font-weight:500;cursor:pointer;background:transparent;color:var(--text2);transition:all .15s;font-family:var(--font);white-space:nowrap}
+.btn-foco:hover{background:var(--bg3);color:var(--text)}
+.btn-foco.ativo{background:var(--verde);color:#fff;border-color:var(--verde)}
+.modo-foco .fase-card:not(.foco-ativo){opacity:.25;filter:blur(1px);pointer-events:none;transition:opacity .3s,filter .3s}
+.modo-foco .fase-card.foco-ativo{transition:opacity .3s,filter .3s}
+
+/* DATA ATUALIZAÇÃO */
+.data-atualizacao{font-size:11px;color:var(--text3);display:flex;align-items:center;gap:5px;padding:6px 0 0}
+
+/* TOOLTIP LINKS CERTIDÕES */
+.link-certidao{position:relative}
+.link-certidao .link-tip{display:none;position:absolute;top:50%;right:calc(100% + 8px);transform:translateY(-50%);background:var(--text);color:var(--bg2);font-size:11px;padding:4px 8px;border-radius:6px;white-space:nowrap;pointer-events:none}
+.link-certidao:hover .link-tip{display:block}
+.externa-tag{font-size:10px;color:var(--text3);background:var(--bg3);border-radius:4px;padding:1px 5px;border:1px solid var(--border);margin-left:4px;vertical-align:middle;white-space:nowrap}
 
 /* WHATSAPP FLUTUANTE */
 .whatsapp-float{position:fixed;bottom:24px;right:24px;z-index:500;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
@@ -281,6 +314,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
       <div class="header-titles">
         <div class="header-logo">Guia Eleições 2026</div>
         <div class="header-sub">Sheila Casaril · Advogada Eleitoral</div>
+        <div class="data-atualizacao"><i class="ti ti-refresh" style="font-size:11px"></i>Atualizado jun/2026 · Res. TSE 23.754 e 23.756</div>
       </div>
     </a>
     <div class="search-wrap">
@@ -296,6 +330,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
       <button class="btn-perfil" onclick="setPerfil('eleitor',this)">Eleitor</button>
     </div>
     <button class="btn-print" onclick="window.print()" title="Imprimir guia completo"><i class="ti ti-printer"></i> Imprimir</button>
+    <button class="btn-foco" id="btn-foco" onclick="toggleFoco()" title="Leitura focada por fase"><i class="ti ti-focus-2"></i> Foco</button>
   </div>
 </header>
 
@@ -361,6 +396,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
       <div class="fase-divider"></div>
       <div class="fase-header-bottom"><button class="btn-share" onclick="compartilhar(this)"><i class="ti ti-link"></i> Copiar link desta fase</button></div>
       <div class="fase-body aberto">
+        <div class="fase-resumo">O que você pode fazer antes da campanha começar — e o que já está proibido desde já.</div>
         <div class="secao">
           <div class="secao-title">O que pode (e o que não pode)</div>
           <div class="secao-texto"><p>A propaganda eleitoral só é permitida a partir de <strong>16/08/2026</strong>. Antes disso, o pré-candidato pode divulgar a pré-candidatura e apresentar projetos — <strong>desde que não peça voto de forma explícita</strong>. Lembre: pedir voto não se resume ao "vote em mim"; qualquer expressão com o mesmo sentido conta.</p></div>
@@ -394,14 +430,14 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
           <div class="resumo"><strong>Em resumo</strong>União de dois ou mais partidos registrados no TSE por no mínimo 4 anos. Precisam estar constituídas e com estatuto registrado no TSE até <strong>4 de abril de 2026</strong>. Se houver suspensão judicial do órgão de qualquer partido da federação, toda ela fica impedida de participar na circunscrição.</div>
         </div>
         <div class="checklist">
-          <div class="checklist-header"><i class="ti ti-list-check" style="font-size:15px;color:var(--verde)"></i><span>Fase 1</span></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Estatuto do partido/federação registrado no TSE até 04/04/2026</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Federação constituída com regras de lista proporcional definidas</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Órgão de direção constituído e anotado na circunscrição</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">RDE: avaliar dúvidas de elegibilidade e protocolar com anuência do partido, se for o caso</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Pré-campanha sem pedido de voto, sem número de urna, sem jingle, sem outdoor</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Vaquinha virtual só a partir de 15/05 com empresa cadastrada no TSE</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Impulsionamento com gastos moderados, identificados e sem pedido de voto</div></div>
+          <div class="checklist-header"><i class="ti ti-list-check" style="font-size:15px;color:var(--verde)"></i><span>Pré-campanha</span></div>
+          <div class="check-item"><span class="check-label">Estatuto do partido/federação registrado no TSE até 04/04/2026</span></div>
+          <div class="check-item"><span class="check-label">Federação constituída com regras de lista proporcional definidas</span></div>
+          <div class="check-item"><span class="check-label">Órgão de direção constituído e anotado na circunscrição</span></div>
+          <div class="check-item"><span class="check-label">RDE: avaliar dúvidas de elegibilidade e protocolar com anuência do partido, se for o caso</span></div>
+          <div class="check-item"><span class="check-label">Pré-campanha sem pedido de voto, sem número de urna, sem jingle, sem outdoor</span></div>
+          <div class="check-item"><span class="check-label">Vaquinha virtual só a partir de 15/05 com empresa cadastrada no TSE</span></div>
+          <div class="check-item"><span class="check-label">Impulsionamento com gastos moderados, identificados e sem pedido de voto</div></div>
         </div>
       </div>
     </article>
@@ -416,6 +452,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
       <div class="fase-divider"></div>
       <div class="fase-header-bottom"><button class="btn-share" onclick="compartilhar(this)"><i class="ti ti-link"></i> Copiar link desta fase</button></div>
       <div class="fase-body">
+        <div class="fase-resumo">A largada oficial: escolha de candidatos, documentação e prazo para registro na Justiça Eleitoral.</div>
         <div class="secao">
           <div class="secao-title">Convenções e ata</div>
           <div class="secao-texto"><p>Candidatos são escolhidos entre <strong>20/07 e 05/08</strong>. A convenção pode ser presencial, virtual ou híbrida. Nas virtuais, a presença é registrada por assinatura eletrônica, gravação de áudio/vídeo ou outro meio que identifique os presentes.</p></div>
@@ -449,35 +486,35 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
               <a href="http://www.tjpr.jus.br/certidoes" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);text-decoration:none;transition:background .15s" onmouseover="this.style.background='var(--bg2)'" onmouseout="this.style.background=''">
                 <i class="ti ti-external-link" style="color:var(--verde);font-size:14px;flex-shrink:0;margin-top:2px"></i>
                 <div>
-                  <div style="font-size:13px;font-weight:600;color:var(--text)">Justiça Comum e Vara de Execuções Penais</div>
+                  <div style="font-size:13px;font-weight:600;color:var(--text)">Justiça Comum e Vara de Execuções Penais<span class="externa-tag">↗ nova aba</span></div>
                   <div style="font-size:11px;color:var(--text3);margin-top:2px">Certidões criminais do domicílio do candidato · tjpr.jus.br</div>
                 </div>
               </a>
               <a href="https://www2.trf4.jus.br/trf4/processos/certidao/index.php" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);text-decoration:none;transition:background .15s" onmouseover="this.style.background='var(--bg2)'" onmouseout="this.style.background=''">
                 <i class="ti ti-external-link" style="color:var(--verde);font-size:14px;flex-shrink:0;margin-top:2px"></i>
                 <div>
-                  <div style="font-size:13px;font-weight:600;color:var(--text)">Justiça Federal da 4ª Região (TRF4)</div>
+                  <div style="font-size:13px;font-weight:600;color:var(--text)">Justiça Federal da 4ª Região (TRF4)<span class="externa-tag">↗ nova aba</span></div>
                   <div style="font-size:11px;color:var(--text3);margin-top:2px">Certidões criminais federais · trf4.jus.br</div>
                 </div>
               </a>
               <a href="https://processo.stj.jus.br/processo/certidao/inicio" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);text-decoration:none;transition:background .15s" onmouseover="this.style.background='var(--bg2)'" onmouseout="this.style.background=''">
                 <i class="ti ti-external-link" style="color:var(--verde);font-size:14px;flex-shrink:0;margin-top:2px"></i>
                 <div>
-                  <div style="font-size:13px;font-weight:600;color:var(--text)">STJ — Superior Tribunal de Justiça</div>
+                  <div style="font-size:13px;font-weight:600;color:var(--text)">STJ — Superior Tribunal de Justiça<span class="externa-tag">↗ nova aba</span></div>
                   <div style="font-size:11px;color:var(--text3);margin-top:2px">Para Governadores e Secretários da Administração Pública Federal · stj.jus.br</div>
                 </div>
               </a>
               <a href="https://certidoes.stf.jus.br/" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border);text-decoration:none;transition:background .15s" onmouseover="this.style.background='var(--bg2)'" onmouseout="this.style.background=''">
                 <i class="ti ti-external-link" style="color:var(--verde);font-size:14px;flex-shrink:0;margin-top:2px"></i>
                 <div>
-                  <div style="font-size:13px;font-weight:600;color:var(--text)">STF — Supremo Tribunal Federal</div>
+                  <div style="font-size:13px;font-weight:600;color:var(--text)">STF — Supremo Tribunal Federal<span class="externa-tag">↗ nova aba</span></div>
                   <div style="font-size:11px;color:var(--text3);margin-top:2px">Para Presidente, Deputado Federal ou Senador · stf.jus.br</div>
                 </div>
               </a>
               <a href="https://www.tse.jus.br/servicos-eleitorais/certidoes/certidao-de-quitacao-eleitoral" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:12px;padding:10px 16px;text-decoration:none;transition:background .15s" onmouseover="this.style.background='var(--bg2)'" onmouseout="this.style.background=''">
                 <i class="ti ti-external-link" style="color:var(--verde);font-size:14px;flex-shrink:0;margin-top:2px"></i>
                 <div>
-                  <div style="font-size:13px;font-weight:600;color:var(--text)">Certidão de Quitação Eleitoral (TSE)</div>
+                  <div style="font-size:13px;font-weight:600;color:var(--text)">Certidão de Quitação Eleitoral (TSE)<span class="externa-tag">↗ nova aba</span></div>
                   <div style="font-size:11px;color:var(--text3);margin-top:2px">Situação eleitoral do candidato · tse.jus.br</div>
                 </div>
               </a>
@@ -485,15 +522,15 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
           </div>
         </div>
         <div class="checklist">
-          <div class="checklist-header"><i class="ti ti-list-check" style="font-size:15px;color:var(--verde)"></i><span>Fase 2</span></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Convenção realizada entre 20/07 e 05/08, conforme o estatuto</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Ata e lista de presença registradas no CANDex e impressas para assinatura</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Arquivo da convenção transmitido à Justiça Eleitoral até o dia seguinte</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Cota de gênero entre 30% e 70% de cada gênero respeitada</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Registro protocolado no CANDex até as 19h de 15/08</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Documentos do RRC reunidos: foto da urna, declaração de bens e plano de governo (majoritárias)</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Certidões criminais (Federal e Estadual); se positivas, a de "objeto e pé"</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Desincompatibilização cumprida no prazo, quando aplicável</div></div>
+          <div class="checklist-header"><i class="ti ti-list-check" style="font-size:15px;color:var(--verde)"></i><span>Convenção e registro</span></div>
+          <div class="check-item"><span class="check-label">Convenção realizada entre 20/07 e 05/08, conforme o estatuto</span></div>
+          <div class="check-item"><span class="check-label">Ata e lista de presença registradas no CANDex e impressas para assinatura</span></div>
+          <div class="check-item"><span class="check-label">Arquivo da convenção transmitido à Justiça Eleitoral até o dia seguinte</span></div>
+          <div class="check-item"><span class="check-label">Cota de gênero entre 30% e 70% de cada gênero respeitada</span></div>
+          <div class="check-item"><span class="check-label">Registro protocolado no CANDex até as <span class="prazo-urgente">19h de 15/08</span></span></div>
+          <div class="check-item"><span class="check-label">Documentos do RRC reunidos: foto da urna, declaração de bens e plano de governo (majoritárias)</span></div>
+          <div class="check-item"><span class="check-label">Certidões criminais (Federal e Estadual); se positivas, a de "objeto e pé"</span></div>
+          <div class="check-item"><span class="check-label">Desincompatibilização cumprida no prazo, quando aplicável</div></div>
         </div>
       </div>
     </article>
@@ -508,6 +545,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
       <div class="fase-divider"></div>
       <div class="fase-header-bottom"><button class="btn-share" onclick="compartilhar(this)"><i class="ti ti-link"></i> Copiar link desta fase</button></div>
       <div class="fase-body">
+        <div class="fase-resumo">A campanha está no ar — regras de propaganda, financiamento, IA e prestação de contas parcial.</div>
         <div class="secao">
           <div class="secao-title">Inteligência artificial — regras 2026</div>
           <div class="novidade"><strong>Novidade 2026 — Rotulagem obrigatória de IA</strong>Todo conteúdo gerado ou significativamente alterado por IA deve ter aviso explícito: no início de áudios, por marca d'água em imagens e vídeos, em cada página de impresso. Os provedores de impulsionamento devem disponibilizar campo específico para declarar uso de IA.</div>
@@ -555,17 +593,17 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
           </div>
         </div>
         <div class="checklist">
-          <div class="checklist-header"><i class="ti ti-list-check" style="font-size:15px;color:var(--verde)"></i><span>Fase 3</span></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Propaganda em língua nacional com nome do candidato e legenda; imagens de terceiros autorizadas</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">URLs de todas as redes/sites comunicadas no registro ou em até 24h da criação</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Conteúdo de IA rotulado de forma destacada; registros do processo criativo guardados</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Impulsionamento só pela campanha, com CNPJ e "Propaganda Eleitoral", sem propaganda negativa</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">LGPD: canal de comunicação e encarregado de dados disponibilizados</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">CNPJ de campanha em recibos, contratos e notas; conta aberta para cada tipo de recurso</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Doações dentro dos limites: PF até 10% dos rendimentos; estimável até R$ 40 mil</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Gastos pagos por meios rastreáveis e registrados na data da contratação</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Carreatas comunicadas com 24h de antecedência</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Conta parcial apresentada entre 09 e 13/09; recursos informados à JE em até 72h do recebimento</div></div>
+          <div class="checklist-header"><i class="ti ti-list-check" style="font-size:15px;color:var(--verde)"></i><span>Campanha Eleitoral</span></div>
+          <div class="check-item"><span class="check-label">Propaganda em língua nacional com nome do candidato e legenda; imagens de terceiros autorizadas</span></div>
+          <div class="check-item"><span class="check-label">URLs de todas as redes/sites comunicadas no registro ou em até 24h da criação</span></div>
+          <div class="check-item"><span class="check-label">Conteúdo de IA rotulado de forma destacada; registros do processo criativo guardados</span></div>
+          <div class="check-item"><span class="check-label">Impulsionamento só pela campanha, com CNPJ e "Propaganda Eleitoral", sem propaganda negativa</span></div>
+          <div class="check-item"><span class="check-label">LGPD: canal de comunicação e encarregado de dados disponibilizados</span></div>
+          <div class="check-item"><span class="check-label">CNPJ de campanha em recibos, contratos e notas; conta aberta para cada tipo de recurso</span></div>
+          <div class="check-item"><span class="check-label">Doações dentro dos limites: PF até 10% dos rendimentos; estimável até R$ 40 mil</span></div>
+          <div class="check-item"><span class="check-label">Gastos pagos por meios rastreáveis e registrados na data da contratação</span></div>
+          <div class="check-item"><span class="check-label">Carreatas comunicadas com 24h de antecedência</span></div>
+          <div class="check-item"><span class="check-label">Conta parcial apresentada entre <span class="prazo-atencao">09 e 13/09</span>; recursos informados à JE em até 72h do recebimento</div></div>
         </div>
       </div>
     </article>
@@ -580,6 +618,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
       <div class="fase-divider"></div>
       <div class="fase-header-bottom"><button class="btn-share" onclick="compartilhar(this)"><i class="ti ti-link"></i> Copiar link desta fase</button></div>
       <div class="fase-body">
+        <div class="fase-resumo">Os momentos mais críticos: 72h finais, apagão da IA e o que pode ou não no dia da votação.</div>
         <div class="secao">
           <div class="secao-title">O "apagão da IA"</div>
           <div class="atencao"><strong>Principal novidade do ciclo</strong>Ficam vedados publicar, republicar e impulsionar novos conteúdos sintéticos de IA que usem imagem, voz ou manifestação de candidato ou pessoa pública — mesmo rotulados — nas janelas abaixo.</div>
@@ -610,12 +649,12 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
           <div class="novidade"><strong>Novidade 2026 — "Seu Voto Importa"</strong>Transporte individual gratuito a eleitores com deficiência ou mobilidade reduzida. Pedido até <strong>14/09/2026</strong>. Vedado a candidatos e partidos se envolverem — pode caracterizar abuso de poder econômico.</div>
         </div>
         <div class="checklist">
-          <div class="checklist-header"><i class="ti ti-list-check" style="font-size:15px;color:var(--verde)"></i><span>Fase 4</span></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Apagão da IA: nenhum conteúdo novo de IA nas 72h finais de cada turno</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Impulsionamento suspenso de 48h antes a 24h depois da eleição</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">No dia: sem boca de urna, sem distribuição de bens, sem transporte de eleitores</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Fiscais e delegados credenciados (até 02/10 / 25/10) com crachá 12×10 cm</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Manifestação individual e silenciosa apenas; conteúdo de IA com aviso visível</div></div>
+          <div class="checklist-header"><i class="ti ti-list-check" style="font-size:15px;color:var(--verde)"></i><span>Reta final e dia do voto</span></div>
+          <div class="check-item"><span class="check-label">Apagão da IA: nenhum conteúdo novo de IA nas 72h finais de cada turno</span></div>
+          <div class="check-item"><span class="check-label">Impulsionamento suspenso de 48h antes a 24h depois da eleição</span></div>
+          <div class="check-item"><span class="check-label">No dia: sem boca de urna, sem distribuição de bens, sem transporte de eleitores</span></div>
+          <div class="check-item"><span class="check-label">Fiscais e delegados credenciados (até <span class="prazo-atencao">02/10 / 25/10</span>) com crachá 12×10 cm</span></div>
+          <div class="check-item"><span class="check-label">Manifestação individual e silenciosa apenas; conteúdo de IA com aviso visível</div></div>
         </div>
       </div>
     </article>
@@ -630,6 +669,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
       <div class="fase-divider"></div>
       <div class="fase-header-bottom"><button class="btn-share" onclick="compartilhar(this)"><i class="ti ti-link"></i> Copiar link desta fase</button></div>
       <div class="fase-body">
+        <div class="fase-resumo">Acabou a eleição, mas não o trabalho — contas, documentos e devoluções de sobras.</div>
         <div class="secao">
           <div class="secao-title">Quem presta contas</div>
           <div class="resumo"><strong>Em resumo</strong>Todos os candidatos — inclusive quem renunciou, desistiu, foi substituído ou teve registro indeferido, mesmo sem fazer campanha — e todos os órgãos partidários de todas as esferas, ainda que provisórios e sem movimentação.</div>
@@ -661,12 +701,12 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
           </div>
         </div>
         <div class="checklist">
-          <div class="checklist-header"><i class="ti ti-list-check" style="font-size:15px;color:var(--verde)"></i><span>Fase 5</span></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Contas finais: 1º turno até 03/11; 2º turno até 14/11</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Contador e advogado constituídos e atuantes desde o início da campanha</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Documentos, recibos e NFs conferidos, digitalizados e enviados ao contador</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Sobras devolvidas: FEFC ao Tesouro; Fundo Partidário ao partido</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Impulsionamento pago e não usado devolvido</div></div>
+          <div class="checklist-header"><i class="ti ti-list-check" style="font-size:15px;color:var(--verde)"></i><span>Depois das urnas</span></div>
+          <div class="check-item"><span class="check-label">Contas finais: 1º turno até <span class="prazo-urgente">03/11</span>; 2º turno até <span class="prazo-urgente">14/11</span></span></div>
+          <div class="check-item"><span class="check-label">Contador e advogado constituídos e atuantes desde o início da campanha</span></div>
+          <div class="check-item"><span class="check-label">Documentos, recibos e NFs conferidos, digitalizados e enviados ao contador</span></div>
+          <div class="check-item"><span class="check-label">Sobras devolvidas: FEFC ao Tesouro; Fundo Partidário ao partido</span></div>
+          <div class="check-item"><span class="check-label">Impulsionamento pago e não usado devolvido</div></div>
         </div>
       </div>
     </article>
@@ -681,6 +721,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
       <div class="fase-divider"></div>
       <div class="fase-header-bottom"><button class="btn-share" onclick="compartilhar(this)"><i class="ti ti-link"></i> Copiar link desta fase</button></div>
       <div class="fase-body">
+        <div class="fase-resumo">Agentes públicos têm obrigações o ano todo — independentemente de disputarem ou não um cargo.</div>
         <div class="secao">
           <div class="secao-title">Ponto central numa eleição geral</div>
           <div class="novidade"><strong>Novidade 2026 — Agentes municipais</strong>Em 2026 é eleição geral (presidente, governador, senador, deputados — sem cargo municipal em disputa). Os agentes municipais ainda se sujeitam às condutas vedadas, mas algumas vedações são vinculadas à circunscrição do pleito e não recaem automaticamente sobre o município.</div>
@@ -700,14 +741,14 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
         </div>
         <div class="checklist">
           <div class="checklist-header"><i class="ti ti-list-check" style="font-size:15px;color:var(--verde)"></i><span>Agentes municipais</span></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Bens públicos nunca usados em favor de candidatura (o ano todo)</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Servidores sem atividade eleitoral no expediente; redes pessoais só fora do horário</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Sem distribuição gratuita de bens/valores (salvo programas sociais pré-existentes e emergência)</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Publicidade institucional sem promoção pessoal nem favorecimento de candidatura</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Gestão de pessoal sem conexão eleitoral demonstrável</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Sem inaugurações com presença de candidatos a partir de 04/07</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Dados públicos jamais usados para mensagens eleitorais</div></div>
-          <div class="check-item" onclick="marcar(this)"><div class="check-toggle"><i class="ti ti-check"></i></div><div class="check-label">Dúvida? Consultar formalmente a Procuradoria antes de agir</div></div>
+          <div class="check-item"><span class="check-label">Bens públicos nunca usados em favor de candidatura (o ano todo)</span></div>
+          <div class="check-item"><span class="check-label">Servidores sem atividade eleitoral no expediente; redes pessoais só fora do horário</span></div>
+          <div class="check-item"><span class="check-label">Sem distribuição gratuita de bens/valores (salvo programas sociais pré-existentes e emergência)</span></div>
+          <div class="check-item"><span class="check-label">Publicidade institucional sem promoção pessoal nem favorecimento de candidatura</span></div>
+          <div class="check-item"><span class="check-label">Gestão de pessoal sem conexão eleitoral demonstrável</span></div>
+          <div class="check-item"><span class="check-label">Sem inaugurações com presença de candidatos a partir de 04/07</span></div>
+          <div class="check-item"><span class="check-label">Dados públicos jamais usados para mensagens eleitorais</span></div>
+          <div class="check-item"><span class="check-label">Dúvida? Consultar formalmente a Procuradoria antes de agir</div></div>
         </div>
       </div>
     </article>
@@ -810,7 +851,7 @@ const fasesPeriodo=[
   {id:'tl-fase2',nome:'Convenção e registro',desc:'20/07 a 15/08/2026',ini:[2026,7,20],fim:[2026,8,15]},
   {id:'tl-fase3',nome:'Campanha Eleitoral',desc:'16/08 a 03/10/2026',ini:[2026,8,16],fim:[2026,10,3]},
   {id:'tl-fase4',nome:'Reta final e dia do voto',desc:'01/10 a 26/10/2026',ini:[2026,10,1],fim:[2026,10,26]},
-  {id:'tl-fase5',nome:'Depois das urnas',desc:'Vigente até 14/11/2026',ini:[2026,10,27],fim:[2026,11,14]},
+  {id:'tl-fase5',nome:'Depois das urnas',desc:'Vigente até <span class="prazo-urgente">14/11</span>/2026',ini:[2026,10,27],fim:[2026,11,14]},
 ];
 function calcFaseAtual(){
   const h=hoje0();
@@ -867,9 +908,22 @@ const cronPrazos=[
     {data:[2026,11,14],label:'Prazo final: prestação de contas — 2º turno'},
   ]},
 ];
+let cronFiltro='todos';
+function setCronFiltro(f,btn){
+  cronFiltro=f;
+  document.querySelectorAll('.cron-filtro button').forEach(b=>b.classList.remove('ativo'));
+  btn.classList.add('ativo');
+  buildCronograma();
+}
 function buildCronograma(){
   const panel=document.getElementById('cron-panel');
+  // Manter filtro se já existe
+  const filtroEl=panel.querySelector('.cron-filtro');
   panel.innerHTML='';
+  // Adicionar barra de filtro
+  const filtro=document.createElement('div');filtro.className='cron-filtro';
+  filtro.innerHTML=`<button class="${cronFiltro==='todos'?'ativo':''}" onclick="setCronFiltro('todos',this)">Todos</button><button class="${cronFiltro==='futuros'?'ativo':''}" onclick="setCronFiltro('futuros',this)">Próximos</button>`;
+  panel.appendChild(filtro);
   cronPrazos.forEach(grupo=>{
     const gl=document.createElement('div');
     gl.className='cron-grupo-label';
@@ -900,8 +954,7 @@ function toggleCronograma(){
   if(!aberto)buildCronograma();
 }
 
-// CHECKLIST
-function marcar(item){item.classList.toggle('checked');}
+// CHECKLIST — checkboxes removidos, itens são apenas de leitura
 
 // ACORDEÃO
 function toggleFase(header){
@@ -919,8 +972,49 @@ function irParaFase(id){
   const icon=el.querySelector('.fase-toggle');
   const header=el.querySelector('.fase-header');
   if(!body.classList.contains('aberto')){body.classList.add('aberto');icon.classList.add('aberto');header.setAttribute('aria-expanded','true');}
-  setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),50);
+  // Scroll com offset do header fixo
+  setTimeout(()=>{
+    const headerH=document.querySelector('.header').offsetHeight;
+    const top=el.getBoundingClientRect().top+window.scrollY-headerH-12;
+    window.scrollTo({top,behavior:'smooth'});
+  },60);
+  // Modo foco: destacar a fase clicada
+  if(document.body.classList.contains('modo-foco')){
+    document.querySelectorAll('.fase-card').forEach(c=>c.classList.remove('foco-ativo'));
+    el.classList.add('foco-ativo');
+  }
 }
+
+// MODO FOCADO
+let focoAtivo=false;
+function toggleFoco(){
+  focoAtivo=!focoAtivo;
+  const btn=document.getElementById('btn-foco');
+  document.body.classList.toggle('modo-foco',focoAtivo);
+  btn.classList.toggle('ativo',focoAtivo);
+  btn.innerHTML=focoAtivo
+    ?'<i class="ti ti-focus-2"></i> Sair do foco'
+    :'<i class="ti ti-focus-2"></i> Foco';
+  if(focoAtivo){
+    // Destacar a primeira fase visível aberta
+    const aberta=document.querySelector('.fase-card .fase-body.aberto');
+    const card=aberta?aberta.closest('.fase-card'):document.querySelector('.fase-card');
+    document.querySelectorAll('.fase-card').forEach(c=>c.classList.remove('foco-ativo'));
+    if(card)card.classList.add('foco-ativo');
+  } else {
+    document.querySelectorAll('.fase-card').forEach(c=>c.classList.remove('foco-ativo'));
+  }
+}
+
+// Ao clicar num fase-header no modo foco, trocar o foco
+document.addEventListener('click',e=>{
+  if(!focoAtivo)return;
+  const header=e.target.closest('.fase-header');
+  if(!header)return;
+  const card=header.closest('.fase-card');
+  document.querySelectorAll('.fase-card').forEach(c=>c.classList.remove('foco-ativo'));
+  if(card)card.classList.add('foco-ativo');
+});
 
 // FILTRO PERFIL
 function setPerfil(p,btn){
