@@ -41,7 +41,7 @@
   --shadow:0 1px 3px rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.04);
 }
 @media(prefers-color-scheme:dark){
-  :root{
+  :root:not(.light){
     --bg:#0D1420;--bg2:#121E2A;--bg3:#1A2535;
     --text:#E8EEF4;--text2:#B5B1A6;--text3:#7A8A9A;
     --border:#1E2E3E;--border2:#2E3E4E;
@@ -49,6 +49,22 @@
     --verde:#B5B1A6;--verde-m:#C8C4BA;--verde-d:#9A968C;--verde-l:#1E2A38;
     --platina:#B5B1A6;--platina-l:#1A2535;
   }
+}
+html.dark{
+  --bg:#0D1420;--bg2:#121E2A;--bg3:#1A2535;
+  --text:#E8EEF4;--text2:#B5B1A6;--text3:#7A8A9A;
+  --border:#1E2E3E;--border2:#2E3E4E;
+  --shadow:0 1px 3px rgba(0,0,0,.3),0 4px 12px rgba(0,0,0,.2);
+  --verde:#B5B1A6;--verde-m:#C8C4BA;--verde-d:#9A968C;--verde-l:#1E2A38;
+  --platina:#B5B1A6;--platina-l:#1A2535;
+}
+html.light{
+  --bg:#F4F3F0;--bg2:#ffffff;--bg3:#EDECEA;
+  --text:#1A2B3C;--text2:#4A5A6A;--text3:#8A9AAA;
+  --border:#DDE2E8;--border2:#BDC5CF;
+  --shadow:0 1px 3px rgba(0,0,0,.06),0 4px 12px rgba(0,0,0,.04);
+  --verde:#1A2B3C;--verde-m:#2C4A63;--verde-d:#0D1920;--verde-l:#E8ECF0;
+  --platina:#B5B1A6;--platina-l:#F0EFEC;
 }
 body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
 
@@ -184,29 +200,43 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .resumo{border-left:3px solid var(--border2);background:var(--bg3);border-radius:0 var(--radius) var(--radius) 0;padding:10px 14px;margin:.75rem 0;font-size:13px;line-height:1.65;color:var(--text)}
 .resumo strong{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;color:var(--text3);font-weight:700}
 @media(prefers-color-scheme:dark){
-  .checklist-header{background:#1A2B3C!important;border-bottom:1px solid #2E3E4E}
-  .checklist-header span,.checklist-header i{color:#B5B1A6!important}
-  .check-item::before{color:#B5B1A6}
-  .widget-val{color:#B5B1A6}
-  .widget-fase-nome{color:#B5B1A6}
-  .fase-resumo{border-left-color:#B5B1A6;color:#B5B1A6}
-  .btn-share{color:#7A8A9A}
-  .btn-share:hover{color:#B5B1A6}
-  .glossario-toggle{color:#B5B1A6}
-  .gloss-item strong{color:#B5B1A6}
-  .tl-cron span{color:#B5B1A6!important}
-  .secao-title::after{background:#2E3E4E}
-  .badge-ativa{background:#fff;color:#1A2B3C}
-  .tl-fase.fase-ativa{background:#1A2B3C}
+  :root:not(.light) .checklist-header{background:#1A2B3C!important;border-bottom:1px solid #2E3E4E}
+  :root:not(.light) .checklist-header span,:root:not(.light) .checklist-header i{color:#B5B1A6!important}
+  :root:not(.light) .check-item::before{color:#B5B1A6}
+  :root:not(.light) .widget-val{color:#B5B1A6}
+  :root:not(.light) .widget-fase-nome{color:#B5B1A6}
+  :root:not(.light) .fase-resumo{border-left-color:#B5B1A6;color:#B5B1A6}
+  :root:not(.light) .glossario-toggle{color:#B5B1A6}
+  :root:not(.light) .gloss-item strong{color:#B5B1A6}
+  :root:not(.light) .tl-cron span{color:#B5B1A6!important}
+  :root:not(.light) .badge-ativa{background:#fff;color:#1A2B3C}
+  :root:not(.light) .tl-fase.fase-ativa{background:#1A2B3C}
 }
+html.dark .checklist-header{background:#1A2B3C!important;border-bottom:1px solid #2E3E4E}
+html.dark .checklist-header span,html.dark .checklist-header i{color:#B5B1A6!important}
+html.dark .check-item::before{color:#B5B1A6}
+html.dark .widget-val{color:#B5B1A6}
+html.dark .widget-fase-nome{color:#B5B1A6}
+html.dark .fase-resumo{border-left-color:#B5B1A6;color:#B5B1A6}
+html.dark .glossario-toggle{color:#B5B1A6}
+html.dark .gloss-item strong{color:#B5B1A6}
+html.dark .tl-cron span{color:#B5B1A6!important}
+html.dark .badge-ativa{background:#fff;color:#1A2B3C}
+html.dark .tl-fase.fase-ativa{background:#1A2B3C}
 @media(prefers-color-scheme:dark){
-  .novidade{background:#1e1500;border-color:#d4890a;color:#f5c842}
-  .novidade strong{color:#f0a820}
-  .atencao{background:#1a0404;border-color:#c0392b;color:#f09090}
-  .atencao strong{color:#e85050}
-  .resumo{background:#1a1a18;border-color:#4a4a47;color:var(--text2)}
-  .resumo strong{color:var(--text3)}
+  :root:not(.light) .novidade{background:#1e1500;border-color:#d4890a;color:#f5c842}
+  :root:not(.light) .novidade strong{color:#f0a820}
+  :root:not(.light) .atencao{background:#1a0404;border-color:#c0392b;color:#f09090}
+  :root:not(.light) .atencao strong{color:#e85050}
+  :root:not(.light) .resumo{background:#1a1a18;border-color:#4a4a47;color:var(--text2)}
+  :root:not(.light) .resumo strong{color:var(--text3)}
 }
+html.dark .novidade{background:#1e1500;border-color:#d4890a;color:#f5c842}
+html.dark .novidade strong{color:#f0a820}
+html.dark .atencao{background:#1a0404;border-color:#c0392b;color:#f09090}
+html.dark .atencao strong{color:#e85050}
+html.dark .resumo{background:#1a1a18;border-color:#4a4a47;color:var(--text2)}
+html.dark .resumo strong{color:var(--text3)}
 
 .perms-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:.75rem 0}
 .perm-col{border-radius:var(--radius);padding:12px 14px;font-size:13px}
@@ -222,15 +252,23 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .perm-col.ok li::before{content:"✓";position:absolute;left:0;color:#2d7a0a;font-weight:700}
 .perm-col.nao li::before{content:"✕";position:absolute;left:0;color:#c0392b;font-weight:700}
 @media(prefers-color-scheme:dark){
-  .perm-col.ok{background:#0a1a00;border-color:#4a8c1a;color:#a8d870}
-  .perm-col.ok h4{color:#7ec832}
-  .perm-col.ok li{color:#a8d870}
-  .perm-col.ok li::before{color:#7ec832}
-  .perm-col.nao{background:#1a0505;border-color:#c0392b;color:#f0a0a0}
-  .perm-col.nao h4{color:#e85050}
-  .perm-col.nao li{color:#f0a0a0}
-  .perm-col.nao li::before{color:#e85050}
+  :root:not(.light) .perm-col.ok{background:#0a1a00;border-color:#4a8c1a;color:#a8d870}
+  :root:not(.light) .perm-col.ok h4{color:#7ec832}
+  :root:not(.light) .perm-col.ok li{color:#a8d870}
+  :root:not(.light) .perm-col.ok li::before{color:#7ec832}
+  :root:not(.light) .perm-col.nao{background:#1a0505;border-color:#c0392b;color:#f0a0a0}
+  :root:not(.light) .perm-col.nao h4{color:#e85050}
+  :root:not(.light) .perm-col.nao li{color:#f0a0a0}
+  :root:not(.light) .perm-col.nao li::before{color:#e85050}
 }
+html.dark .perm-col.ok{background:#0a1a00;border-color:#4a8c1a;color:#a8d870}
+html.dark .perm-col.ok h4{color:#7ec832}
+html.dark .perm-col.ok li{color:#a8d870}
+html.dark .perm-col.ok li::before{color:#7ec832}
+html.dark .perm-col.nao{background:#1a0505;border-color:#c0392b;color:#f0a0a0}
+html.dark .perm-col.nao h4{color:#e85050}
+html.dark .perm-col.nao li{color:#f0a0a0}
+html.dark .perm-col.nao li::before{color:#e85050}
 
 .checklist{margin-top:1.25rem;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
 .checklist-header{padding:10px 16px;background:var(--verde);display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border)}
@@ -273,6 +311,10 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .footer-aviso{font-size:11px;color:var(--text3);line-height:1.6;max-width:480px;padding-top:.5rem;border-top:1px solid var(--border)}
 
 .hidden-perfil{display:none!important}
+
+/* BOTÃO TEMA */
+.btn-tema{width:34px;height:34px;border-radius:50%;border:1px solid var(--border2);background:var(--bg3);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;transition:all .2s;flex-shrink:0}
+.btn-tema:hover{background:var(--bg2);border-color:var(--verde)}
 
 /* MODO FOCADO */
 .btn-foco{display:flex;align-items:center;gap:6px;padding:8px 13px;border:1px solid var(--border2);border-radius:var(--radius);font-size:12px;font-weight:500;cursor:pointer;background:var(--bg2);color:var(--text2);transition:all .15s;font-family:var(--font);white-space:nowrap;box-shadow:var(--shadow)}
@@ -344,6 +386,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
       <button class="btn-perfil" onclick="setPerfil('agente',this)">Agente público</button>
       <button class="btn-perfil" onclick="setPerfil('eleitor',this)">Eleitor</button>
     </div>
+    <button class="btn-tema" id="btn-tema" onclick="toggleTema()" title="Alternar modo claro/escuro">🌙</button>
   </div>
 </header>
 
@@ -1174,6 +1217,32 @@ if(window.location.hash){
     setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),300);
   }
 }
+
+// TEMA CLARO/ESCURO
+function getPrefersDark(){
+  return window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches;
+}
+function getTema(){
+  return localStorage.getItem('tema')||'auto';
+}
+function aplicarTema(tema){
+  const html=document.documentElement;
+  const btn=document.getElementById('btn-tema');
+  html.classList.remove('dark','light');
+  if(tema==='dark'){html.classList.add('dark');if(btn)btn.textContent='☀️';}
+  else if(tema==='light'){html.classList.add('light');if(btn)btn.textContent='🌙';}
+  else{if(btn)btn.textContent=getPrefersDark()?'☀️':'🌙';}
+  localStorage.setItem('tema',tema);
+}
+function toggleTema(){
+  const atual=getTema();
+  const prefersDark=getPrefersDark();
+  if(atual==='auto'){aplicarTema(prefersDark?'light':'dark');}
+  else if(atual==='dark'){aplicarTema('light');}
+  else{aplicarTema('dark');}
+}
+// Aplicar tema salvo ao carregar
+aplicarTema(getTema());
 
 // GLOSSÁRIO
 function toggleGlossario(){
