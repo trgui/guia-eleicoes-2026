@@ -319,6 +319,28 @@ html.dark .perm-col.nao li::before{color:#e85050}
 
 .hidden-perfil{display:none!important}
 
+/* TABELA PROP */
+.prop-table{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin:.75rem 0;font-size:13px}
+.prop-table-header{display:grid;grid-template-columns:180px 1fr 1fr;background:var(--bg3);border-bottom:2px solid var(--border)}
+.prop-table-header>div{padding:8px 12px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3)}
+.prop-table-row{display:grid;grid-template-columns:180px 1fr 1fr;border-bottom:1px solid var(--border)}
+.prop-table-row:last-child{border-bottom:none}
+.prop-table-row:nth-child(even){background:var(--bg3)}
+.prop-table-cat{padding:10px 12px;font-size:12px;color:var(--text2);border-right:1px solid var(--border);display:flex;align-items:center}
+.prop-table-ok{padding:10px 12px;color:#173404;border-right:1px solid var(--border);background:rgba(234,243,222,.35);line-height:1.5}
+.prop-table-nao{padding:10px 12px;color:#4a0f0f;background:rgba(252,235,235,.35);line-height:1.5}
+@media(prefers-color-scheme:dark){
+  .prop-table-ok{background:rgba(13,31,0,.4);color:#a8d870}
+  .prop-table-nao{background:rgba(40,10,10,.4);color:#f0a0a0}
+}
+html.dark .prop-table-ok{background:rgba(13,31,0,.4);color:#a8d870}
+html.dark .prop-table-nao{background:rgba(40,10,10,.4);color:#f0a0a0}
+@media(max-width:760px){
+  .prop-table-header,.prop-table-row{grid-template-columns:1fr}
+  .prop-table-cat{border-right:none;border-bottom:1px solid var(--border);background:var(--bg3);font-weight:600}
+  .prop-table-ok{border-right:none;border-bottom:1px solid var(--border)}
+}
+
 /* PERFIL NA SIDEBAR */
 .sidebar-perfil{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:12px 14px;box-shadow:var(--shadow)}
 .sidebar-perfil-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);display:block;margin-bottom:8px}
@@ -484,7 +506,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
     <article class="fase-card fade-card" id="fase1" data-perfis="candidato,eleitor">
       <div class="fase-header" onclick="toggleFase(this)" aria-expanded="true">
         <div class="fase-num" style="background:var(--fase1-l);color:var(--fase1)">1</div>
-        <div class="fase-info"><h2>Pré-campanha</h2><p>Até 15 de agosto de 2026 · Organizar partido, testar elegibilidade, divulgar pré-candidatura</p></div>
+        <div class="fase-info"><h2>Pré-campanha</h2><p>Período que antecede a campanha, antes de 16/08/2026 · Organizar partido, testar elegibilidade, divulgar pré-candidatura</p></div>
         <i class="ti ti-chevron-down fase-toggle aberto" aria-hidden="true"></i>
       </div>
       <div class="fase-divider"></div>
@@ -493,21 +515,23 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
         <div class="fase-resumo">O que você pode fazer antes da campanha começar — e o que já está proibido desde já.</div>
         <div class="secao">
           <div class="secao-title">O que pode (e o que não pode)</div>
-          <div class="secao-texto"><p>A propaganda eleitoral só é permitida a partir de <strong>16/08/2026</strong>. Antes disso, o pré-candidato pode divulgar a pré-candidatura e apresentar projetos — <strong>desde que não peça voto de forma explícita</strong>. Lembre: pedir voto não se resume ao "vote em mim"; qualquer expressão com o mesmo sentido conta.</p></div>
+          <div class="secao-texto"><p>A propaganda eleitoral só é permitida a partir de <strong>16/08/2026</strong>. Antes disso, o pré-candidato pode divulgar a pré-candidatura e apresentar projetos — <strong>desde que não peça voto de forma explícita</strong>. O art. 36-A da Lei nº 9.504/97 estabelece o que não é considerado propaganda antecipada.</p></div>
           <div class="perms-grid">
             <div class="perm-col ok"><h4>✓ Permitido</h4><ul>
-              <li>Entrevistas, debates e programas (rádio, TV, internet)</li>
+              <li>Entrevistas, debates e programas (rádio, TV, internet), observado pelas emissoras o tratamento isonômico</li>
               <li>Encontros e seminários fechados do partido</li>
               <li>Prévias partidárias com debates entre pré-candidatos</li>
               <li>Divulgar atos parlamentares sem pedir voto</li>
               <li>Lives nos perfis do pré-candidato, partido ou coligação</li>
+              <li>Transmissão das convenções em live pelas plataformas virtuais (Instagram, YouTube etc.)</li>
+              <li>Às expensas do partido, realização de reuniões com a sociedade civil, divulgando propostas e discutindo políticas públicas</li>
+              <li>Exaltação das qualidades pessoais de pré-candidatos, manifestação de opinião política e divulgação de propostas</li>
               <li>Impulsionar conteúdo político sem pedido de voto</li>
               <li>Arrecadação por vaquinha virtual a partir de 15/05</li>
             </ul></div>
             <div class="perm-col nao"><h4>✕ Proibido</h4><ul>
               <li>Pedido explícito de voto (qualquer forma)</li>
               <li>Número de urna, jingle e outdoor</li>
-              <li>Material com cara de campanha</li>
               <li>Transmissão ao vivo de prévias por rádio e TV</li>
               <li>Pré-campanha massiva com grande investimento</li>
               <li>Contratar alguém para divulgar conteúdo em favor de terceiros</li>
@@ -517,12 +541,43 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
         <div class="secao">
           <div class="secao-title">Novidades 2026</div>
           <div class="novidade"><strong>Novidade 2026 — RDE (Declaração de Elegibilidade)</strong>O <span class="termo">RDE<span class="tooltip-box">Criado pela LC 219/2025. Permite ao pré-candidato levar dúvida sobre elegibilidade à Justiça Eleitoral antes da campanha.</span></span> permite levar dúvidas sobre elegibilidade à Justiça Eleitoral ainda na pré-campanha. Quem tem incertezas sobre condenações, contas rejeitadas ou Lei da Ficha Limpa pode pedir uma declaração prévia. Exige anuência expressa do partido ou federação.</div>
-          <div class="novidade"><strong>Novidade 2026 — Arrecadação antecipada</strong>A partir de <strong>15/05/2026</strong> o pré-candidato já pode arrecadar por crowdfunding (vaquinha virtual). Os valores são liberados apenas após o cumprimento dos requisitos de registro: CNPJ ativo, pedido protocolado e recibos emitidos.</div>
+          <div class="resumo"><strong>Arrecadação antecipada</strong>A partir de <strong>15/05/2026</strong> o pré-candidato já pode arrecadar por crowdfunding (vaquinha virtual). Os valores são liberados apenas após o cumprimento dos requisitos de registro: CNPJ ativo, pedido protocolado e recibos emitidos.</div>
         </div>
+
         <div class="secao">
-          <div class="secao-title">Federações partidárias</div>
-          <div class="resumo"><strong>Em resumo</strong>União de dois ou mais partidos registrados no TSE por no mínimo 4 anos, com estatuto registrado no TSE até <strong>4 de abril de 2026</strong>. Se houver suspensão judicial do órgão de qualquer partido da federação, toda ela fica impedida de participar na circunscrição.</div>
+          <div class="secao-title">Observações legais importantes</div>
+          <div class="atencao">
+            <strong>Propaganda antecipada — art. 3º-A</strong>
+            <p>Considera-se propaganda antecipada passível de multa aquela divulgada extemporaneamente cuja mensagem contenha pedido explícito de voto, ou que veicule conteúdo eleitoral em local vedado ou por meio, forma ou instrumento proscrito no período de campanha (p. ex., outdoor, telemarketing etc.).</p>
+            <p style="margin-top:.5rem">O pedido explícito de voto não se limita ao uso da locução "vote em", podendo ser inferido de termos e expressões que transmitam o mesmo conteúdo (art. 3º-A, parágrafo único).</p>
+          </div>
+          <div class="resumo">
+            <strong>Impulsionamento na pré-campanha — art. 3º-B</strong>
+            <p>Requisitos cumulativos para impulsionamento pago de conteúdo político-eleitoral na pré-campanha:</p>
+            <ul style="list-style:none;padding:0;margin-top:.5rem">
+              <li style="padding:4px 0;border-bottom:1px solid var(--border)"><span style="color:var(--verde);font-weight:700;margin-right:6px">I.</span>O serviço deve ser contratado por partido político ou pela pessoa natural que pretenda se candidatar diretamente com o provedor de aplicação</li>
+              <li style="padding:4px 0;border-bottom:1px solid var(--border)"><span style="color:var(--verde);font-weight:700;margin-right:6px">II.</span>Não haver pedido explícito de voto</li>
+              <li style="padding:4px 0;border-bottom:1px solid var(--border)"><span style="color:var(--verde);font-weight:700;margin-right:6px">III.</span>Os gastos devem ser moderados, proporcionais e transparentes</li>
+              <li style="padding:4px 0;border-bottom:1px solid var(--border)"><span style="color:var(--verde);font-weight:700;margin-right:6px">IV.</span>Identificação inequívoca de que se trata de conteúdo impulsionado, em repositório público com dados sobre o impulsionamento</li>
+              <li style="padding:4px 0"><span style="color:var(--verde);font-weight:700;margin-right:6px">V.</span>Devem ser observadas as regras aplicáveis ao impulsionamento durante a campanha</li>
+            </ul>
+          </div>
         </div>
+
+        <div class="secao">
+          <div class="secao-title">Propaganda intrapartidária</div>
+          <div class="secao-texto"><p>Ocorre na <strong>quinzena anterior à Convenção</strong> e se destina a pedir apoio político de filiados e dirigentes à pré-candidatura. A propaganda é interna, limitada ao universo partidário.</p></div>
+          <div class="perms-grid">
+            <div class="perm-col ok"><h4>✓ Permitido</h4><ul>
+              <li>Fixar faixas e cartazes nas localidades próximas àquela destinada à convenção</li>
+            </ul></div>
+            <div class="perm-col nao"><h4>✕ Proibido</h4><ul>
+              <li>Uso de rádio, TV e outdoors</li>
+              <li>Materiais entregues além do universo partidário para pedir votos</li>
+            </ul></div>
+          </div>
+        </div>
+
         <div class="checklist">
           <div class="checklist-header"><i class="ti ti-list-check" style="font-size:15px;color:var(--verde)"></i><span>Pré-campanha</span></div>
           <div class="check-item"><span class="check-label">Estatuto do partido/federação registrado no TSE até 04/04/2026</span></div>
@@ -540,17 +595,35 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
     <article class="fase-card fade-card" id="fase2" data-perfis="candidato">
       <div class="fase-header" onclick="toggleFase(this)" aria-expanded="false">
         <div class="fase-num" style="background:var(--fase2-l);color:var(--fase2)">2</div>
-        <div class="fase-info"><h2>Convenção e registro</h2><p>20/07 a 15/08/2026 · Escolha de candidatos, coligações e registro na Justiça Eleitoral</p></div>
+        <div class="fase-info"><h2>Convenção e registro</h2><p>20/07 a 15/08/2026 · Definição de candidatos, números de urna, coligações e registro na Justiça Eleitoral</p></div>
         <i class="ti ti-chevron-down fase-toggle" aria-hidden="true"></i>
       </div>
       <div class="fase-divider"></div>
       <div class="fase-header-bottom"><button class="btn-share" onclick="compartilhar(this)"><i class="ti ti-link"></i> Copiar link desta fase</button></div>
       <div class="fase-body">
-        <div class="fase-resumo">A largada oficial: escolha de candidatos, documentação e prazo para registro na Justiça Eleitoral.</div>
+        <div class="fase-resumo">Nas convenções serão decididos os candidatos aos cargos em disputa, nomes e número de urnas, além de coligações. Após a convenção, segue-se o registro na Justiça Eleitoral.</div>
         <div class="secao">
-          <div class="secao-title">Convenções e ata</div>
-          <div class="secao-texto"><p>Candidatos são escolhidos entre <strong>20/07 e 05/08</strong>. A convenção pode ser presencial, virtual ou híbrida. Nas virtuais, a presença é registrada por assinatura eletrônica, gravação de áudio/vídeo ou outro meio que identifique os presentes.</p></div>
-          <div class="atencao"><strong>Atenção — Fim da dispensa de impressão</strong>Em 2026 não existe mais a opção de registrar só no <span class="termo">CANDex<span class="tooltip-box">Sistema digital da Justiça Eleitoral para envio de candidaturas, atas de convenção e documentos.</span></span>: a ata deve ser impressa para coleta de assinaturas e conservada até 15 dias após a diplomação.</div>
+          <div class="secao-title">Convenções</div>
+          <div class="secao-texto">
+            <p>Candidatos são escolhidos entre <strong>20/07 e 05/08</strong>. A convenção pode ser presencial, virtual ou híbrida. Nas virtuais, a presença é registrada por assinatura eletrônica, gravação de áudio/vídeo ou outro meio que identifique os presentes.</p>
+            <p>No caso das federações, a convenção ocorrerá de forma unificada, devendo participar todos os partidos políticos que tenham órgão de direção partidária na circunscrição (art. 6º, §2º-A).</p>
+            <p>Poderá participar das eleições o partido político ou a federação que, até 6 meses antes da data do pleito, tenha registrado seu estatuto no TSE. Além disso, será necessário que os partidos políticos tenham, até a data da convenção, órgão de direção definitivo ou provisório constituído na circunscrição, devidamente anotado no tribunal eleitoral competente.</p>
+            <p>Para ser candidato, não é obrigatória a participação na Convenção Partidária, porém o filiado indicado para qualquer candidatura deverá declarar sua anuência prévia.</p>
+            <p>As convenções poderão ser realizadas em prédios públicos, de forma gratuita. Deverá ser comunicada com antecedência mínima de uma semana, ser realizada vistoria e respeitar a ordem de protocolo, caso outros partidos tenham solicitado.</p>
+          </div>
+          <div class="atencao"><strong>Atenção — Ata da Convenção</strong>Em 2026 não existe mais a opção de registrar só no <span class="termo">CANDex<span class="tooltip-box">Sistema digital da Justiça Eleitoral para envio de candidaturas, atas de convenção e documentos.</span></span>: a ata deve ser impressa para coleta de assinaturas e conservada até 15 dias após a diplomação.</div>
+          <div class="resumo">
+            <strong>Dados obrigatórios na Ata (art. 7º)</strong>
+            <ul style="list-style:none;padding:0;margin-top:.4rem">
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)"><span style="color:var(--verde);font-weight:700;margin-right:6px">I.</span>Local, data e hora</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)"><span style="color:var(--verde);font-weight:700;margin-right:6px">II.</span>Identificação e qualificação de quem presidiu</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)"><span style="color:var(--verde);font-weight:700;margin-right:6px">III.</span>Deliberação para quais cargos concorrerá</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)"><span style="color:var(--verde);font-weight:700;margin-right:6px">IV.</span>No caso de coligação: seu nome, siglas dos partidos e nome do representante</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)"><span style="color:var(--verde);font-weight:700;margin-right:6px">V.</span>Identificação do representante da federação</li>
+              <li style="padding:3px 0"><span style="color:var(--verde);font-weight:700;margin-right:6px">VI.</span>Relação dos candidatos escolhidos: cargo, número de urna, nome completo, nome para urna, inscrição eleitoral, CPF e gênero</li>
+            </ul>
+            <p style="margin-top:.75rem">A Ata e a Lista de Presença deverão ser incluídas no CANDex até 1 (um) dia após a realização da convenção. Coligações continuam sendo permitidas apenas para eleições majoritárias.</p>
+          </div>
         </div>
         <div class="secao">
           <div class="secao-title">Cota de gênero</div>
@@ -639,7 +712,31 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
       <div class="fase-divider"></div>
       <div class="fase-header-bottom"><button class="btn-share" onclick="compartilhar(this)"><i class="ti ti-link"></i> Copiar link desta fase</button></div>
       <div class="fase-body">
-        <div class="fase-resumo">A campanha está no ar — regras de propaganda, financiamento, IA e prestação de contas parcial.</div>
+        <div class="fase-resumo">A campanha está no ar a partir de 16/08/2026 — regras de propaganda, LGPD, financiamento, IA e prestação de contas parcial.</div>
+        <div class="secao">
+          <div class="secao-title">LGPD — Proteção de Dados na Campanha</div>
+          <div class="secao-texto">
+            <p>Desde 2021, as normativas da Lei Geral de Proteção de Dados (Lei nº 13.709/2018) são incluídas nas resoluções eleitorais. Candidatos, partidos, federações e coligações devem respeitar a finalidade para a qual o dado pessoal foi coletado.</p>
+            <p>É obrigatório disponibilizar, nos endereços eletrônicos de propaganda eleitoral, um <strong>canal de comunicação claro e acessível</strong> que permita ao titular obter confirmação do tratamento de seus dados e exercer os direitos previstos no art. 18 da LGPD (eliminação, descadastramento etc.).</p>
+            <p>O canal de comunicação e o nome do encarregado de tratamento de dados serão divulgados pela Justiça Eleitoral junto às informações da candidatura.</p>
+          </div>
+          <div class="resumo">
+            <strong>Registro das operações de tratamento de dados — o que deve constar</strong>
+            <ul style="list-style:none;padding:0;margin-top:.4rem;font-size:13px">
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">• O tipo do dado e sua origem · Categorias de titulares</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">• Descrição do processo e da finalidade · Fundamento legal</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">• Duração prevista e período de armazenamento</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">• Descrição do fluxo de compartilhamento de dados, se couber</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">• Instrumentos contratuais com papéis e responsabilidades de controladores e operadores</li>
+              <li style="padding:3px 0">• Medidas de segurança utilizadas, incluindo boas práticas e políticas de governança</li>
+            </ul>
+          </div>
+          <div class="novidade">
+            <strong>Manual do TSE sobre LGPD</strong>
+            <a href="https://www.tse.jus.br/institucional/catalogo-de-publicacoes/lista-do-catalogo-de-publicacoes/publicacoes/g/guia-orientativo-aplicacao-da-lei-geral-de-protecao-de-dados-pessoais-lgpd" target="_blank" rel="noopener" style="color:inherit;display:flex;align-items:center;gap:6px;margin-top:4px"><i class="ti ti-external-link"></i>Guia Orientativo de Aplicação da LGPD — TSE</a>
+          </div>
+        </div>
+
         <div class="secao">
           <div class="secao-title">Inteligência artificial — regras 2026</div>
           <div class="novidade"><strong>Novidade 2026 — Rotulagem obrigatória de IA</strong>Todo conteúdo gerado ou significativamente alterado por IA deve ter aviso explícito: no início de áudios, por marca d'água em imagens e vídeos, em cada página de impresso. Os provedores de impulsionamento devem disponibilizar campo específico para declarar uso de IA.</div>
@@ -660,30 +757,185 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
           <div class="atencao"><strong>Atenção — Ônus da prova invertido</strong>Nas representações sobre IA, o juiz pode inverter o ônus da prova. Documente e preserve prompts, versões e edições do processo criativo.</div>
         </div>
         <div class="secao">
-          <div class="secao-title">Financiamento da campanha</div>
-          <div class="resumo"><strong>Limites de doação — pessoa física</strong>Até 10% dos rendimentos brutos do ano anterior em dinheiro · Bens estimáveis até R$ 40.000,00 · Doação ≥ R$ 1.064,10 só por transferência ou cheque nominal · Recursos próprios: até 10% do teto do cargo.</div>
-          <div class="novidade"><strong>Novidade 2026 — Pix</strong>O Pix pode ser usado para arrecadar (chave = CNPJ de campanha) e para pagar gastos. Dispensa-se recibo em doações recebidas por Pix, mas é obrigatório manter relatório com CPF e valor de cada doação.</div>
-          <div class="atencao"><strong>Fontes proibidas</strong>Pessoas jurídicas · Origem estrangeira · Quem exerce atividade por concessão pública · Recursos de origem não identificada (vão ao Tesouro).</div>
+          <div class="secao-title">Arrecadação e gastos de recursos</div>
+          <div class="secao-texto">
+            <p>Pessoas físicas podem realizar doações financeiras ou estimáveis em dinheiro, limitadas a <strong>10% dos rendimentos brutos</strong> auferidos pelo doador no ano anterior à eleição. Este limite não se aplica a doações estimáveis relativas a bens móveis/imóveis do próprio doador ou prestação de serviços próprios, desde que o valor não ultrapasse <strong>R$ 40.000,00</strong>.</p>
+            <p>Recursos próprios do candidato podem ser utilizados até <strong>10% dos limites de gastos</strong> do cargo em que concorrer. Os recursos próprios de candidatos a vice ou suplente são somados aos do titular.</p>
+          </div>
+          <div class="resumo">
+            <strong>Pré-requisitos para arrecadação (art. 3º, Res. TSE nº 23.607)</strong>
+            <ul style="list-style:none;padding:0;margin-top:.4rem;font-size:13px">
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)"><span style="font-weight:700;margin-right:6px">1.</span>Requerimento do registro de candidatura (até 15 de agosto)</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)"><span style="font-weight:700;margin-right:6px">2.</span>CNPJ de campanha</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)"><span style="font-weight:700;margin-right:6px">3.</span>Abertura da conta específica de campanha</li>
+              <li style="padding:3px 0"><span style="font-weight:700;margin-right:6px">4.</span>Emissão dos recibos eleitorais</li>
+            </ul>
+          </div>
+          <div class="resumo" style="margin-top:.75rem">
+            <strong>Formas de arrecadação permitidas</strong>
+            <ul style="list-style:none;padding:0;margin-top:.4rem;font-size:13px">
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">• Transação bancária com CPF do doador obrigatoriamente identificado</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">• Doação ou cessão de bens/serviços estimáveis, com comprovação de propriedade</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">• Crowdfunding por instituições credenciadas</li>
+              <li style="padding:3px 0">• <strong>Pix</strong> — chave deve ser o CNPJ de campanha; dispensado recibo, mas obrigatório manter relatório com CPF e valor de cada doação</li>
+            </ul>
+            <p style="margin-top:.5rem;font-size:12px">Doações financeiras de valor igual ou superior a <strong>R$ 1.064,10</strong> só podem ser realizadas mediante transferência eletrônica ou cheque cruzado e nominal.</p>
+          </div>
+          <div class="atencao" style="margin-top:.75rem">
+            <strong>Fontes vedadas</strong>
+            <ul style="list-style:none;padding:0;margin-top:.4rem;font-size:13px">
+              <li style="padding:2px 0">• Pessoas jurídicas (nem repasse de doações anteriores ao partido)</li>
+              <li style="padding:2px 0">• Origem estrangeira (o que se veda é a origem; estrangeiros com renda em solo brasileiro podem doar)</li>
+              <li style="padding:2px 0">• Pessoa física que exerça atividade por concessão ou permissão pública</li>
+              <li style="padding:2px 0">• Recursos de origem não identificada — recolhidos ao Tesouro Nacional</li>
+              <li style="padding:2px 0">• Conta bancária incorreta (ex: recursos do FEFC depositados em conta do Fundo Partidário)</li>
+            </ul>
+            <p style="margin-top:.5rem;font-size:12px">Em caso de recebimento de origem vedada, é necessária a <strong>imediata devolução</strong> ao doador, com registro na prestação de contas.</p>
+          </div>
+          <div class="resumo" style="margin-top:.75rem">
+            <strong>Gastos eleitorais — o que pode ser contabilizado</strong>
+            <p style="font-size:12px;margin-top:.4rem">Material impresso · Publicidade em qualquer meio · Aluguel de locais · Despesas postais · Comitês de campanha · Remuneração de prestadores · Carros de som · Comícios · Pesquisas eleitorais · Conteúdo na internet · Jingles e slogans · Doações a outros candidatos · Deslocamentos · Segurança · Multas eleitorais · Programas de rádio e TV</p>
+            <p style="font-size:12px;margin-top:.5rem">Ficam <strong>excluídos dos limites</strong>: honorários contábeis e advocatícios relacionados à campanha; militância não remunerada; pessoal de apoio administrativo; fiscais e delegados credenciados.</p>
+            <p style="font-size:12px;margin-top:.5rem"><strong>Limites específicos:</strong> Alimentação: até 10% do total de gastos · Aluguel de veículos: até 20% do total de gastos.</p>
+          </div>
+          <div class="resumo" style="margin-top:.75rem">
+            <strong>Contratação de cabos eleitorais</strong>
+            <ul style="list-style:none;padding:0;margin-top:.4rem;font-size:13px">
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">Municípios com até 30 mil eleitores: máximo de 1% do eleitorado</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">Demais municípios: 300 + 1 para cada mil pessoas acima do limite anterior</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">Presidente/Senador: limite do município com maior eleitorado no estado</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">Dep. Federal: 70% do limite do município com mais eleitores na circunscrição</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">Governador: dobro do limite no município com mais eleitores no estado</li>
+              <li style="padding:3px 0">Dep. Estadual: 50% do limite estabelecido para deputados federais</li>
+            </ul>
+          </div>
         </div>
         <div class="secao">
-          <div class="secao-title">Propaganda: permissões e vedações</div>
-          <div class="perms-grid">
-            <div class="perm-col ok"><h4>Permitido</h4><ul>
-              <li>Comícios das 8h às 24h, comunicado com 24h de antecedência</li>
-              <li>Adesivo microperfurado no para-brisa traseiro inteiro</li>
-              <li>Folhetos e santinhos com CNPJ/CPF e tiragem</li>
-              <li>Carreatas e passeatas das 8h às 22h da véspera</li>
-              <li>Bandeiras ao longo das vias das 6h às 22h</li>
-              <li>Impulsionamento com CNPJ e "Propaganda Eleitoral"</li>
-            </ul></div>
-            <div class="perm-col nao"><h4>Proibido</h4><ul>
-              <li>Outdoor em qualquer lugar (inclusive eletrônico)</li>
-              <li>Telemarketing em qualquer horário</li>
-              <li>Showmício com artistas para animar o público</li>
-              <li>Distribuição de brindes ou bens ao eleitor</li>
-              <li>Propaganda negativa no impulsionamento</li>
-              <li>Robôs, perfis falsos e disparo em massa</li>
-            </ul></div>
+          <div class="secao-title">Propaganda eleitoral</div>
+          <div class="secao-texto">
+            <p>Toda e qualquer propaganda eleitoral deve ser feita em <strong>língua nacional</strong> e mencionar o nome do candidato e a legenda partidária. Nas candidaturas majoritárias, o nome do vice ou dos suplentes deve figurar em tamanho não inferior a 30% ao nome do titular.</p>
+          </div>
+          <div class="resumo">
+            <strong>Comitê</strong>
+            <p>Candidatos, partidos e coligações podem inscrever sua designação em formato que não se assemelhe a outdoor, não podendo exceder <strong>4m²</strong> no comitê central. Nos demais comitês, o limite é de <strong>0,5m²</strong>. Imagens sobrepostas ou com pouco espaçamento podem ser consideradas como geradoras de efeito outdoor. Para ser considerado Comitê Central, deve ter havido prévia comunicação no registro de candidatura.</p>
+          </div>
+
+          <!-- TABELA PROPAGANDA IMPRESSA E MATERIAL p21-22 -->
+          <div class="prop-table">
+            <div class="prop-table-header">
+              <div class="prop-table-cat">Tipo</div>
+              <div class="prop-table-ok">✓ Permitido</div>
+              <div class="prop-table-nao">✕ Vedado</div>
+            </div>
+            <div class="prop-table-row">
+              <div class="prop-table-cat"><strong>Propaganda Impressa</strong></div>
+              <div class="prop-table-ok">Deve conter: nome da gráfica, CNPJ da gráfica, CNPJ de quem contratou e tiragem</div>
+              <div class="prop-table-nao">Apócrifo (sem dados de identificação obrigatórios); Derrame de material de propaganda</div>
+            </div>
+            <div class="prop-table-row">
+              <div class="prop-table-cat"><strong>Adesivo</strong></div>
+              <div class="prop-table-ok">Fixação em automotores (carros, caminhões, bicicletas e congêneres), respeitado o tamanho de 0,5m²</div>
+              <div class="prop-table-nao">Envelopamento de veículo; Sobreposição de adesivos para causar efeito outdoor</div>
+            </div>
+            <div class="prop-table-row">
+              <div class="prop-table-cat"><strong>Propaganda em Bens Públicos</strong></div>
+              <div class="prop-table-ok">Instalação de mesas móveis e bandeiras ao longo da via, das 6h às 22h, sem impedir o trânsito</div>
+              <div class="prop-table-nao">Fixação permanente em bens públicos ou fora do horário permitido (placas, bonecos, faixas e assemelhados)</div>
+            </div>
+            <div class="prop-table-row">
+              <div class="prop-table-cat"><strong>Propaganda em veículos de uso comum</strong><span style="display:block;font-size:11px;color:var(--text3)">(aplicativos, transporte coletivo)</span></div>
+              <div class="prop-table-ok">—</div>
+              <div class="prop-table-nao">Distribuição ou fixação de panfletos e adesivos</div>
+            </div>
+            <div class="prop-table-row">
+              <div class="prop-table-cat"><strong>Propaganda em bens particulares</strong><span style="display:block;font-size:11px;color:var(--text3)">(casas)</span></div>
+              <div class="prop-table-ok">Fixação de adesivos que não excedam 0,5m²</div>
+              <div class="prop-table-nao">Pagamento em troca de pintura em fachadas, muros, paredes, carros, placas ou faixas</div>
+            </div>
+            <div class="prop-table-row">
+              <div class="prop-table-cat"><strong>Propaganda em jornais</strong></div>
+              <div class="prop-table-ok">Limitada a 10 anúncios por jornal, até 2 dias antes da eleição, informando o valor pago — tamanho máximo de 1/8 de página de jornal e 1/4 de página de revista ou tabloide</div>
+              <div class="prop-table-nao">Extrapolar o limite de publicações e os tamanhos indicados</div>
+            </div>
+            <div class="prop-table-row">
+              <div class="prop-table-cat"><strong>Contratação de panfleteiros e cabos eleitorais</strong></div>
+              <div class="prop-table-ok">Observados os limites legais: 1% do eleitorado em municípios com até 30 mil eleitores; para municípios maiores, 300 + 1 por mil eleitores acima desse limite</div>
+              <div class="prop-table-nao">Abuso na quantidade de colaboradores contratados</div>
+            </div>
+          </div>
+
+          <!-- TABELA PROPAGANDA NA INTERNET p23-24 -->
+          <div class="secao-title" style="margin-top:1.5rem">Propaganda na Internet</div>
+          <div class="secao-texto">
+            <p>O candidato, partido ou coligação deverá comunicar à Justiça Eleitoral todos os sites que divulgar a campanha — no registro e sempre que criar novos perfis/URLs.</p>
+          </div>
+          <div class="novidade">
+            <strong>Dica importante</strong>
+            Por cautela, é recomendável que conste o CNPJ de campanha nas postagens de redes sociais, ainda que não impulsionadas. Impulsionar apenas após ter certeza de que todos os requisitos foram preenchidos.
+          </div>
+          <div class="resumo" style="margin:.75rem 0">
+            <strong>Critérios obrigatórios do impulsionamento</strong>
+            <ol style="padding-left:1.25rem;margin-top:.4rem;font-size:13px">
+              <li style="padding:2px 0">Número do CNPJ/CPF do responsável e a expressão <em>propaganda eleitoral</em></li>
+              <li style="padding:2px 0">Pago por candidato, partido ou coligação — apenas para propaganda positiva da candidatura</li>
+              <li style="padding:2px 0">Contratado diretamente com provedor de aplicação com sede ou representação legal no País</li>
+              <li style="padding:2px 0">Eleitores não podem impulsionar propaganda eleitoral</li>
+            </ol>
+          </div>
+          <div class="prop-table">
+            <div class="prop-table-header">
+              <div class="prop-table-cat">Tipo</div>
+              <div class="prop-table-ok">✓ Permitido</div>
+              <div class="prop-table-nao">✕ Vedado</div>
+            </div>
+            <div class="prop-table-row">
+              <div class="prop-table-cat"><strong>Impulsionamento</strong></div>
+              <div class="prop-table-ok">Pago por candidato, partido ou coligação. Apenas para propaganda positiva da candidatura</div>
+              <div class="prop-table-nao">Intuito negativo para crítica de outros candidatos, partidos ou coligações; utilização de nome, sigla, alcunha ou apelido de candidato adversário</div>
+            </div>
+            <div class="prop-table-row">
+              <div class="prop-table-cat"><strong>Prazo</strong></div>
+              <div class="prop-table-ok">—</div>
+              <div class="prop-table-nao">Antes ou depois do prazo legal, inclusive no dia da eleição (vedado de 48h antes até 24h após)</div>
+            </div>
+            <div class="prop-table-row">
+              <div class="prop-table-cat"><strong>E-mails e mensagens</strong></div>
+              <div class="prop-table-ok">Apenas para endereços cadastrados gratuitamente, desde que possuam mecanismo de descadastramento pelo destinatário</div>
+              <div class="prop-table-nao">Venda de cadastros de endereços eletrônicos</div>
+            </div>
+            <div class="prop-table-row">
+              <div class="prop-table-cat"><strong>E-mails e mensagens eletrônicas</strong></div>
+              <div class="prop-table-ok">Em forma de elogio ou crítica a candidato ou a partido político</div>
+              <div class="prop-table-nao">Ofensiva à honra ou imagem de candidatos, partidos ou coligações e/ou sobre fatos sabidamente inverídicos</div>
+            </div>
+            <div class="prop-table-row">
+              <div class="prop-table-cat"><strong>Manifestação</strong></div>
+              <div class="prop-table-ok">Espontânea e voluntária</div>
+              <div class="prop-table-nao">Uso de perfil anônimo ou Fake News</div>
+            </div>
+            <div class="prop-table-row">
+              <div class="prop-table-cat"><strong>Forma</strong></div>
+              <div class="prop-table-ok">Envio de mensagens de forma privada ou em grupos, por meio de blogues, redes sociais e sítios de mensagens instantâneas</div>
+              <div class="prop-table-nao">Utilização de chatbots que simulem interações com seus interlocutores</div>
+            </div>
+          </div>
+
+          <!-- RÁDIO E TV -->
+          <div class="secao-title" style="margin-top:1.5rem">Rádio e TV</div>
+          <div class="secao-texto">
+            <p>A partir de <strong>06/08/2026</strong>, é vedado às emissoras de rádio e televisão, durante a programação normal e noticiário:</p>
+            <ul style="margin:.5rem 0 .5rem 1.25rem;font-size:13px">
+              <li>Realizar propaganda eleitoral paga</li>
+              <li>Transmitir imagens de entrevistas em que seja possível identificar o entrevistado</li>
+              <li>Veicular propaganda política fora do horário eleitoral gratuito</li>
+              <li>Dar tratamento privilegiado a candidatos, partidos ou federações</li>
+              <li>Veicular ou divulgar, em programas televisivos, alusão a imagens de candidatos</li>
+            </ul>
+            <p>É permitida a propaganda eleitoral gratuita nos <strong>35 dias anteriores à antevéspera</strong> das eleições.</p>
+          </div>
+          <div class="atencao">
+            <strong>Sanções às emissoras</strong>
+            Multa de R$ 21.282,00 a R$ 106.410,00, duplicada em caso de reincidência, sem prejuízo da perda do tempo equivalente ao dobro do usado na prática do ilícito, dobrada a cada reincidência.
           </div>
         </div>
         <div class="checklist">
@@ -724,21 +976,62 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
         </div>
         <div class="secao">
           <div class="secao-title">No dia da eleição</div>
-          <div class="perms-grid">
-            <div class="perm-col ok"><h4>Permitido</h4><ul>
-              <li>Manifestação individual e silenciosa (bandeira, broche, adesivo, camiseta)</li>
-              <li>Manter conteúdos já publicados online</li>
-              <li>Foto do candidato votando, sem conteúdo eleitoral</li>
-              <li>Fotos e cumprimentos cordiais</li>
-              <li>Fiscais com crachá de 12×10 cm (nome e sigla)</li>
-            </ul></div>
-            <div class="perm-col nao"><h4>Proibido</h4><ul>
-              <li>Boca de urna · distribuição de qualquer bem · som e carreatas</li>
-              <li>Impulsionar conteúdo (de 48h antes a 24h depois)</li>
-              <li>Publicar conteúdo eleitoral novo</li>
-              <li>Fornecer transporte a eleitores</li>
-              <li>Abordagem, aliciamento ou tentativa de convencimento</li>
-            </ul></div>
+          <div class="prop-table">
+            <div class="prop-table-header">
+              <div class="prop-table-cat">Situação</div>
+              <div class="prop-table-ok">✓ Permitido</div>
+              <div class="prop-table-nao">✕ Vedado</div>
+            </div>
+            <div class="prop-table-row">
+              <div class="prop-table-cat"><strong>Manifestação de candidato</strong></div>
+              <div class="prop-table-ok">Individual e silenciosa, mediante bandeira, broche, dístico e adesivo</div>
+              <div class="prop-table-nao">Exageradas ou excessivas</div>
+            </div>
+            <div class="prop-table-row">
+              <div class="prop-table-cat"><strong>Manifestação do eleitor</strong></div>
+              <div class="prop-table-ok">Individual e silenciosa, exclusivamente por bandeiras, broches, adesivos e camisetas (vedada a aglomeração)</div>
+              <div class="prop-table-nao">Coletivas e ruidosas</div>
+            </div>
+            <div class="prop-table-row">
+              <div class="prop-table-cat"><strong>Distribuição de bens</strong></div>
+              <div class="prop-table-ok">—</div>
+              <div class="prop-table-nao">Qualquer espécie, independentemente de sua natureza</div>
+            </div>
+            <div class="prop-table-row">
+              <div class="prop-table-cat"><strong>Interação entre candidato e eleitor</strong></div>
+              <div class="prop-table-ok">Fotos e cumprimentos cordiais</div>
+              <div class="prop-table-nao">Abordagem, aliciamento e qualquer exercício de influência ou convencimento</div>
+            </div>
+            <div class="prop-table-row">
+              <div class="prop-table-cat"><strong>Mesário</strong></div>
+              <div class="prop-table-ok">Atuação limitada à sua função</div>
+              <div class="prop-table-nao">Uso de vestiário ou objeto com propaganda ou identificação de qualquer candidato ou partido</div>
+            </div>
+            <div class="prop-table-row">
+              <div class="prop-table-cat"><strong>Propaganda na internet</strong></div>
+              <div class="prop-table-ok">Manutenção de conteúdos publicados anteriormente. Publicação de foto do candidato votando, desde que ausente qualquer conteúdo eleitoral (menção à candidatura ou pedido de voto, ainda que implícito)</div>
+              <div class="prop-table-nao">Impulsionamento (desde 48h antes até 24h após) e publicação de conteúdos eleitorais, ainda que anteriores</div>
+            </div>
+            <div class="prop-table-row">
+              <div class="prop-table-cat"><strong>Publicação com IA</strong></div>
+              <div class="prop-table-ok">Todo conteúdo gerado ou alterado por IA deve exibir aviso claro e visível de "conteúdo produzido por IA"</div>
+              <div class="prop-table-nao">Proibida a disseminação de qualquer conteúdo novo feito por IA nas 72 horas anteriores ao pleito</div>
+            </div>
+            <div class="prop-table-row">
+              <div class="prop-table-cat"><strong>Alto-falantes, comícios e carreatas</strong></div>
+              <div class="prop-table-ok">—</div>
+              <div class="prop-table-nao">Independentemente do horário</div>
+            </div>
+            <div class="prop-table-row">
+              <div class="prop-table-cat"><strong>Fiscais</strong></div>
+              <div class="prop-table-ok">Uso de crachás com nome e sigla partidária</div>
+              <div class="prop-table-nao">Padronização de vestuário e aglomeração</div>
+            </div>
+            <div class="prop-table-row">
+              <div class="prop-table-cat"><strong>Transporte de eleitores</strong></div>
+              <div class="prop-table-ok">Uso de veículo individual para exercício do próprio voto e de sua família</div>
+              <div class="prop-table-nao">Fornecimento de transporte a outros eleitores (permitida a carona a pessoas próximas)</div>
+            </div>
           </div>
           <div class="novidade"><strong>Novidade 2026 — "Seu Voto Importa"</strong>Transporte individual gratuito a eleitores com deficiência ou mobilidade reduzida. Pedido até <strong>14/09/2026</strong>. Vedado a candidatos e partidos se envolverem — pode caracterizar abuso de poder econômico.</div>
         </div>
@@ -777,20 +1070,53 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
           </div>
         </div>
         <div class="secao">
-          <div class="secao-title">Dicas práticas</div>
+          <div class="secao-title">Quem deve prestar contas</div>
+          <div class="resumo">
+            <strong>Obrigados a prestar contas</strong>
+            <ul style="list-style:none;padding:0;margin-top:.4rem;font-size:13px">
+              <li style="padding:2px 0">• Todos os candidatos, inclusive os que renunciaram, desistiram, foram substituídos ou tiveram registro indeferido, mesmo que não tenham realizado campanha</li>
+              <li style="padding:2px 0">• Todos os órgãos partidários de todas as esferas (nacional, estadual, distrital, municipal e zonal), ainda que constituídos de forma provisória e sem movimentação financeira</li>
+            </ul>
+            <p style="font-size:12px;margin-top:.5rem">É obrigatória a constituição de <strong>advogado</strong> e de <strong>contador habilitado</strong> desde o início da campanha para a prestação de contas (art. 45, Res. TSE nº 23.607).</p>
+          </div>
+        </div>
+
+        <div class="secao">
+          <div class="secao-title">Julgamento das contas</div>
+          <div class="resumo">
+            <strong>Resultados possíveis</strong>
+            <div class="perms-grid" style="margin-top:.5rem">
+              <div style="font-size:12px">
+                <p><strong>✓ Aprovadas</strong> — sem irregularidades</p>
+                <p style="margin-top:.25rem"><strong>✓ Aprovadas com ressalvas</strong> — advertência de caráter moral</p>
+              </div>
+              <div style="font-size:12px">
+                <p><strong>✕ Desaprovadas</strong> — devolução de valores ao Tesouro ou ao partido</p>
+                <p style="margin-top:.25rem"><strong>✕ Não prestadas</strong> — impossibilidade de se candidatar</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="secao">
+          <div class="secao-title">Boas práticas e riscos</div>
           <div class="perms-grid">
             <div class="perm-col ok"><h4>Boas práticas</h4><ul>
-              <li>Coletar, guardar e digitalizar comprovantes a cada pagamento</li>
-              <li>Registrar carreatas, eventos e gravações</li>
-              <li>Conferir NFs com o CNPJ de campanha diariamente</li>
-              <li>Devolver impulsionamento pago e não usado ao fim da campanha</li>
-              <li>Comunicar carreatas 24h antes (combustível sem comunicação = gasto irregular)</li>
+              <li>Coletar, guardar e digitalizar comprovantes a cada pagamento e recebimento</li>
+              <li>Registrar carreatas, eventos, gravações e itens adquiridos</li>
+              <li>Conferir NFs com o CNPJ de campanha diariamente — cancelar as emitidas equivocadamente</li>
+              <li>Devolver impulsionamento pago e não utilizado ao final da campanha</li>
+              <li>Comunicar carreatas com 24h de antecedência (combustível sem comunicação = gasto irregular)</li>
+              <li>Contratos de locação ou cessão exigem comprovação de propriedade atualizada do doador</li>
+              <li>Manter contato constante com advogado e contador responsáveis</li>
             </ul></div>
             <div class="perm-col nao"><h4>Riscos comuns</h4><ul>
-              <li>NFs com CNPJ de campanha não declaradas</li>
+              <li>NFs com CNPJ de campanha não declaradas — valor deverá ser devolvido ao Tesouro</li>
               <li>Locação sem comprovação de propriedade do cedente</li>
-              <li>Sobras do FEFC não devolvidas ao Tesouro</li>
-              <li>Sobras do Fundo Partidário não devolvidas ao partido</li>
+              <li>Sobras do FEFC não devolvidas ao Tesouro Nacional</li>
+              <li>Sobras do Fundo Partidário não devolvidas ao partido doador</li>
+              <li>Gastos não efetivados na data da contratação</li>
+              <li>Fundo de Caixa ultrapassando 2% dos gastos contratados</li>
             </ul></div>
           </div>
         </div>
