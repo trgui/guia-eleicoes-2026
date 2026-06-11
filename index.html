@@ -263,6 +263,19 @@ html.dark .resumo strong{color:var(--text3)}
 html.dark .excecao-note,.dark .excecao-note{color:#f0a0a0}
 html.dark .excecao-note strong,.dark .excecao-note strong{color:#e85050}
 @media(prefers-color-scheme:dark){:root:not(.light) .excecao-note{color:#f0a0a0}:root:not(.light) .excecao-note strong{color:#e85050}}
+/* Override: strong para ênfase inline — não deve ser block.
+   Cobre: (a) strong que não é primeiro filho direto da div,
+   (b) strong dentro de p, li, span */
+.resumo strong:not(:first-child),
+.novidade strong:not(:first-child),
+.atencao strong:not(:first-child),
+.resumo p strong,.resumo li strong,.resumo span strong,
+.novidade p strong,.novidade li strong,.novidade span strong,
+.atencao p strong,.atencao li strong,.atencao span strong,
+.excecao-note strong{
+  display:inline!important;font-size:inherit;text-transform:none;
+  letter-spacing:normal;margin-bottom:0;color:inherit;font-weight:700
+}
 @media(prefers-color-scheme:dark){
   :root:not(.light) .perm-col.ok{background:#0a1a00;border-color:#4a8c1a;color:#a8d870}
   :root:not(.light) .perm-col.ok h4{color:#7ec832}
@@ -827,7 +840,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
               <li>Conteúdo novo de IA nas 72h finais (apagão)</li>
             </ul></div>
           </div>
-          <div class="atencao"><strong>Atenção — Ônus da prova invertido (Regra 6)</strong>Nas representações sobre IA, o juiz pode, motivadamente, inverter o ônus da prova. Com a inversão, o <strong>representado</strong> deve demonstrar: (a) como e em quais etapas a IA foi empregada e (b) a veracidade da informação veiculada. Documente e preserve prompts, versões geradas e etapas de edição.</div>
+          <div class="atencao"><strong>Atenção — Ônus da prova invertido (Regra 6)</strong><p style="margin-top:.3rem">Nas representações sobre IA, o juiz pode, motivadamente, inverter o ônus da prova. Com a inversão, o <strong>representado</strong> deve demonstrar: (a) como e em quais etapas a IA foi empregada e (b) a veracidade da informação veiculada. Documente e preserve prompts, versões geradas e etapas de edição.</p></div>
 
           <div class="resumo" style="margin-top:.75rem">
             <strong>Impulsionamento pago — vedações adicionais (Res. 23.755/2026)</strong>
@@ -1402,7 +1415,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
 
           <div class="novidade" style="margin-bottom:.75rem">
             <strong>Novidade 2026 — IA como conduta vedada</strong>
-            O uso de infraestrutura pública (servidores, computadores ou pessoal) para criar ou disseminar deepfakes ou conteúdo desinformativo contra adversários é agora <strong>explicitamente enquadrado como conduta vedada e abuso de poder político</strong>.
+            <p style="margin-top:.3rem">O uso de infraestrutura pública (servidores, computadores ou pessoal) para criar ou disseminar deepfakes ou conteúdo desinformativo contra adversários é agora <strong>explicitamente enquadrado como conduta vedada e abuso de poder político</strong>.</p>
           </div>
 
           <div class="resumo" style="margin-bottom:.75rem">
