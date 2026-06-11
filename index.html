@@ -258,6 +258,11 @@ html.dark .resumo strong{color:var(--text3)}
 .perm-col.nao li{color:#4a0f0f}
 .perm-col.ok li::before{content:"✓";position:absolute;left:0;color:#2d7a0a;font-weight:700}
 .perm-col.nao li::before{content:"✕";position:absolute;left:0;color:#c0392b;font-weight:700}
+.excecao-note{font-size:12px;margin-top:8px;padding-top:8px;border-top:1px solid rgba(192,57,43,.2);color:#5a1a1a;line-height:1.5}
+.excecao-note strong{color:#7a1515}
+html.dark .excecao-note,.dark .excecao-note{color:#f0a0a0}
+html.dark .excecao-note strong,.dark .excecao-note strong{color:#e85050}
+@media(prefers-color-scheme:dark){:root:not(.light) .excecao-note{color:#f0a0a0}:root:not(.light) .excecao-note strong{color:#e85050}}
 @media(prefers-color-scheme:dark){
   :root:not(.light) .perm-col.ok{background:#0a1a00;border-color:#4a8c1a;color:#a8d870}
   :root:not(.light) .perm-col.ok h4{color:#7ec832}
@@ -588,7 +593,6 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
         <div class="checklist">
           <div class="checklist-header"><i class="ti ti-list-check" style="font-size:15px;color:var(--verde)"></i><span>Pré-campanha</span></div>
           <div class="check-item"><span class="check-label">Estatuto do partido/federação registrado no TSE até 04/04/2026</span></div>
-          <div class="check-item"><span class="check-label">Federação constituída com regras de lista proporcional definidas</span></div>
           <div class="check-item"><span class="check-label">Órgão de direção constituído e anotado na circunscrição</span></div>
           <div class="check-item"><span class="check-label">RDE: avaliar dúvidas de elegibilidade e protocolar com anuência do partido, se for o caso</span></div>
           <div class="check-item"><span class="check-label">Pré-campanha sem pedido de voto, sem número de urna, sem jingle, sem outdoor</span></div>
@@ -695,6 +699,68 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
             </div>
           </div>
         </div>
+
+        <div class="secao">
+          <div class="secao-title">Registro de candidatura</div>
+          <div class="secao-texto">
+            <p>A Secretaria Judiciária publicará os pedidos de registro no Diário da Justiça Eletrônico para ciência dos interessados. Qualquer candidato, partido, coligação ou o Ministério Público Eleitoral tem <strong>5 dias</strong> após a publicação para impugná-lo. O candidato com registro <em>sub judice</em> pode efetuar todos os atos de campanha, usar o horário eleitoral gratuito e ter seu nome mantido na urna eletrônica enquanto estiver nessa condição (art. 16-A, Lei nº 9.504/97).</p>
+            <p>O prazo final é <strong>15/08/2026 às 19h</strong> (em mídia física) ou <strong>08h</strong> pelo CANDex. O registro é composto de dois formulários:</p>
+          </div>
+
+          <div class="resumo" style="margin-top:.75rem">
+            <strong>DRAP — Demonstrativo de Regularidade dos Atos Partidários</strong>
+            <p style="font-size:13px;margin-top:.4rem">É o processo que abre a análise individualizada de cada candidatura. Nele são verificados nome e sigla da agremiação, endereços, atos da convenção e situação de regularidade do partido. Somente após o deferimento do DRAP inicia-se a análise de cada RRC.</p>
+            <ul style="list-style:none;padding:0;margin-top:.5rem;font-size:13px">
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)"><span style="color:var(--verde);font-weight:700;margin-right:6px">→</span>Nome e sigla do partido político</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)"><span style="color:var(--verde);font-weight:700;margin-right:6px">→</span>Nome da coligação, siglas dos partidos, CPF e título do representante e delegados</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)"><span style="color:var(--verde);font-weight:700;margin-right:6px">→</span>Datas das convenções e cargos pleiteados</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)"><span style="color:var(--verde);font-weight:700;margin-right:6px">→</span>Telefone com aplicativo de mensagens para citações e intimações da Justiça Eleitoral</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)"><span style="color:var(--verde);font-weight:700;margin-right:6px">→</span>Endereço eletrônico e endereço completo para recebimento de comunicações</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)"><span style="color:var(--verde);font-weight:700;margin-right:6px">→</span>Endereço do comitê central, se já constituído; telefone fixo</li>
+              <li style="padding:3px 0"><span style="color:var(--verde);font-weight:700;margin-right:6px">→</span>Declaração de ciência sobre necessidade de acessar o mural eletrônico para comunicações</li>
+            </ul>
+          </div>
+
+          <div class="resumo" style="margin-top:.75rem">
+            <strong>RRC — Requerimento de Registro de Candidatura</strong>
+            <p style="font-size:13px;margin-top:.4rem">Permite o registro individualizado de cada candidato. Deve ser instruído com os seguintes documentos:</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;margin-top:.5rem;font-size:13px">
+              <div style="padding:3px 0;border-bottom:1px solid var(--border)">Formulário com dados pessoais e dados para contato</div>
+              <div style="padding:3px 0;border-bottom:1px solid var(--border)">Declaração de ciência de prestação de contas</div>
+              <div style="padding:3px 0;border-bottom:1px solid var(--border)">Declaração de ciência de divulgação de dados pelo TSE</div>
+              <div style="padding:3px 0;border-bottom:1px solid var(--border)">Termo de autorização para concorrer</div>
+              <div style="padding:3px 0;border-bottom:1px solid var(--border)">Comprovante de escolaridade / prova de alfabetização</div>
+              <div style="padding:3px 0;border-bottom:1px solid var(--border)">Prova de desincompatibilização (se aplicável)</div>
+              <div style="padding:3px 0;border-bottom:1px solid var(--border)">Cópia de documento oficial com foto</div>
+              <div style="padding:3px 0;border-bottom:1px solid var(--border)">Propostas / Plano de Governo (apenas majoritárias)</div>
+              <div style="padding:3px 0;border-bottom:1px solid var(--border)">Fotografia para urna eletrônica (161×225 px, fundo uniforme)</div>
+              <div style="padding:3px 0;border-bottom:1px solid var(--border)">Declaração de bens atualizada (preenchida no CANDex)</div>
+              <div style="padding:3px 0;border-bottom:1px solid var(--border)">Endereços de todas as páginas (site, redes sociais, blog etc.)</div>
+              <div style="padding:3px 0">Declaração de ciência sobre dados de gênero, cor/raça, estado civil, ocupação e cadastro eleitoral</div>
+            </div>
+          </div>
+
+          <div class="resumo" style="margin-top:.75rem">
+            <strong>Requisitos para candidatura</strong>
+            <ul style="list-style:none;padding:0;margin-top:.4rem;font-size:13px">
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">• Nacionalidade brasileira</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">• Estar no pleno exercício dos direitos políticos</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">• Possuir alistamento eleitoral</li>
+              <li style="padding:3px 0">• Ter domicílio eleitoral e filiação deferida no prazo legal</li>
+            </ul>
+          </div>
+
+          <div class="resumo" style="margin-top:.75rem">
+            <strong>Substituição de candidatura</strong>
+            <p style="font-size:13px;margin-top:.4rem">Deverá ser elaborada pelo CANDex ou encaminhada diretamente à Justiça Eleitoral.</p>
+            <ul style="list-style:none;padding:0;margin-top:.4rem;font-size:13px">
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)"><span style="font-weight:600">Majoritária:</span> prazo decadencial de 10 dias contados da ocorrência do motivo</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)"><span style="font-weight:600">Proporcional:</span> somente até 20 dias antes das eleições, salvo em caso de falecimento</li>
+              <li style="padding:3px 0"><span style="font-weight:600">Motivos:</span> indeferimento do registro (exceto por informação fraudulenta); cassação em ação eleitoral; cancelamento por expulsão; renúncia ou falecimento do titular</li>
+            </ul>
+          </div>
+        </div>
+
         <div class="checklist">
           <div class="checklist-header"><i class="ti ti-list-check" style="font-size:15px;color:var(--verde)"></i><span>Convenção e registro</span></div>
           <div class="check-item"><span class="check-label">Convenção realizada entre 20/07 e 05/08, conforme o estatuto</span></div>
@@ -761,7 +827,49 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
               <li>Conteúdo novo de IA nas 72h finais (apagão)</li>
             </ul></div>
           </div>
-          <div class="atencao"><strong>Atenção — Ônus da prova invertido</strong>Nas representações sobre IA, o juiz pode inverter o ônus da prova. Documente e preserve prompts, versões e edições do processo criativo.</div>
+          <div class="atencao"><strong>Atenção — Ônus da prova invertido (Regra 6)</strong>Nas representações sobre IA, o juiz pode, motivadamente, inverter o ônus da prova. Com a inversão, o <strong>representado</strong> deve demonstrar: (a) como e em quais etapas a IA foi empregada e (b) a veracidade da informação veiculada. Documente e preserve prompts, versões geradas e etapas de edição.</div>
+
+          <div class="resumo" style="margin-top:.75rem">
+            <strong>Impulsionamento pago — vedações adicionais (Res. 23.755/2026)</strong>
+            <ul style="list-style:none;padding:0;margin-top:.4rem;font-size:13px">
+              <li style="padding:4px 0;border-bottom:1px solid var(--border)"><span style="color:#A32D2D;font-weight:700;margin-right:6px">✕</span><strong>Ferramentas externas:</strong> vedado o impulsionamento por ferramentas digitais não disponibilizadas pelo próprio provedor da plataforma, mesmo que gratuitas</li>
+              <li style="padding:4px 0;border-bottom:1px solid var(--border)"><span style="color:#A32D2D;font-weight:700;margin-right:6px">✕</span><strong>Propaganda negativa:</strong> vedada em qualquer modalidade de impulsionamento</li>
+              <li style="padding:4px 0;border-bottom:1px solid var(--border)"><span style="color:#A32D2D;font-weight:700;margin-right:6px">✕</span><strong>Priorização paga em buscas:</strong> vedada quando promova propaganda negativa ou use nome, sigla, alcunha ou apelido de candidato adversário como palavra-chave (mesmo para promover propaganda positiva)</li>
+              <li style="padding:4px 0"><span style="color:#A32D2D;font-weight:700;margin-right:6px">✕</span><strong>Concursos de "cortes":</strong> vedados mecanismos de competição, ranqueamento ou premiação que ofereçam vantagem econômica — direta ou indiretamente — a pessoas físicas ou jurídicas para que realizem publicações de cunho político-eleitoral</li>
+            </ul>
+          </div>
+
+          <div class="resumo" style="margin-top:.75rem">
+            <strong>Regra 4 — Vedações específicas aos sistemas de IA</strong>
+            <p style="font-size:13px;margin-top:.4rem">Ainda que solicitado pelo próprio usuário, é vedado aos provedores que ofereçam sistemas de IA:</p>
+            <ul style="list-style:none;padding:0;margin-top:.4rem;font-size:13px">
+              <li style="padding:4px 0;border-bottom:1px solid var(--border)"><span style="color:#A32D2D;font-weight:700;margin-right:6px">✕</span><strong>Ranqueamento eleitoral:</strong> ranquear, recomendar, sugerir ou priorizar candidatos, campanhas, partidos ou coligações</li>
+              <li style="padding:4px 0;border-bottom:1px solid var(--border)"><span style="color:#A32D2D;font-weight:700;margin-right:6px">✕</span><strong>Indicação de voto:</strong> emitir opiniões, indicar preferência eleitoral ou recomendar voto — direta ou indiretamente, inclusive por respostas automatizadas</li>
+              <li style="padding:4px 0;border-bottom:1px solid var(--border)"><span style="color:#A32D2D;font-weight:700;margin-right:6px">✕</span><strong>Manipulação degradante:</strong> criar ou promover alterações em foto, vídeo ou áudio que coloquem candidato em cena de sexo, nudez ou pornografia</li>
+              <li style="padding:4px 0"><span style="color:#A32D2D;font-weight:700;margin-right:6px">✕</span><strong>Violência política de gênero:</strong> formular publicidade eleitoral que represente ato de violência política contra a mulher</li>
+            </ul>
+            <p style="font-size:12px;margin-top:.6rem;color:var(--text2)">Na prática: ferramentas como ChatGPT, Gemini e Copilot não poderão responder a "em quem devo votar?" ou "qual candidato é melhor?" — os provedores serão responsabilizados pelo descumprimento, mesmo quando a pergunta partir do próprio usuário.</p>
+          </div>
+
+          <div class="resumo" style="margin-top:.75rem">
+            <strong>Regra 5 — Responsabilidade dos provedores (novidade 2026)</strong>
+            <p style="font-size:13px;margin-top:.4rem">Os provedores são obrigados a remover conteúdos <strong>imediatamente e de forma independente</strong>, sem necessidade de nova ordem judicial, quando:</p>
+            <ul style="list-style:none;padding:0;margin-top:.4rem;font-size:13px">
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">• Violem regras de rotulagem ou incidam nas vedações sobre conteúdo sintético irregular</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">• Reproduzam conteúdo já objeto de ordem de indisponibilização pela Justiça Eleitoral</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">• Descredibilizem a integridade do sistema eletrônico de votação</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">• Incidam em crime contra o Estado Democrático de Direito</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">• Fomentem subversão da ordem constitucional</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">• Configurem violência política contra a mulher</li>
+              <li style="padding:3px 0">• Sejam publicados por perfis comprovadamente falsos, apócrifos ou automatizados (robôs) que pratiquem reiteradamente crimes eleitorais ou publiquem desinformação reconhecida pela Justiça Eleitoral</li>
+            </ul>
+            <p style="font-size:12px;margin-top:.6rem;color:var(--text2)">Ao remover conteúdo de ofício, o provedor deve comunicar ao usuário os motivos da exclusão e informar que ele pode recorrer judicialmente (art. 28, Res. 23.755/2026).</p>
+          </div>
+
+          <div class="resumo" style="margin-top:.75rem">
+            <strong>Regra 7 — Perícia técnica especializada</strong>
+            <p style="font-size:13px;margin-top:.4rem">Os Tribunais Eleitorais poderão firmar acordos com <strong>universidades, entidades e órgãos com peritos em ilícitos digitais e IA</strong> para atuarem nos processos eleitorais. Os candidatos e partidos não são obrigados a contratar profissionais dessas instituições, mas a previsão indica que a Justiça Eleitoral estará tecnicamente aparelhada para analisar os conteúdos questionados.</p>
+          </div>
         </div>
         <div class="secao">
           <div class="secao-title">Arrecadação e gastos de recursos</div>
@@ -813,7 +921,64 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
               <li style="padding:3px 0;border-bottom:1px solid var(--border)">Presidente/Senador: limite do município com maior eleitorado no estado</li>
               <li style="padding:3px 0;border-bottom:1px solid var(--border)">Dep. Federal: 70% do limite do município com mais eleitores na circunscrição</li>
               <li style="padding:3px 0;border-bottom:1px solid var(--border)">Governador: dobro do limite no município com mais eleitores no estado</li>
-              <li style="padding:3px 0">Dep. Estadual: 50% do limite estabelecido para deputados federais</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">Dep. Estadual: 50% do limite estabelecido para deputados federais</li>
+              <li style="padding:3px 0"><span style="font-size:11px;color:var(--text3)">Ficam excluídos dos limites: militância não remunerada, pessoal de apoio administrativo e operacional, fiscais e delegados credenciados. Honorários contábeis e advocatícios relacionados à campanha também ficam excluídos dos limites de gastos.</span></li>
+            </ul>
+          </div>
+
+          <div class="resumo" style="margin-top:.75rem">
+            <strong>Efetivação das despesas</strong>
+            <p style="font-size:13px;margin-top:.4rem">A despesa é efetivada na <strong>data da sua contratação</strong>, independentemente do pagamento. Formas permitidas: cheque nominal cruzado, cartão de débito, Pix, transferência bancária e débito em conta.</p>
+          </div>
+
+          <div class="resumo" style="margin-top:.75rem">
+            <strong>Gastos de pequeno vulto</strong>
+            <p style="font-size:13px;margin-top:.4rem">Despesas individuais que não ultrapassem <strong>meio salário mínimo (R$ 810,50)</strong>. Podem ser pagas pelo "Fundo de Caixa", limitado a <strong>2% dos gastos contratados</strong>, vedada a recomposição. Os recursos devem transitar pela conta bancária específica antes do saque, que deve ser feito mediante cartão de débito ou cheque nominativo.</p>
+          </div>
+
+          <div class="resumo" style="margin-top:.75rem">
+            <strong>Gastos do eleitor em apoio ao candidato</strong>
+            <p style="font-size:13px;margin-top:.4rem">Qualquer eleitor pode realizar pessoalmente gastos totais de até <strong>R$ 1.064,10</strong> em favor de candidato de sua preferência, sem sujeição à contabilização, desde que não reembolsados. O comprovante deve ser emitido em nome do eleitor. Atenção: bens ou serviços entregues ao candidato caracterizam <em>doação</em> e devem ser contabilizados.</p>
+          </div>
+
+          <div class="resumo" style="margin-top:.75rem">
+            <strong>Recibos eleitorais</strong>
+            <p style="font-size:13px;margin-top:.4rem">Devem ser emitidos via sistema SPCE para arrecadação de recursos estimáveis em dinheiro e por meio da internet. Doações financeiras são comprovadas por documento bancário com CPF do doador.</p>
+            <p style="font-size:13px;margin-top:.4rem"><strong>Emissão facultativa:</strong> cessão de bens móveis até R$ 4.000 por cedente; uso comum de sedes e materiais entre candidatos e partidos; cessão de automóvel do candidato, cônjuge ou parentes até 3º grau para uso pessoal durante a campanha.</p>
+            <p style="font-size:13px;margin-top:.4rem"><strong>Dispensa total:</strong> doações do FEFC e do Fundo Partidário por transferência bancária; doações recebidas por Pix — mas obriga manter relatório com CPF e valor de cada doação por Pix para fins de fiscalização.</p>
+          </div>
+
+          <div class="resumo" style="margin-top:.75rem">
+            <strong>Dívidas de campanha financeira</strong>
+            <p style="font-size:13px;margin-top:.4rem">Podem ser contraídas caso as obrigações não sejam quitadas até a data das eleições, desde que a prestação de contas apresente:</p>
+            <ul style="list-style:none;padding:0;margin-top:.4rem;font-size:13px">
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">• Acordo expresso e formalizado demonstrando origem e valor da obrigação</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">• Cronograma de pagamento e quitação, com prazo não superior à prestação de contas do próximo pleito (para o mesmo cargo)</li>
+              <li style="padding:3px 0;border-bottom:1px solid var(--border)">• Indicação da fonte dos recursos que serão utilizados para quitação</li>
+              <li style="padding:3px 0">• Autorização da direção nacional do partido</li>
+            </ul>
+          </div>
+
+          <div class="resumo" style="margin-top:.75rem">
+            <strong>Comprovação de gastos</strong>
+            <p style="font-size:13px;margin-top:.4rem">Preferencialmente por documento fiscal idôneo (nota fiscal). Quando impossível, por contratos e recibos. Todos devem conter:</p>
+            <ul style="list-style:none;padding:0;margin-top:.4rem;font-size:13px">
+              <li style="padding:2px 0;border-bottom:1px solid var(--border)">• Nome do candidato ou partido · Data de emissão</li>
+              <li style="padding:2px 0;border-bottom:1px solid var(--border)">• Descrição do produto ou serviço · Valor da transação</li>
+              <li style="padding:2px 0">• Identificação do contratado (nome/razão social e CPF/CNPJ)</li>
+            </ul>
+            <p style="font-size:13px;margin-top:.5rem"><strong>Para prestadores de serviços:</strong> contrato assinado + recibo + comprovantes de pagamento. O contrato deve conter: identificação integral do prestador; locais de trabalho; horas trabalhadas; especificação das tarefas; justificativa do preço contratado.</p>
+          </div>
+
+          <div class="resumo" style="margin-top:.75rem">
+            <strong>FEFC — Fundo Especial de Financiamento de Campanha</strong>
+            <ul style="list-style:none;padding:0;margin-top:.4rem;font-size:13px">
+              <li style="padding:4px 0;border-bottom:1px solid var(--border)"><span style="font-weight:600">Critérios de distribuição:</span> informados ao TSE pela executiva nacional; divulgados pelo partido em sua página na internet</li>
+              <li style="padding:4px 0;border-bottom:1px solid var(--border)"><span style="font-weight:600">Prazo de repasse:</span> FEFC e Fundo Partidário distribuídos até <strong>30/08/2026</strong></li>
+              <li style="padding:4px 0;border-bottom:1px solid var(--border)"><span style="font-weight:600">Contas específicas:</span> partidos devem abrir contas distintas para candidaturas negras e femininas; recursos dessas cotas não podem ser desviados para outros fins (vedada dobrada)</li>
+              <li style="padding:4px 0;border-bottom:1px solid var(--border)"><span style="font-weight:600">Sobras:</span> FEFC deve ser devolvido ao Tesouro Nacional; Fundo Partidário devolvido ao partido doador</li>
+              <li style="padding:4px 0;border-bottom:1px solid var(--border)"><span style="font-weight:600">IA nos gastos:</span> despesas com ferramentas de IA para criação de conteúdo devem ser discriminadas de forma clara na prestação de contas</li>
+              <li style="padding:4px 0"><span style="font-weight:600">Documentação digital:</span> incentivado o uso de notas fiscais eletrônicas para evitar glosas por falta de clareza</li>
             </ul>
           </div>
         </div>
@@ -836,7 +1001,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
             </div>
             <div class="prop-table-row">
               <div class="prop-table-cat"><strong>Propaganda Impressa</strong></div>
-              <div class="prop-table-ok">Deve conter: nome da gráfica, CNPJ da gráfica, CNPJ de quem contratou e tiragem</div>
+              <div class="prop-table-ok">Deve conter: nome e CNPJ da gráfica, CNPJ de quem contratou, CNPJ/CPF do responsável pela confecção e tiragem. Dimensão máxima: <strong>50cm × 40cm</strong> ou totalidade do vidro traseiro do veículo em adesivo perfurado</div>
               <div class="prop-table-nao">Apócrifo (sem dados de identificação obrigatórios); Derrame de material de propaganda</div>
             </div>
             <div class="prop-table-row">
@@ -954,7 +1119,11 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
           <div class="check-item"><span class="check-label">LGPD: canal de comunicação e encarregado de dados disponibilizados</span></div>
           <div class="check-item"><span class="check-label">CNPJ de campanha em recibos, contratos e notas; conta aberta para cada tipo de recurso</span></div>
           <div class="check-item"><span class="check-label">Doações dentro dos limites: PF até 10% dos rendimentos; estimável até R$ 40 mil</span></div>
-          <div class="check-item"><span class="check-label">Gastos pagos por meios rastreáveis e registrados na data da contratação</span></div>
+          <div class="check-item"><span class="check-label">Gastos pagos por meios rastreáveis e registrados na data da contratação; pequeno vulto dentro de 2% dos gastos</span></div>
+          <div class="check-item"><span class="check-label">Recibos eleitorais emitidos via SPCE; Pix com relatório de CPF e valores mantido</span></div>
+          <div class="check-item"><span class="check-label">Ferramentas externas de impulsionamento não utilizadas; concursos de "cortes" e priorização paga em buscas evitados</span></div>
+          <div class="check-item"><span class="check-label">FEFC e Fundo Partidário distribuídos até <span class="prazo-atencao">30/08</span>; contas específicas para candidaturas negras e femininas abertas</span></div>
+          <div class="check-item"><span class="check-label">Gastos com IA discriminados claramente; dívidas formalizadas com acordo, cronograma e autorização do partido</span></div>
           <div class="check-item"><span class="check-label">Carreatas comunicadas com 24h de antecedência</span></div>
           <div class="check-item"><span class="check-label">Conta parcial apresentada entre <span class="prazo-atencao">09 e 13/09</span>; recursos informados à JE em até 72h do recebimento</span></div>
         </div>
@@ -1148,33 +1317,132 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
       <div class="fase-divider"></div>
       <div class="fase-header-bottom"><button class="btn-share" onclick="compartilhar(this)"><i class="ti ti-link"></i> Copiar link desta fase</button></div>
       <div class="fase-body">
-        <div class="fase-resumo">Agentes públicos têm obrigações o ano todo — independentemente de disputarem ou não um cargo.</div>
+        <div class="fase-resumo">As barreiras que separam a gestão pública legítima do uso da máquina em favor de candidaturas. Onde o limite é estreito e as sanções, severas.</div>
+
         <div class="secao">
           <div class="secao-title">Ponto central numa eleição geral</div>
           <div class="novidade"><strong>Novidade 2026 — Agentes municipais</strong>Em 2026 é eleição geral (presidente, governador, senador, deputados — sem cargo municipal em disputa). Os agentes municipais ainda se sujeitam às condutas vedadas, mas algumas vedações são vinculadas à circunscrição do pleito e não recaem automaticamente sobre o município.</div>
           <div class="atencao"><strong>Atenção — Isso não é salvo-conduto</strong>A dispensa de algumas regras automáticas não autoriza usar a máquina pública. Permanece proibido qualquer ato que configure promoção pessoal ou favorecimento de candidatura.</div>
         </div>
+
         <div class="secao">
           <div class="secao-title">Marcos no tempo</div>
           <div class="datas-grid">
             <div class="data-card"><div class="d"><i class="ti ti-calendar"></i> O ano todo</div><div class="e">Uso de bens públicos · cessão de servidores · promoção pessoal · distribuição de benefícios</div></div>
             <div class="data-card"><div class="d"><i class="ti ti-calendar-event"></i> A partir de 07/04</div><div class="e">Revisão geral da remuneração acima da reposição</div></div>
             <div class="data-card"><div class="d"><i class="ti ti-calendar-event"></i> A partir de 04/07</div><div class="e">Publicidade institucional · transferências voluntárias · inaugurações com candidatos · gestão de pessoal</div></div>
+            <div class="data-card"><div class="d"><i class="ti ti-calendar-event"></i> A partir de 15/08</div><div class="e">Vedação de enquetes relacionadas ao pleito eleitoral</div></div>
           </div>
         </div>
+
+        <div class="secao">
+          <div class="secao-title">Vedações detalhadas</div>
+
+          <div class="perms-grid" style="margin-bottom:.75rem">
+            <div class="perm-col nao">
+              <h4>✕ Bens Públicos</h4>
+              <ul>
+                <li>Utilização do espaço público em favor da candidatura — ex.: reunião com eleitores/apoiadores em prédios públicos</li>
+              </ul>
+              <p class="excecao-note"><strong>Exceção:</strong> realização de convenção partidária em prédio público, de forma gratuita</p>
+            </div>
+            <div class="perm-col nao">
+              <h4>✕ Bens e Serviços</h4>
+              <ul>
+                <li>Usos que excedam as prerrogativas dos regimentos dos órgãos — ex.: uso de materiais do órgão público para fins de campanha</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="perm-col nao" style="border-radius:var(--radius);margin-bottom:.75rem">
+            <h4>✕ Servidor Público</h4>
+            <ul>
+              <li><strong>Horário de expediente:</strong> vedada qualquer atividade eleitoral, inclusive publicação em redes sociais — aplica-se integralmente a quem está em regime de <em>teletrabalho</em></li>
+              <li><strong>Atos de pessoal:</strong> nomeação, contratação, admissão, demissão sem justa causa, supressão ou reajuste de vantagens, impedimento ou empecilho ao exercício funcional, remoção, transferência ou exoneração de ofício</li>
+              <li><strong>Remuneração:</strong> vedada revisão geral que exceda a recomposição da perda do poder aquisitivo ao longo do ano da eleição</li>
+            </ul>
+            <p class="excecao-note"><strong>Exceções:</strong> servidor em férias ou licença; nomeação ou exoneração de cargos em comissão; nomeação para o Judiciário, MP, Tribunais de Contas e órgãos da Presidência; nomeação de aprovados em concursos homologados até o início do prazo; contratação inadiável de serviços essenciais com autorização do Chefe do Executivo; transferência/remoção ex officio de militares, policiais civis e agentes penitenciários; demissão com justa causa; remoção, transferência ou exoneração a pedido.</p>
+            <p class="excecao-note" style="margin-top:4px"><strong>Limite territorial:</strong> circunscrição do pleito · <strong>Limite temporal:</strong> 3 meses antes das eleições até a posse dos eleitos</p>
+          </div>
+
+          <div class="perm-col nao" style="border-radius:var(--radius);margin-bottom:.75rem">
+            <h4>✕ Publicidade Institucional</h4>
+            <ul>
+              <li>Autorizar publicidade institucional de atos, programas, obras, serviços e campanhas de órgãos públicos federais, estaduais ou municipais</li>
+              <li>Manter placas com publicidade institucional no período vedado</li>
+              <li>Manter notícias em sites e redes sociais de órgãos públicos, ainda que sejam antigas</li>
+            </ul>
+            <p class="excecao-note"><strong>Gastos:</strong> vedada, no primeiro semestre de 2026, a realização de despesas com publicidade institucional que excedam a média dos gastos dos dois primeiros semestres dos 3 últimos anos.</p>
+            <p class="excecao-note"><strong>Limite territorial:</strong> circunscrição do pleito · <strong>Limite temporal:</strong> 3 meses antes das eleições.</p>
+            <p class="excecao-note" style="margin-top:4px"><strong>Exceções:</strong> propaganda de produtos e serviços com concorrência no mercado; caso de grave e urgente necessidade pública (com reconhecimento pela Justiça Eleitoral).</p>
+          </div>
+
+          <div class="perms-grid" style="margin-bottom:.75rem">
+            <div class="perm-col nao">
+              <h4>✕ Transferência de Recursos</h4>
+              <ul>
+                <li>Realizar transferência voluntária de recursos da União aos Estados e Municípios, e dos Estados aos Municípios</li>
+              </ul>
+              <p class="excecao-note"><strong>Limite:</strong> 3 meses antes das eleições, na circunscrição do pleito.</p>
+              <p class="excecao-note" style="margin-top:4px"><strong>Exceções:</strong> obra ou serviço em andamento com cronograma prefixado; recursos para emergência e calamidade pública.</p>
+            </div>
+            <div class="perm-col nao">
+              <h4>✕ Enquete</h4>
+              <ul>
+                <li>Realização ou divulgação de enquete relacionada ao pleito eleitoral — quando resultados possibilitem ao eleitor inferir a ordem dos candidatos</li>
+              </ul>
+              <p class="excecao-note"><strong>Definição:</strong> levantamento de opiniões sem plano amostral, que dependa de participação espontânea e não utilize método científico.</p>
+              <p class="excecao-note" style="margin-top:4px"><strong>Limite temporal:</strong> a partir de 15/08/2026.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="secao">
+          <div class="secao-title">Novidades 2026 — condutas vedadas</div>
+
+          <div class="novidade" style="margin-bottom:.75rem">
+            <strong>Novidade 2026 — IA como conduta vedada</strong>
+            O uso de infraestrutura pública (servidores, computadores ou pessoal) para criar ou disseminar deepfakes ou conteúdo desinformativo contra adversários é agora <strong>explicitamente enquadrado como conduta vedada e abuso de poder político</strong>.
+          </div>
+
+          <div class="resumo" style="margin-bottom:.75rem">
+            <strong>Recursos Tecnológicos</strong>
+            <p style="font-size:13px;margin-top:.4rem">O uso de softwares ou bancos de dados da administração pública para fins de campanha — como disparo em massa de mensagens — está sob fiscalização rigorosa e pode configurar abuso de poder político.</p>
+          </div>
+
+          <div class="resumo" style="margin-bottom:.75rem">
+            <strong>Retirada de Marcas</strong>
+            <p style="font-size:13px;margin-top:.4rem">No período de <strong>3 meses que antecede o pleito</strong>, é obrigatória a retirada de marcas, slogans, símbolos e expressões que identifiquem a gestão atual em <strong>bens públicos e sites oficiais</strong>.</p>
+          </div>
+
+          <div class="resumo" style="margin-bottom:.75rem">
+            <strong>Fiscalização do Horário de Expediente — Teletrabalho</strong>
+            <p style="font-size:13px;margin-top:.4rem">A vedação de usar servidores para atividades eleitorais aplica-se integralmente a quem está em regime de <strong>teletrabalho</strong>. Não basta o servidor estar em casa; ele deve cumprir sua jornada funcional sem desvio para atividades político-partidárias.</p>
+          </div>
+
+          <div class="atencao">
+            <strong>Ponto de atenção — Publicidade Institucional "Invisível"</strong>
+            <p>Tema que tem gerado muito debate nos tribunais: o gestor que usa suas <strong>redes sociais pessoais</strong> para promover atos de governo de forma massiva, mimetizando a comunicação oficial. O TSE tem se inclinado a considerar isso conduta vedada quando há uso de <strong>recursos públicos</strong> na produção do conteúdo — fotógrafos ou assessores da prefeitura, por exemplo.</p>
+          </div>
+        </div>
+
         <div class="secao">
           <div class="secao-title">O que não se aplica automaticamente ao município</div>
           <div class="resumo"><strong>Vinculadas à circunscrição do pleito (art. 73, §3º)</strong>Publicidade institucional (art. 73, VI, "b") · Pronunciamento em cadeia de rádio e TV (art. 73, VI, "c") · Revisão geral da remuneração (art. 73, VIII) · Gestão de pessoal: nomear, demitir sem justa causa, remover, transferir (art. 73, V). As duas últimas ficam permitidas com ressalvas.</div>
         </div>
+
         <div class="checklist">
-          <div class="checklist-header"><i class="ti ti-list-check" style="font-size:15px;color:var(--verde)"></i><span>Agentes municipais</span></div>
+          <div class="checklist-header"><i class="ti ti-list-check" style="font-size:15px;color:var(--verde)"></i><span>Agentes públicos — checklist</span></div>
           <div class="check-item"><span class="check-label">Bens públicos nunca usados em favor de candidatura (o ano todo)</span></div>
-          <div class="check-item"><span class="check-label">Servidores sem atividade eleitoral no expediente; redes pessoais só fora do horário</span></div>
+          <div class="check-item"><span class="check-label">Servidores sem atividade eleitoral no expediente — inclusive em teletrabalho; redes pessoais só fora do horário</span></div>
           <div class="check-item"><span class="check-label">Sem distribuição gratuita de bens/valores (salvo programas sociais pré-existentes e emergência)</span></div>
-          <div class="check-item"><span class="check-label">Publicidade institucional sem promoção pessoal nem favorecimento de candidatura</span></div>
-          <div class="check-item"><span class="check-label">Gestão de pessoal sem conexão eleitoral demonstrável</span></div>
+          <div class="check-item"><span class="check-label">Publicidade institucional sem promoção pessoal nem favorecimento de candidatura; despesas do 1º semestre dentro da média histórica</span></div>
+          <div class="check-item"><span class="check-label">Gestão de pessoal sem conexão eleitoral demonstrável; atos de pessoal vedados a partir de 04/07 (salvo exceções)</span></div>
           <div class="check-item"><span class="check-label">Sem inaugurações com presença de candidatos a partir de 04/07</span></div>
-          <div class="check-item"><span class="check-label">Dados públicos jamais usados para mensagens eleitorais</span></div>
+          <div class="check-item"><span class="check-label">Marcas e slogans da gestão removidos de bens públicos e sites oficiais nos 3 meses antes das eleições</span></div>
+          <div class="check-item"><span class="check-label">Sem transferências voluntárias na circunscrição nos 3 meses anteriores (salvo obras em andamento e emergências)</span></div>
+          <div class="check-item"><span class="check-label">Dados públicos e infraestrutura tecnológica jamais usados para mensagens eleitorais ou deepfakes</span></div>
+          <div class="check-item"><span class="check-label">Redes sociais pessoais do gestor sem uso de recursos públicos (fotógrafos/assessores) na produção do conteúdo</span></div>
           <div class="check-item"><span class="check-label">Dúvida? Consultar formalmente a Procuradoria antes de agir</span></div>
         </div>
       </div>
@@ -1235,7 +1503,7 @@ mark{background:#FAC775;border-radius:2px;padding:0 2px;color:#412402}
       </a>
     </div>
     <div style="font-size:11px;color:var(--text3);display:flex;align-items:center;gap:5px">
-      <i class="ti ti-refresh" style="font-size:11px"></i>Atualizado jun/2026 · Res. TSE 23.754 e 23.756
+      <i class="ti ti-refresh" style="font-size:11px"></i>Atualizado jun/2026 · Res. TSE 23.607, 23.755 e 23.756
     </div>
     <div class="footer-aviso">Material orientativo, baseado nas leis e resoluções do TSE. Não substitui a consulta jurídica para casos concretos.</div>
   </div>
